@@ -1,0 +1,21 @@
+Build a marketing website for Advanced Vision Associates, an optometry practice in Inwood, NY specializing in vision therapy, run by Dr. Marcie Stein, OD, who has practiced for over 40 years and is a recognized provider through OVDRA (Optometric Vision Development & Rehabilitation Association).
+Responsive web app — works well on both mobile and desktop — and fast-loading. Use your own design judgment for layout, color palette, and visual style — aim for something that feels credible and professional for a medical practice, not generic or templated.
+Sections, in this order:
+1. Hero — Practice name, welcoming tagline, CTA button leading to the contact form. Use a placeholder stock image (doctor examining a young patient, or a child doing an eye-tracking exercise). Comment the image clearly in code so it’s easy to swap for a real photo later.
+2. What Is Vision Therapy — Explainer content. Pull directly from OVDRA’s (covd.org) patient education materials — you’re authorized to use their language on what vision therapy is and its evidence-based approach.
+3. Benefits / Conditions Treated — Pull directly from OVDRA’s patient-facing content on conditions treated (learning-related vision problems, convergence insufficiency, sports vision, post-concussion, strabismus/amblyopia, etc.) and their signs/symptoms checklists.
+4. About Dr. Stein — 40+ years of experience, OVDRA-affiliated/recognized provider, patient and thorough approach with kids and adults.
+5. Meet the Staff — Team section with placeholder cards (photo, name, role) beyond Dr. Stein. Make entries easy to add/edit later.
+6. Testimonials — Section styled to hold 2–3 real patient reviews (text supplied separately).
+7. Insurance — Note that vision insurance is accepted; direct visitors to contact the office to confirm their specific plan.
+8. Contact Section — Fields: Name, Email, Phone, Child’s Age (optional), Message — pre-filled default message: “I’m interested in learning more about vision therapy services. Please contact me to schedule a consultation.” (editable). No pricing/package info anywhere. Below the form: address (148C Doughty Blvd, Inwood, NY 11096), phone (718-268-3937), hours placeholder.
+9. Footer — Practice name, address, phone, social icons (placeholders), copyright.
+Form backend: Build the form UI, but stub the submit handler with // TODO: connect to Formspree or email backend once domain email is set up — don’t wire to a live email yet.
+Content rules: No diagnostic guarantees or outcome promises. Include disclaimer near footer: “This website is for educational purposes and does not constitute medical advice.”
+SEO basics: Proper page title, meta description mentioning “vision therapy Inwood NY,” alt text on all images, semantic heading structure.
+
+Reference links for you — pull content/info from these yourself, then add into the site:
+* Google Maps listing (verify address/phone/hours, and pull Google reviews too): https://maps.app.goo.gl/fA64Qj1NxV1FRm9s6
+* Yelp reviews (source for testimonials): https://www.yelp.com/biz/marcie-evans-stein-od-inwood
+* OVDRA main site (source for “What Is Vision Therapy” and Benefits copy): https://www.covd.org/
+* OVDRA “Locate a Doctor” profile for Dr. Stein (confirms affiliation): https://locate.covd.org/Search/Detailed?profileId=81ED303F-363C-4CFF-9DB6-B4B71F895F23&markerId=0&lat=40.6157488&lng=-73.7464181&address=148C%20Doughty%20Blvd%20Inwood%2C%20NY%2011096&ZipCodeOrAddress=Far%20Rockaway%2C%20NY%2011691%2C%20USA&SearchRadius=15
