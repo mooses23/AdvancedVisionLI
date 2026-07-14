@@ -13,8 +13,8 @@ export default function Home() {
       <Nav />
       <main className="flex-grow">
         <Hero />
-        <VisionTherapy />
         <Checklist />
+        <VisionTherapy />
         <TestimonialsStrip />
         <Team />
         <Contact />
