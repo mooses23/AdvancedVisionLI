@@ -27,10 +27,10 @@ export default function Nav() {
           : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-10 flex items-center justify-between h-16 md:h-18">
+      <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="#" className="flex flex-col leading-tight shrink-0">
-          <span className="text-primary font-bold text-sm md:text-base tracking-tight">
+        <a href="#" className="flex flex-col leading-tight">
+          <span className="text-primary font-bold text-base tracking-tight">
             Advanced Vision Associates
           </span>
           <span className="text-muted-foreground text-xs font-medium">
@@ -49,6 +49,7 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+          {/* Coral phone CTA */}
           <a
             href="tel:718-268-3937"
             className="text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
@@ -60,28 +61,19 @@ export default function Nav() {
           </a>
         </nav>
 
-        {/* Mobile right side: coral phone button + hamburger */}
-        <div className="md:hidden flex items-center gap-3">
-          <a
-            href="tel:718-268-3937"
-            className="text-white text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap"
-            style={{ backgroundColor: 'hsl(var(--accent))' }}
-          >
-            (718) 268-3937
-          </a>
-          <button
-            className="flex flex-col gap-1.5 p-1.5"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${open ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
-          </button>
-        </div>
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+        </button>
       </div>
 
-      {/* Mobile menu drawer */}
+      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-white border-t border-border/50 px-6 py-4 flex flex-col gap-4">
           {NAV_LINKS.map((link) => (
@@ -94,6 +86,13 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+          <a
+            href="tel:718-268-3937"
+            className="text-white text-sm font-semibold px-5 py-3 rounded-full text-center mt-2 transition-colors"
+            style={{ backgroundColor: 'hsl(var(--accent))' }}
+          >
+            Call (718) 268-3937
+          </a>
         </div>
       )}
     </header>

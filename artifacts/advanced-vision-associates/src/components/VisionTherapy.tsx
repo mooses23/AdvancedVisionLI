@@ -17,76 +17,58 @@ const VISUAL_SKILLS = [
     def: 'Smoothly follow a moving object with your eyes',
     icon: Eye,
     iconBg: '#5bbfb8',
+    iconColor: '#ffffff',
   },
   {
     term: 'Fixation',
     def: 'Hold a steady gaze on a stationary object',
     icon: Crosshair,
     iconBg: '#e07060',
+    iconColor: '#ffffff',
   },
   {
     term: 'Focus change',
     def: 'Switch focus between near and far without blur',
     icon: RotateCcw,
     iconBg: '#5cb86a',
+    iconColor: '#ffffff',
   },
   {
     term: 'Depth perception',
     def: 'Judge space between objects accurately',
     icon: Layers,
     iconBg: '#6a8fc0',
+    iconColor: '#ffffff',
   },
   {
     term: 'Peripheral vision',
-    def: "Notice what's happening around you",
+    def: 'Notice what\'s happening around you',
     icon: Maximize2,
     iconBg: '#e8a840',
+    iconColor: '#ffffff',
   },
   {
     term: 'Binocularity',
     def: 'Coordinate both eyes smoothly together',
     icon: Link2,
     iconBg: '#e8a840',
+    iconColor: '#ffffff',
   },
   {
     term: 'Attention',
     def: 'Stay on a visual task without losing focus',
     icon: Target,
     iconBg: '#5bbfb8',
+    iconColor: '#ffffff',
   },
   {
     term: 'Visualization',
     def: 'Form and manipulate mental images',
     icon: Sparkles,
     iconBg: '#5cb86a',
+    iconColor: '#ffffff',
   },
 ];
-
-// Placeholder — drop vt-anaglyph-boy.jpg into public/images/ to activate
-function VTPhotoSlot() {
-  return (
-    <div
-      className="hidden xl:flex absolute pointer-events-none select-none z-20 flex-col items-center justify-center gap-2 rounded-tl-3xl"
-      style={{
-        right: 0,
-        bottom: '-180px',
-        width: '380px',
-        height: '480px',
-        background: 'hsl(185 30% 88%)',
-        border: '2px dashed hsl(185 35% 70%)',
-      }}
-    >
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <rect x="3" y="6" width="30" height="24" rx="3" stroke="hsl(185 42% 40%)" strokeWidth="1.5" strokeDasharray="4 3" fill="none" />
-        <circle cx="12" cy="14" r="3" stroke="hsl(185 42% 40%)" strokeWidth="1.5" fill="none" />
-        <path d="M3 26l8-7 6 5 5-4 9 8" stroke="hsl(185 42% 40%)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="text-xs font-medium text-center px-4" style={{ color: 'hsl(185 42% 30%)' }}>
-        Photo coming soon
-      </span>
-    </div>
-  );
-}
 
 export default function VisionTherapy() {
   const ref = useScrollAnimation();
@@ -111,7 +93,9 @@ export default function VisionTherapy() {
             <p className="text-primary/60 text-xs font-semibold tracking-[0.18em] uppercase mb-4">
               What is Vision Therapy?
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-primary font-medium mb-5 leading-tight">
+            <h2
+              className="font-serif text-3xl md:text-4xl text-primary font-medium mb-5 leading-tight"
+            >
               Training the visual system,{' '}
               <em className="not-italic" style={{ color: 'hsl(var(--accent))' }}>
                 not just the eye
@@ -138,6 +122,7 @@ export default function VisionTherapy() {
               </p>
             </div>
 
+            {/* Teal squiggly wave */}
             <WaveDecoration className="mt-6 mb-5" />
 
             {/* OVDRA badge */}
@@ -162,11 +147,16 @@ export default function VisionTherapy() {
                     key={skill.term}
                     className="flex items-start gap-3 bg-white rounded-xl px-3.5 py-3 shadow-xs"
                   >
+                    {/* Colored circular icon */}
                     <div
                       className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5"
                       style={{ backgroundColor: skill.iconBg }}
                     >
-                      <Icon size={16} color="#ffffff" strokeWidth={2} />
+                      <Icon
+                        size={16}
+                        color={skill.iconColor}
+                        strokeWidth={2}
+                      />
                     </div>
                     <div className="min-w-0">
                       <p className="text-foreground font-semibold text-sm leading-snug">
@@ -185,8 +175,39 @@ export default function VisionTherapy() {
         </div>
       </div>
 
-      {/* VT photo placeholder — positioned to overflow into Checklist section */}
-      <VTPhotoSlot />
+      {/* Boy-with-glasses photo — positioned below the grid, right side, overflows into Checklist */}
+      <div
+        className="hidden xl:block absolute pointer-events-none select-none z-20"
+        style={{
+          right: 0,
+          bottom: '-180px',
+          width: '380px',
+          height: '480px',
+        }}
+      >
+        <div className="relative w-full h-full">
+          {/* Gradient mask: fades left edge and bottom */}
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                'linear-gradient(to right, hsl(38 38% 96% / 0) 0%, transparent 100%), linear-gradient(to top, transparent 0%, transparent 85%, hsl(38 38% 96%) 100%)',
+            }}
+          />
+          <div
+            className="absolute left-0 top-0 bottom-0 z-10 w-24"
+            style={{
+              background: 'linear-gradient(to right, hsl(38 38% 96%), transparent)',
+            }}
+          />
+          <img
+            src="/images/vt-anaglyph-boy.jpg"
+            alt="Child doing vision therapy with anaglyph glasses"
+            className="w-full h-full object-cover object-top rounded-tl-3xl"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        </div>
+      </div>
     </section>
   );
 }

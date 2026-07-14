@@ -23,30 +23,6 @@ const SYMPTOMS = [
   'Avoids sports or outdoor activities',
 ];
 
-// Placeholder — drop checklist-tired-child.jpg into public/images/ to activate
-function ChecklistPhotoSlot() {
-  return (
-    <div
-      className="absolute bottom-0 left-0 hidden lg:flex flex-col items-center justify-center gap-2 z-10 rounded-tr-3xl"
-      style={{
-        width: '220px',
-        height: '280px',
-        background: 'hsl(185 30% 88%)',
-        border: '2px dashed hsl(185 35% 70%)',
-      }}
-    >
-      <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <rect x="3" y="6" width="30" height="24" rx="3" stroke="hsl(185 42% 40%)" strokeWidth="1.5" strokeDasharray="4 3" fill="none" />
-        <circle cx="12" cy="14" r="3" stroke="hsl(185 42% 40%)" strokeWidth="1.5" fill="none" />
-        <path d="M3 26l8-7 6 5 5-4 9 8" stroke="hsl(185 42% 40%)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="text-xs font-medium text-center px-4" style={{ color: 'hsl(185 42% 30%)' }}>
-        Photo coming soon
-      </span>
-    </div>
-  );
-}
-
 export default function Checklist() {
   const ref = useScrollAnimation();
   const [checked, setChecked] = useState<Set<number>>(new Set());
@@ -63,8 +39,28 @@ export default function Checklist() {
 
   return (
     <section id="signs" className="relative bg-background overflow-hidden py-16 md:py-24">
-      {/* Child photo placeholder — bottom left */}
-      <ChecklistPhotoSlot />
+      {/* Tired child photo — bottom left */}
+      <div
+        className="absolute bottom-0 left-0 pointer-events-none select-none hidden lg:block z-10"
+        style={{ width: '220px', height: '280px' }}
+      >
+        <div className="relative w-full h-full">
+          {/* Fade right and top */}
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                'linear-gradient(to right, transparent 50%, hsl(38 38% 96%)), linear-gradient(to bottom, hsl(38 38% 96%) 0%, transparent 25%)',
+            }}
+          />
+          <img
+            src="/images/checklist-tired-child.jpg"
+            alt="Child appearing tired, illustrating vision-related fatigue"
+            className="w-full h-full object-cover object-top rounded-tr-3xl"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        </div>
+      </div>
 
       <div
         ref={ref as any}
@@ -74,7 +70,9 @@ export default function Checklist() {
           <p className="text-primary/60 text-xs font-semibold tracking-[0.18em] uppercase mb-3">
             Parent Check List
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary font-medium mb-4 leading-tight">
+          <h2
+            className="font-serif text-4xl md:text-5xl text-primary font-medium mb-4 leading-tight"
+          >
             Is this your child?
           </h2>
           <p className="text-muted-foreground text-base mb-8 max-w-xl">
@@ -137,7 +135,8 @@ export default function Checklist() {
                     You checked{' '}
                     <span className="text-primary font-bold">{count}</span>{' '}
                     sign{count > 1 ? 's' : ''}.{' '}
-                    Even a couple of these can signal a vision issue worth evaluating.
+                    Even a couple of these can signal a vision issue worth
+                    evaluating.
                   </p>
                 ) : (
                   <p className="text-foreground text-sm font-medium">
