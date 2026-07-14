@@ -16,13 +16,12 @@ export default function Hero() {
       {/* Sandy blob — mid left */}
       <BlobSand className="absolute bottom-8 left-[22%] w-[180px] h-[180px] pointer-events-none select-none opacity-60" />
 
-      {/* Hero photo — right side, fades in from right */}
+      {/* Hero photo — right side on desktop, stacked below text on mobile */}
       <div
         className="absolute top-0 right-0 bottom-0 pointer-events-none select-none hidden md:block"
         style={{ width: '48%' }}
       >
         <div className="relative w-full h-full">
-          {/* Gradient mask: cream on left, transparent on right so photo shows */}
           <div
             className="absolute inset-0 z-10"
             style={{
@@ -43,13 +42,13 @@ export default function Hero() {
         className="relative z-10 container mx-auto px-6 md:px-10 flex items-center"
         style={{ minHeight: '76vh' }}
       >
-        <div className="max-w-xl pt-20 pb-14">
+        <div className="w-full md:max-w-xl pt-20 pb-8 md:pb-14">
           <p className="text-primary/60 text-xs font-semibold tracking-[0.2em] uppercase mb-6">
             Advanced Vision Associates · Inwood, NY
           </p>
 
           <h1
-            className="font-serif font-medium text-primary leading-[1.1] mb-8"
+            className="font-serif font-medium text-primary leading-[1.1] mb-6"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
           >
             Did you know that a person can have{' '}
@@ -61,6 +60,16 @@ export default function Hero() {
             </em>{' '}
             and still have a vision problem?
           </h1>
+
+          {/* Mobile-only photo — between heading and subtext */}
+          <div className="block md:hidden -mx-6 mb-6 overflow-hidden rounded-none" style={{ height: '260px' }}>
+            <img
+              src="/images/hero-brock-string.jpg"
+              alt="Child doing Brock string vision therapy exercise"
+              className="w-full h-full object-cover object-top"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+          </div>
 
           <p className="text-foreground/65 text-lg md:text-xl leading-relaxed mb-10 max-w-md">
             Vision therapy treats the functional issues that glasses alone
