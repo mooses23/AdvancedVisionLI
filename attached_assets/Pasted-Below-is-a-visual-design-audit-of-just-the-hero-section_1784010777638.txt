@@ -1,0 +1,641 @@
+Below is a visual design audit of just the hero section. I’ll go layer by layer as if I were writing specifications for a designer or AI image generator.
+
+⸻
+
+Overall Feel
+
+The hero is designed to communicate:
+
+* Modern medical practice
+* Premium but approachable
+* Child-focused without looking childish
+* Calm, optimistic, trustworthy
+* Editorial magazine meets healthcare website
+
+Instead of looking like a corporate hospital, it feels almost like an Apple landing page mixed with a pediatric wellness brand.
+
+⸻
+
+Hero Dimensions
+
+Approximate proportions:
+
+* Full width
+* Around 620–680px tall
+* Split approximately
+
+55% text
+45% imagery
+
+However—
+
+the split is NOT a hard vertical line.
+
+The artwork intentionally bleeds together.
+
+⸻
+
+Layout Structure
+
+ ---------------------------------------------------------
+| NAVIGATION                                              |
+----------------------------------------------------------
+|                                                         |
+|  Small Eyebrow                                          |
+|                                                         |
+|  Massive Headline              Large Girl               |
+|                                (therapy activity)       |
+|                                                         |
+|  Paragraph                     String extends           |
+|                                toward headline          |
+|                                                         |
+|  CTA      Secondary CTA                                |
+|                                                         |
+----------------------------------------------------------
+
+Nothing feels boxed.
+
+Everything floats.
+
+⸻
+
+Grid
+
+The page follows roughly a 12-column grid.
+
+Text occupies about
+
+Columns
+
+1–6
+
+Girl occupies
+
+7–12
+
+BUT—
+
+the girl’s arm crosses left.
+
+The therapy string crosses into the typography.
+
+This is important.
+
+It visually ties both halves together.
+
+⸻
+
+Reading Flow
+
+Eye movement is intentionally controlled.
+
+User sees
+
+20/20
+↓
+large headline
+↓
+girl's face
+↓
+therapy string
+↓
+buttons
+↓
+next section
+
+There are no dead areas.
+
+⸻
+
+Background
+
+This is one of the strongest parts.
+
+It is NOT flat.
+
+It contains roughly six layers.
+
+⸻
+
+Layer 1
+
+Very light warm off-white
+
+approximately
+
+#F7F5F2
+
+⸻
+
+Layer 2
+
+Soft blue wash
+
+#DDEEEE
+
+Large subtle gradient.
+
+Almost watercolor.
+
+Very low opacity.
+
+⸻
+
+Layer 3
+
+Large translucent circles.
+
+About
+
+15–40% opacity.
+
+Sizes range from
+
+250px
+
+to
+
+700px.
+
+Colors
+
+Very pale aqua.
+
+Very pale mint.
+
+Almost invisible.
+
+Purpose:
+
+Creates depth without becoming noticeable.
+
+⸻
+
+Layer 4
+
+Abstract organic blobs.
+
+Bottom left
+
+sand color.
+
+Bottom center
+
+turquoise.
+
+Far right
+
+turquoise.
+
+These are intentionally cut off by screen edges.
+
+Nothing is centered.
+
+⸻
+
+Layer 5
+
+Dot pattern.
+
+Upper right.
+
+White dots.
+
+Roughly
+
+10×10 grid.
+
+Acts as decorative texture.
+
+⸻
+
+Layer 6
+
+Very faint lighting gradient.
+
+Brighter behind headline.
+
+Slightly darker behind girl.
+
+This creates natural separation.
+
+⸻
+
+Color Palette
+
+Background
+
+Soft aqua
+
+#DDEEEE
+
+Warm cream
+
+#F6F2EB
+
+Light beige
+
+#F2DFC3
+
+Muted teal
+
+#7ECFCF
+
+White
+
+#FFFFFF
+
+⸻
+
+Accent
+
+Coral
+
+#F46B54
+
+Used for
+
+* 20/20
+* CTA button
+* Phone button
+
+⸻
+
+Primary text
+
+Dark navy
+
+Almost black
+
+#173140
+
+Not pure black.
+
+Feels softer.
+
+⸻
+
+Secondary accent
+
+Ocean teal
+
+#0D8AA5
+
+Used sparingly.
+
+⸻
+
+Typography
+
+The typography is doing most of the selling.
+
+⸻
+
+Eyebrow
+
+Very small.
+
+Tracking
+
+Around
+
+0.25em
+
+All caps.
+
+Muted teal.
+
+Looks premium.
+
+⸻
+
+Main Headline
+
+Huge.
+
+Probably
+
+64–82px.
+
+Very elegant serif.
+
+High contrast strokes.
+
+Feels like
+
+Canela
+
+Editorial New
+
+IvyPresto
+
+No obvious slab characteristics.
+
+⸻
+
+Weight
+
+Semi Bold.
+
+⸻
+
+Line height
+
+Very tight.
+
+Around
+
+0.95
+
+This creates visual impact.
+
+⸻
+
+Only one thing is highlighted.
+
+20/20
+
+Everything else remains dark.
+
+This creates hierarchy.
+
+⸻
+
+Headline Width
+
+Approximately
+
+540px.
+
+Never stretches across entire screen.
+
+Very readable.
+
+⸻
+
+Paragraph
+
+Sans serif.
+
+18–20px.
+
+Around
+
+70 characters wide.
+
+Muted charcoal.
+
+Lots of breathing room.
+
+⸻
+
+Buttons
+
+Primary
+
+Large pill.
+
+Height
+
+56px.
+
+Coral gradient.
+
+Rounded
+
+30px.
+
+White text.
+
+⸻
+
+Secondary
+
+Outlined.
+
+White background.
+
+Blue outline.
+
+Blue text.
+
+Very minimal.
+
+⸻
+
+Spacing
+
+Approximately
+
+24px
+
+between buttons.
+
+⸻
+
+Girl
+
+The girl is the emotional anchor.
+
+⸻
+
+Pose
+
+Three-quarter profile.
+
+Looking inward.
+
+Never looking at camera.
+
+Huge difference psychologically.
+
+She’s concentrating.
+
+Not smiling.
+
+Not posing.
+
+She’s immersed.
+
+⸻
+
+Wardrobe
+
+Large knit sweater.
+
+Neutral beige.
+
+Soft texture.
+
+Comfortable.
+
+No branding.
+
+⸻
+
+Hair
+
+Long.
+
+Natural.
+
+Loose.
+
+Adds softness.
+
+⸻
+
+Lighting
+
+Soft window light.
+
+No hard shadows.
+
+No dramatic highlights.
+
+Feels authentic.
+
+⸻
+
+Position
+
+Placed intentionally off-center.
+
+Head begins roughly
+
+65% across page.
+
+Shoulders extend beyond lower fold.
+
+She is cropped.
+
+This makes image feel larger than screen.
+
+⸻
+
+Therapy Tool
+
+The Brock string is compositionally brilliant.
+
+Instead of staying inside image—
+
+it stretches diagonally
+
+toward the headline.
+
+Creates a literal visual bridge.
+
+Angle
+
+Approximately
+
+30°
+
+from lower left
+
+to upper right.
+
+Colored beads provide tiny accent colors.
+
+⸻
+
+Image Cutout
+
+The girl isn’t placed inside a rectangle.
+
+Background has been softly removed.
+
+Hair feathering preserved.
+
+Edges blend naturally.
+
+Almost invisible masking.
+
+⸻
+
+Overlap
+
+Nothing overlaps the text.
+
+Instead—
+
+the therapy string almost enters typography.
+
+This increases depth without sacrificing readability.
+
+⸻
+
+Negative Space
+
+One reason the hero feels expensive:
+
+Lots of empty air.
+
+Large margins.
+
+Headline has breathing room.
+
+Girl has breathing room.
+
+Buttons have breathing room.
+
+No clutter.
+
+⸻
+
+Contrast Strategy
+
+Instead of high contrast everywhere:
+
+Dark text
+
+↓
+
+Light background
+
+↓
+
+Warm coral accents
+
+↓
+
+Muted photography
+
+↓
+
+Tiny colorful therapy beads
+
+This prevents visual overload.
+
+⸻
+
+Visual Weight Distribution
+
+Left side:
+
+* Large typography
+* CTA
+* Strong messaging
+
+Right side:
+
+* Human emotion
+* Storytelling
+* Visual proof
+
+Neither side dominates.
+
+⸻
+
+Psychological Design Principles Used
+
+* Editorial hierarchy: One dominant message, one highlighted phrase, minimal competing elements.
+* Directional cueing: The Brock string guides the eye from the photograph toward the headline and back.
+* Soft biomorphic shapes: Rounded circles and blobs reduce the clinical feel associated with healthcare.
+* Warm–cool balance: Cool aqua backgrounds establish calm; coral accents create urgency and focus.
+* Authenticity over stock imagery: The subject is engaged in a real therapy exercise rather than smiling at the camera, increasing credibility.
+* Generous whitespace: Empty space creates a premium perception and improves readability.
+* Asymmetrical balance: The text-heavy left and image-heavy right remain visually equal without mirroring one another.
+* Layered depth: Gradients, translucent circles, organic shapes, and subtle patterns create richness while remaining unobtrusive.
+
+Overall, the hero succeeds because every element serves a purpose: the typography delivers the message, the girl demonstrates the solution, the Brock string connects the two halves, and the restrained color palette creates a calm, trustworthy first impression.
