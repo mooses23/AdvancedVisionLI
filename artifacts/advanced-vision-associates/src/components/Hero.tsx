@@ -1,4 +1,4 @@
-/** Hero — pixel-perfect rebuild matching design audit (desktop + mobile) */
+/** Hero — matches desktop + mobile mockups */
 
 function DotGrid({ cols = 10, rows = 10 }: { cols?: number; rows?: number }) {
   const gap = 18;
@@ -18,14 +18,12 @@ function DotGrid({ cols = 10, rows = 10 }: { cols?: number; rows?: number }) {
           cy={Math.floor(i / cols) * gap + r + 2}
           r={r}
           fill="white"
-          opacity={0.70}
+          opacity={0.65}
         />
       ))}
     </svg>
   );
 }
-
-// ─── shared blob paths ──────────────────────────────────────────────────────
 
 function SandBlob({ style }: { style: React.CSSProperties }) {
   return (
@@ -33,136 +31,115 @@ function SandBlob({ style }: { style: React.CSSProperties }) {
       className="absolute pointer-events-none select-none" style={style}>
       <path
         d="M340,240Q300,320,230,355Q160,390,100,350Q40,310,20,240Q0,170,40,110Q80,50,160,30Q240,10,300,60Q360,110,370,175Q380,240,340,240Z"
-        fill="#F2DFC3" fillOpacity="0.82"
+        fill="#F2DFC3" fillOpacity="0.88"
       />
     </svg>
   );
 }
 
-function TealBlobBottom({ style }: { style: React.CSSProperties }) {
+function TealBlobSmall({ style }: { style: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
       className="absolute pointer-events-none select-none" style={style}>
       <path
-        d="M380,260Q340,340,265,375Q190,410,120,370Q50,330,30,250Q10,170,60,105Q110,40,200,25Q290,10,355,75Q420,140,420,200Q420,260,380,260Z"
-        fill="#7ECFCF" fillOpacity="0.55"
+        d="M240,175Q210,240,155,260Q100,280,55,240Q10,200,15,140Q20,80,80,55Q140,30,200,65Q260,100,255,137Q250,175,240,175Z"
+        fill="#5ABFBF" fillOpacity="0.55"
       />
     </svg>
   );
 }
 
-function TealBlobCorner({ style }: { style: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-      className="absolute pointer-events-none select-none" style={style}>
-      <path
-        d="M310,200Q280,280,210,330Q140,380,80,330Q20,280,10,200Q0,120,60,70Q120,20,210,20Q300,20,340,90Q380,160,310,200Z"
-        fill="#7ECFCF" fillOpacity="0.45"
-      />
-    </svg>
-  );
-}
-
-// ─── hero ────────────────────────────────────────────────────────────────────
-
-const GIRL_URL = "url('/images/hero-girl-cutout.png')";
+// Solid teal/mint background matching the mockup
+const HERO_BG = '#C6DADA';
 
 export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#F7F5F2' }}
+      style={{ backgroundColor: HERO_BG }}
     >
 
       {/* ═══════════════════════════════════════════════════════════
           DESKTOP  (md and up)
       ═══════════════════════════════════════════════════════════ */}
-      <div className="hidden md:block relative" style={{ height: 660 }}>
+      <div className="hidden md:block relative" style={{ height: 540, backgroundColor: '#C6DADA' }}>
 
-        {/* Layer 2 — soft aqua wash */}
+        {/* Dark teal circle — top-right corner, partially clipped */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute pointer-events-none rounded-full"
           style={{
-            background: 'linear-gradient(112deg, rgba(221,238,238,0.52) 0%, rgba(221,238,238,0.74) 100%)',
-            zIndex: 1,
+            width: 220, height: 220,
+            backgroundColor: '#4AAEB0',
+            top: -70, right: -55,
+            zIndex: 2,
           }}
         />
 
-        {/* Layer 3 — large translucent circles (15–40% opacity, pale aqua) */}
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 620, height: 620, background: 'rgba(221,238,238,0.28)',
-          top: -120, right: '12%', zIndex: 1,
-        }} />
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 360, height: 360, background: 'rgba(221,238,238,0.22)',
-          bottom: -90, left: '40%', zIndex: 1,
-        }} />
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 240, height: 240, background: 'rgba(255,255,255,0.18)',
-          top: '28%', left: '20%', zIndex: 1,
-        }} />
-
-        {/* ── Girl cutout — background-image div (no iOS Safari compositing bug) ──
-            PNG: 1536×1024 (ratio 1.5). Div ratio: 1320/880 = 1.5 → no distortion.
-            top: 0 anchors her head near the hero top, bottom body overflows + is
-            clipped. right: 0 with width 1320 puts left edge at -40px (off-screen,
-            transparent, clipped). Background-color ≈ blended hero teal fills the
-            transparent PNG regions (around the string, above head, etc.).          */}
-        <div
-          aria-hidden="true"
-          className="absolute pointer-events-none select-none"
-          style={{
-            top: 0,
-            right: 0,
-            width: 1320,
-            height: 880,
-            backgroundColor: '#E2EDEB',   // ≈ #F7F5F2 base + 65% #DDEEEE wash
-            backgroundImage: GIRL_URL,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',  // fills div exactly — no distortion (both 1.5 ratio)
-            zIndex: 3,
-          }}
-        />
-
-        {/* Layer 4 blobs — z:4 so they sit above the girl div but don't
-            overlap the opaque girl pixels (they're in the corners/edges) */}
-        <SandBlob style={{ width: 300, height: 270, bottom: -10, left: -10, zIndex: 4 }} />
-        <TealBlobBottom style={{ width: 380, height: 340, bottom: -120, left: '28%', zIndex: 4 }} />
-        <TealBlobCorner style={{ width: 260, height: 300, top: -30, right: -30, zIndex: 4 }} />
-
-        {/* Layer 5 — dot grid upper right */}
-        <div className="absolute top-3 right-3 pointer-events-none select-none" style={{ zIndex: 5 }}>
+        {/* Dot grid — upper right, behind circle */}
+        <div className="absolute pointer-events-none select-none" style={{ top: 18, right: 18, zIndex: 3 }}>
           <DotGrid cols={10} rows={10} />
         </div>
 
-        {/* Layer 6 — lighting (brighter left / slightly darker right) */}
-        <div
-          className="absolute inset-0 pointer-events-none"
+        {/* Subtle large circle behind girl */}
+        <div className="absolute rounded-full pointer-events-none" style={{
+          width: 480, height: 480,
+          background: 'rgba(255,255,255,0.09)',
+          top: -100, right: '18%',
+          zIndex: 1,
+        }} />
+
+        {/* Sand blob — bottom left */}
+        <SandBlob style={{ width: 210, height: 190, bottom: -30, left: -20, zIndex: 4 }} />
+
+        {/* Small teal blob — bottom center */}
+        <TealBlobSmall style={{ width: 185, height: 170, bottom: -60, left: '30%', zIndex: 4 }} />
+
+        {/* Girl PNG — <img> so her transparent areas show the teal background behind */}
+        {/*
+          PNG is 1536×1024 (ratio 1.5:1).
+          At height=680px: width=1020px (scale=0.664).
+          top=-100px: img starts 100px above hero, clipped by section overflow:hidden.
+            Girl head in PNG ≈ y=230 → rendered y=153 → section y=53px (just below 64px nav).
+          right=0: img right edge flush with viewport right.
+            Girl body center PNG x≈1050 → rendered x=697 → viewport x=(1280-1020)+697=957 (≈75%).
+            String far end PNG x≈75 → rendered x=50 → viewport x=310 (≈24%).
+        */}
+        <img
+          src="/images/hero-girl-cutout.png"
+          aria-hidden="true"
+          alt=""
+          className="absolute pointer-events-none select-none"
           style={{
-            background: 'linear-gradient(to right, rgba(255,255,255,0.16) 0%, transparent 42%, rgba(0,0,0,0.03) 100%)',
-            zIndex: 5,
+            top: -100,
+            right: 0,
+            height: 680,
+            width: 'auto',
+            display: 'block',
+            zIndex: 2,
           }}
         />
 
-        {/* Main content */}
+        {/* Content — left column
+            Layout budget at 540px hero, targeting 5-line headline at ~46px:
+            pt:72 + eyebrow:14 + gap:18 + h1(5×47px):235 + gap:18 + body:56 + gap:28 + btn:50 + pb:32 = 523px ✓ */}
         <div
-          className="relative container mx-auto px-10 flex items-center h-full"
-          style={{ zIndex: 10 }}
+          className="relative h-full flex items-start"
+          style={{ zIndex: 10, paddingLeft: '11%', paddingTop: 72, paddingBottom: 32 }}
         >
-          <div style={{ maxWidth: 540, paddingTop: 96, paddingBottom: 48 }}>
+          <div style={{ maxWidth: 540 }}>
 
             <p
-              className="font-semibold uppercase mb-6"
-              style={{ fontSize: 11, letterSpacing: '0.25em', color: '#0D8AA5' }}
+              className="font-semibold uppercase mb-4"
+              style={{ fontSize: 11, letterSpacing: '0.24em', color: '#0D6F86' }}
             >
               Advanced Vision Associates · Inwood, NY
             </p>
 
             <h1
-              className="font-serif font-semibold mb-5"
+              className="font-serif font-semibold mb-4"
               style={{
-                fontSize: 'clamp(2.8rem, 5.3vw, 4.3rem)',
-                lineHeight: 0.95,
+                fontSize: 'clamp(2.1rem, 3.6vw, 3.0rem)',
+                lineHeight: 1.04,
                 color: '#173140',
               }}
             >
@@ -172,25 +149,25 @@ export default function Hero() {
             </h1>
 
             <p
-              className="mb-9"
-              style={{ fontSize: 18, lineHeight: 1.62, color: '#173140', opacity: 0.65, maxWidth: 400 }}
+              className="mb-7"
+              style={{ fontSize: 16, lineHeight: 1.65, color: '#173140', opacity: 0.68, maxWidth: 380 }}
             >
               Vision therapy treats the functional issues that glasses alone
               can't fix — for children and adults of all ages.
             </p>
 
-            <div className="flex flex-wrap" style={{ gap: 20 }}>
+            <div className="flex flex-wrap" style={{ gap: 14 }}>
               <a
                 href="#contact"
                 className="inline-flex items-center text-white font-semibold hover:opacity-90 transition-all"
-                style={{ backgroundColor: '#F46B54', height: 56, paddingLeft: 28, paddingRight: 28, borderRadius: 30, fontSize: 16 }}
+                style={{ backgroundColor: '#F46B54', height: 50, paddingLeft: 26, paddingRight: 26, borderRadius: 30, fontSize: 15 }}
               >
                 Schedule a Consultation
               </a>
               <a
                 href="#vision-therapy"
                 className="inline-flex items-center font-medium bg-white hover:bg-white/90 transition-all"
-                style={{ height: 56, paddingLeft: 28, paddingRight: 28, borderRadius: 30, border: '2px solid #0D8AA5', color: '#0D8AA5', fontSize: 16 }}
+                style={{ height: 50, paddingLeft: 26, paddingRight: 26, borderRadius: 30, border: '2px solid #0D8AA5', color: '#0D8AA5', fontSize: 15 }}
               >
                 Learn More
               </a>
@@ -201,100 +178,63 @@ export default function Hero() {
 
       {/* ═══════════════════════════════════════════════════════════
           MOBILE  (below md)
-          Audit spec: girl overlaps headline side-by-side (NOT stacked),
-          shoulder at ~58%, head near top, bottom cropped below elbows.
-          Buttons stack full-width vertically.
       ═══════════════════════════════════════════════════════════ */}
-      <div className="md:hidden relative" style={{ minHeight: 820 }}>
+      <div className="md:hidden relative">
 
-        {/* Layer 2 — aqua wash */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(148deg, rgba(221,243,242,0.55) 0%, rgba(221,238,238,0.78) 100%)',
-            zIndex: 1,
-          }}
-        />
-
-        {/* Layer 3 — large circle top-left */}
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 280, height: 280, background: 'rgba(221,238,238,0.18)',
-          top: -60, left: -60, zIndex: 2,
-        }} />
-
-        {/* Layer 4 — small teal blob lower center */}
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 160, height: 160, background: 'rgba(114,212,214,0.22)',
-          bottom: '38%', left: '28%', zIndex: 2,
-        }} />
-
-        {/* Layer 5 — sand blob left */}
-        <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          className="absolute pointer-events-none select-none"
-          style={{ width: 200, height: 185, bottom: '33%', left: -15, zIndex: 2 }}>
-          <path
-            d="M240,170Q210,230,155,255Q100,280,55,245Q10,210,10,155Q10,100,55,65Q100,30,165,30Q230,30,255,90Q280,150,240,170Z"
-            fill="#F3D8AA" fillOpacity="0.72"
-          />
-        </svg>
-
-        {/* Layer 6 (mobile-only) — turquoise vertical panel right ~23% */}
-        <div
-          className="absolute top-0 bottom-0 pointer-events-none"
-          style={{ right: 0, width: '23%', backgroundColor: '#71D5D5', opacity: 0.28, zIndex: 2 }}
-        />
-
-        {/* Layer 7 — dot grid upper right */}
-        <div className="absolute top-2 right-2 pointer-events-none select-none" style={{ zIndex: 3 }}>
-          <DotGrid cols={8} rows={8} />
-        </div>
-
-        {/* Layer 8 — lighting gradient */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to right, rgba(255,255,255,0.14) 0%, transparent 55%)',
-            zIndex: 3,
-          }}
-        />
-
-        {/* Girl cutout — overlapping right side, beside headline.
-            PNG 1536×1024.  Rendered at 750×500 (ratio preserved).
-            bg-position '-270px 0' shows original x≈554–1278,
-            placing the girl's face at ~68–72% from screen left. */}
+        {/* Girl PNG — right 48% of hero, cropped to show face/upper body.
+            object-fit:cover + object-position pins the girl's face (68%,8%)
+            so head/beads are centered in the right column at any phone width.  */}
         <div
           aria-hidden="true"
-          className="absolute pointer-events-none select-none"
-          style={{
-            top: 0,
-            right: 0,
-            width: 280,
-            height: 520,
-            backgroundColor: '#C2DADA',
-            backgroundImage: GIRL_URL,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '750px auto',  // renders PNG at 750×500px
-            backgroundPosition: '-270px 0', // shows rendered x=270–550 → orig x≈554–1128
-            zIndex: 4,
-          }}
-        />
+          className="absolute top-0 right-0 bottom-0 overflow-hidden pointer-events-none"
+          style={{ width: '48%', zIndex: 2 }}
+        >
+          <img
+            src="/images/hero-girl-cutout.png"
+            alt=""
+            className="select-none"
+            style={{
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: '68% 8%',
+            }}
+          />
+        </div>
 
-        {/* Content column — left of girl, z:10 */}
+        {/* Dot grid — upper right */}
+        <div className="absolute top-3 right-3 pointer-events-none select-none" style={{ zIndex: 4 }}>
+          <DotGrid cols={7} rows={7} />
+        </div>
+
+        {/* Sand blob — lower left, partially clipped */}
+        <SandBlob style={{ width: 140, height: 126, bottom: -20, left: -18, zIndex: 1 }} />
+
+        {/* Teal circle blob — mid left, beside body text */}
+        <div className="absolute rounded-full pointer-events-none" style={{
+          width: 100, height: 100,
+          background: 'rgba(90,191,191,0.30)',
+          bottom: '28%', left: '5%',
+          zIndex: 1,
+        }} />
+
+        {/* Content — left of girl.
+            paddingRight: '50%' keeps text left of the 48% girl column.        */}
         <div
           className="relative"
-          style={{ zIndex: 10, paddingLeft: 28, paddingRight: 28, paddingTop: 84 }}
+          style={{ zIndex: 10, paddingLeft: 20, paddingRight: '50%', paddingTop: 78, paddingBottom: 28 }}
         >
           <p
-            className="font-semibold uppercase mb-4"
-            style={{ fontSize: 11, letterSpacing: '0.25em', color: '#0D8AA5', lineHeight: 1.4 }}
+            className="font-semibold uppercase mb-3"
+            style={{ fontSize: 10, letterSpacing: '0.2em', color: '#0D8AA5', lineHeight: 1.5 }}
           >
-            Advanced Vision Associates · Inwood, NY
+            Advanced Vision Associates<br />· Inwood, NY
           </p>
 
-          {/* Headline constrained so it stays left of the girl (≈53% of 390px ≈ 207px) */}
           <h1
-            className="font-serif font-semibold mb-4"
-            style={{ fontSize: 31, lineHeight: 0.93, color: '#163444', maxWidth: 205 }}
+            className="font-serif font-semibold mb-3"
+            style={{ fontSize: 24, lineHeight: 1.06, color: '#163444' }}
           >
             Did you know that a person can have{' '}
             <em className="not-italic" style={{ color: '#F46B54' }}>20/20 vision</em>{' '}
@@ -302,26 +242,26 @@ export default function Hero() {
           </h1>
 
           <p
-            className="mb-7"
-            style={{ fontSize: 16, lineHeight: 1.62, color: '#173140', opacity: 0.65, maxWidth: 205 }}
+            className="mb-6"
+            style={{ fontSize: 14, lineHeight: 1.65, color: '#173140', opacity: 0.68 }}
           >
             Vision therapy treats the functional issues that glasses alone
             can't fix — for children and adults of all ages.
           </p>
 
-          {/* Stacked full-width buttons (90% wide) */}
-          <div className="flex flex-col" style={{ gap: 12, paddingBottom: 60 }}>
+          {/* Full-width stacked buttons */}
+          <div className="flex flex-col" style={{ gap: 10, paddingBottom: 24 }}>
             <a
               href="#contact"
               className="inline-flex items-center justify-center text-white font-semibold hover:opacity-90 transition-all"
-              style={{ backgroundColor: '#F46B54', height: 58, width: '90%', borderRadius: 30, fontSize: 16 }}
+              style={{ backgroundColor: '#F46B54', height: 50, borderRadius: 30, fontSize: 14 }}
             >
               Schedule a Consultation
             </a>
             <a
               href="#vision-therapy"
               className="inline-flex items-center justify-center font-medium bg-white hover:bg-white/90 transition-all"
-              style={{ height: 58, width: '90%', borderRadius: 30, border: '2px solid #0D8AA5', color: '#0D8AA5', fontSize: 16 }}
+              style={{ height: 50, borderRadius: 30, border: '2px solid #0D8AA5', color: '#0D8AA5', fontSize: 14 }}
             >
               Learn More
             </a>
