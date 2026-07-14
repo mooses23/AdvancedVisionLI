@@ -81,7 +81,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ minHeight: 650, backgroundColor: '#B8D2D2' }}
+      style={{ minHeight: 650, height: 650, backgroundColor: '#B8D2D2' }}
     >
       {/* ── Solid fill to ensure consistent colour behind transparent PNG ── */}
       <div className="absolute inset-0" style={{ backgroundColor: '#B8D2D2', zIndex: 0 }} />
@@ -159,7 +159,7 @@ export default function Hero() {
         className="absolute bottom-0 pointer-events-none select-none hidden md:block"
         style={{
           right: -8,
-          height: '106%',
+          height: 680,
           width: 'auto',
           zIndex: 3,
         }}
