@@ -62,7 +62,7 @@ export default function Hero() {
       {/* ═══════════════════════════════════════════════════════════
           DESKTOP  (md and up)
       ═══════════════════════════════════════════════════════════ */}
-      <div className="hidden md:block relative" style={{ height: 540, backgroundColor: '#C6DADA', isolation: 'isolate' }}>
+      <div className="hidden md:block relative" style={{ height: 540, backgroundColor: '#C6DADA' }}>
 
         {/* Dark teal circle — top-right corner, partially clipped */}
         <div
@@ -75,12 +75,10 @@ export default function Hero() {
           }}
         />
 
-        {/* Dot grid — upper left teal area, behind img (z:1) so it shows as background texture */}
+        {/* Dot grid — upper left teal area */}
         <div className="absolute pointer-events-none select-none" style={{ top: 18, left: 18, zIndex: 1 }}>
           <DotGrid cols={10} rows={10} />
         </div>
-
-        {/* (large white circle removed — backdrop div now ensures clean teal behind girl) */}
 
         {/* Sand blob — bottom left */}
         <SandBlob style={{ width: 210, height: 190, bottom: -30, left: -20, zIndex: 4 }} />
@@ -88,26 +86,9 @@ export default function Hero() {
         {/* Small teal blob — bottom center */}
         <TealBlobSmall style={{ width: 185, height: 170, bottom: -60, left: '30%', zIndex: 4 }} />
 
-        {/* Solid teal backdrop — same position as the girl img.
-            A physical div at z:1 guarantees transparent PNG pixels show
-            teal rather than the cream page background, regardless of how
-            the browser handles compositing transparent PNGs in stacking contexts. */}
-        <div
-          aria-hidden="true"
-          className="absolute pointer-events-none"
-          style={{
-            top: -100,
-            right: 0,
-            height: 680,
-            width: 1020,
-            backgroundColor: '#C6DADA',
-            zIndex: 1,
-          }}
-        />
-
-        {/* Girl PNG */}
+        {/* Girl — teal background baked into PNG so no compositing issues */}
         <img
-          src="/images/hero-girl-cutout.png"
+          src="/images/hero-girl-cutout.png?v=2"
           aria-hidden="true"
           alt=""
           className="absolute pointer-events-none select-none"
