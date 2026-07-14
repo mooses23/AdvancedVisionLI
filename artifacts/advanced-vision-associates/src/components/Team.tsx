@@ -5,8 +5,9 @@ const TEAM = [
     name: 'Dr. Marcie Evans Stein',
     credentials: 'OD FABM OVDRA',
     role: 'Optometrist & Founder',
+    initials: 'MS',
     bio: 'Dr. Stein has been practicing optometry in Inwood and Far Rockaway for over 40 years. As an OVDRA-recognized developmental optometrist, she is known for her patient, thorough approach — especially with children, for whom vision therapy can be life-changing.',
-    // SWAP: replace with real photo when available
+    // Drop dr-stein.jpg into public/images/ to replace the placeholder
     imageSrc: '/images/dr-stein.jpg',
     imageAlt: 'Dr. Marcie Evans Stein, OD',
   },
@@ -14,12 +15,29 @@ const TEAM = [
     name: 'Dr. Esther Moller',
     credentials: 'OD FAAO',
     role: 'Vision Therapist',
+    initials: 'EM',
     bio: 'Dr. Moller brings deep expertise in vision therapy and binocular vision rehabilitation. She works closely with each patient to design and guide personalized therapy programs from start to finish.',
-    // SWAP: replace with real photo when available
+    // Drop dr-moller.jpg into public/images/ to replace the placeholder
     imageSrc: '/images/dr-moller.jpg',
     imageAlt: 'Dr. Esther Moller, OD',
   },
 ];
+
+function PortraitPlaceholder({ initials }: { initials: string }) {
+  return (
+    <div
+      className="w-full h-full flex items-center justify-center"
+      style={{ background: 'hsl(185 30% 88%)' }}
+    >
+      <span
+        className="font-serif text-2xl font-medium"
+        style={{ color: 'hsl(185 42% 30%)' }}
+      >
+        {initials}
+      </span>
+    </div>
+  );
+}
 
 export default function Team() {
   const ref = useScrollAnimation();
@@ -45,13 +63,31 @@ export default function Team() {
               key={member.name}
               className="bg-white rounded-2xl overflow-hidden p-5 flex items-start gap-5 shadow-xs border border-border/40"
             >
-              {/* Portrait */}
+              {/* Portrait — placeholder until real photo is dropped in */}
               <div className="shrink-0 w-24 h-24 rounded-xl overflow-hidden bg-muted">
                 <img
                   src={member.imageSrc}
                   alt={member.imageAlt}
                   className="w-full h-full object-cover object-top"
+                  onError={(e) => {
+                    // Hide broken img and show placeholder sibling
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    const placeholder = (e.target as HTMLImageElement).nextElementSibling as HTMLElement;
+                    if (placeholder) placeholder.style.display = 'flex';
+                  }}
                 />
+                {/* Shown only if image fails to load */}
+                <div
+                  className="w-full h-full items-center justify-center"
+                  style={{ display: 'none', background: 'hsl(185 30% 88%)' }}
+                >
+                  <span
+                    className="font-serif text-2xl font-medium"
+                    style={{ color: 'hsl(185 42% 30%)' }}
+                  >
+                    {member.initials}
+                  </span>
+                </div>
               </div>
 
               {/* Text */}
