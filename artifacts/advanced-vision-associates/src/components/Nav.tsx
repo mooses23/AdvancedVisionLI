@@ -65,7 +65,7 @@ export default function Nav() {
         <div className="md:hidden flex items-center gap-2">
           <a
             href="tel:718-268-3937"
-            className="text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+            className="text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors whitespace-nowrap"
             style={{ backgroundColor: 'hsl(var(--accent))' }}
           >
             (718) 268-3937

@@ -54,20 +54,6 @@ const VISUAL_SKILLS = [
     iconBg: '#e8a840',
     iconColor: '#ffffff',
   },
-  {
-    term: 'Attention',
-    def: 'Stay on a visual task without losing focus',
-    icon: Target,
-    iconBg: '#5bbfb8',
-    iconColor: '#ffffff',
-  },
-  {
-    term: 'Visualization',
-    def: 'Form and manipulate mental images',
-    icon: Sparkles,
-    iconBg: '#5cb86a',
-    iconColor: '#ffffff',
-  },
 ];
 
 export default function VisionTherapy() {
