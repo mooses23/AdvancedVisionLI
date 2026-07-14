@@ -142,7 +142,7 @@ export default function Hero() {
       {/* ═════════════ DESKTOP (md and up) — fixed nav is 72px ═════════════ */}
       <div
         className="hidden md:block relative"
-        style={{ height: 'clamp(560px, 47vw, 690px)', overflow: 'hidden' }}
+        style={{ minHeight: 'clamp(560px, 47vw, 690px)', overflow: 'hidden' }}
       >
         {/* soft lighter circle behind the headline */}
         <div
@@ -242,9 +242,26 @@ export default function Hero() {
           }}
         />
 
-        {/* copy */}
+        {/* seam dissolve — melts the clipped blobs & girl into the flat
+            background before the section edge, so no hard cut line exists */}
         <div
-          className="relative"
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 96,
+            background: `linear-gradient(to bottom, rgba(216,228,226,0) 0%, ${BG} 88%)`,
+            zIndex: 2,
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* copy — pb keeps buttons clear of the bottom edge at tablet widths,
+            where the copy stack is taller than the clamped section height */}
+        <div
+          className="relative pb-20 lg:pb-0"
           style={{
             zIndex: 3,
             paddingLeft: '15.9%',
@@ -393,6 +410,21 @@ export default function Hero() {
             right: '-6%',
             width: '96%',
             zIndex: 2,
+          }}
+        />
+
+        {/* seam dissolve — same treatment as desktop, scaled down */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 64,
+            background: `linear-gradient(to bottom, rgba(216,228,226,0) 0%, ${BG} 88%)`,
+            zIndex: 2,
+            pointerEvents: 'none',
           }}
         />
 
