@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import {
@@ -19,7 +19,6 @@ const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
   email: z.string().email('Valid email is required'),
   phone: z.string().optional(),
-  childAge: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
@@ -34,42 +33,96 @@ export default function Contact() {
       name: '',
       email: '',
       phone: '',
-      childAge: '',
-      message: "I'm interested in learning more about vision therapy services. Please contact me to schedule a consultation.",
+      message: "I'm interested in learning more about vision therapy. Please contact me to schedule a consultation.",
     },
   });
 
   const onSubmit = (data: FormValues) => {
     // TODO: connect to Formspree or email backend once domain email is confirmed
-    // Example: fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data) })
-    console.log("Form Submitted:", data);
+    // fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data) })
+    console.log('Form submitted:', data);
     alert("Thank you! We'll be in touch soon.");
     form.reset();
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div 
+    <section id="contact" className="bg-primary py-20 md:py-28">
+      <div
         ref={ref as any}
-        className="container mx-auto px-4 md:px-6 scroll-section"
+        className="container mx-auto px-6 md:px-10 scroll-section"
       >
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground font-medium mb-4">
+        {/* Insurance callout — compact banner */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="bg-white/15 border border-white/25 rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+            <div className="flex items-center gap-3 text-white">
+              <ShieldCheck className="h-5 w-5 shrink-0 opacity-80" />
+              <span className="text-sm font-medium">
+                Vision therapy may be covered by medical insurance.
+                We'll help you navigate your benefits.
+              </span>
+            </div>
+            <a
+              href="tel:718-268-3937"
+              className="shrink-0 bg-white text-primary font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors whitespace-nowrap"
+            >
+              Call to Verify Coverage
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-white font-medium mb-3">
               Get in Touch
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Ready to schedule a consultation? We're here to help.
+            <p className="text-white/70 text-lg">
+              Ready to schedule an evaluation? We're here to help.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            
-            {/* Form Column */}
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-border/50">
-              <h3 className="text-2xl font-medium mb-6">Send us a message</h3>
+          <div className="grid md:grid-cols-5 gap-8 items-start">
+
+            {/* Contact info — left column (narrower) */}
+            <div className="md:col-span-2 flex flex-col gap-7 pt-2">
+              <div className="flex items-start gap-4">
+                <div className="bg-white/20 p-3 rounded-full shrink-0">
+                  <MapPin className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Location</p>
+                  <a
+                    href="https://maps.google.com/?q=148C+Doughty+Blvd,+Inwood,+NY+11096"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-medium hover:text-white/80 transition-colors leading-relaxed"
+                  >
+                    148c Doughty Blvd<br />
+                    Inwood, NY 11096
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-white/20 p-3 rounded-full shrink-0">
+                  <Phone className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Phone</p>
+                  <a
+                    href="tel:718-268-3937"
+                    className="text-white font-medium text-xl hover:text-white/80 transition-colors"
+                  >
+                    (718) 268-3937
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Form — right column (wider) */}
+            <div className="md:col-span-3 bg-white rounded-2xl p-6 md:p-8 shadow-xl">
+              <h3 className="text-lg font-semibold text-foreground mb-5">Send us a message</h3>
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                   <FormField
                     control={form.control}
                     name="name"
@@ -83,8 +136,8 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                  
-                  <div className="grid sm:grid-cols-2 gap-6">
+
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="email"
@@ -115,28 +168,14 @@ export default function Contact() {
 
                   <FormField
                     control={form.control}
-                    name="childAge"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Child's Age (if applicable)</FormLabel>
-                        <FormControl>
-                          <Input placeholder="e.g. 8" {...field} data-testid="input-child-age" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Message *</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            rows={4} 
-                            {...field} 
+                          <Textarea
+                            rows={3}
+                            {...field}
                             data-testid="input-message"
                             className="resize-none"
                           />
@@ -151,59 +190,6 @@ export default function Contact() {
                   </Button>
                 </form>
               </Form>
-            </div>
-
-            {/* Contact Info Column */}
-            <div className="flex flex-col gap-10">
-              
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-4 rounded-full text-primary shrink-0">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-foreground mb-2">Location</h4>
-                  <a 
-                    href="https://maps.google.com/?q=148C+Doughty+Blvd,+Inwood,+NY+11096" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors leading-relaxed"
-                  >
-                    148C Doughty Blvd<br />
-                    Inwood, NY 11096
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-4 rounded-full text-primary shrink-0">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-foreground mb-2">Phone</h4>
-                  <a 
-                    href="tel:718-268-3937" 
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    (718) 268-3937
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-4 rounded-full text-primary shrink-0">
-                  <Clock className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-foreground mb-2">Office Hours</h4>
-                  <ul className="text-muted-foreground space-y-2">
-                    {/* SWAP: add real office hours */}
-                    <li className="flex justify-between w-48"><span>Monday–Friday:</span> <span>Call for hours</span></li>
-                    <li className="flex justify-between w-48"><span>Saturday:</span> <span>By Appointment</span></li>
-                    <li className="flex justify-between w-48"><span>Sunday:</span> <span>Closed</span></li>
-                  </ul>
-                </div>
-              </div>
-
             </div>
 
           </div>

@@ -1,87 +1,93 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+
+const NAV_LINKS = [
+  { label: 'Vision Therapy', href: '#vision-therapy' },
+  { label: 'Signs', href: '#signs' },
+  { label: 'Our Team', href: '#team' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Nav() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const links = [
-    { name: 'Vision Therapy', href: '#vision-therapy' },
-    { name: 'Conditions', href: '#conditions' },
-    { name: 'About', href: '#about' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const handleNavClick = () => setOpen(false);
 
   return (
-    <nav
-      data-testid="nav"
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-border py-3' 
-          : 'bg-white border-b border-transparent py-5'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 z-50" onClick={() => setIsMobileMenuOpen(false)}>
-          <span className="font-serif font-medium text-xl md:text-2xl text-foreground">
+      <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
+        {/* Logo */}
+        <a href="#" className="flex flex-col leading-tight">
+          <span className="text-primary font-bold text-base tracking-tight">
             Advanced Vision Associates
+          </span>
+          <span className="text-muted-foreground text-xs font-medium">
+            Inwood, NY
           </span>
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a 
-              key={link.name}
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground/75 hover:text-primary transition-colors"
             >
-              {link.name}
+              {link.label}
             </a>
           ))}
-          <Button asChild className="rounded-full shadow-sm">
-            <a href="#contact">Schedule Consultation</a>
-          </Button>
-        </div>
+          <a
+            href="tel:718-268-3937"
+            className="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary/90 transition-colors"
+          >
+            (718) 268-3937
+          </a>
+        </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden z-50 p-2 text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Menu"
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
         </button>
-
-        {/* Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 top-0 left-0 bg-white z-40 flex flex-col pt-24 px-6 gap-6 md:hidden animate-in fade-in slide-in-from-top-4 duration-300">
-            {links.map((link) => (
-              <a 
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-foreground border-b border-border pb-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button asChild size="lg" className="w-full mt-4 rounded-full" onClick={() => setIsMobileMenuOpen(false)}>
-              <a href="#contact">Schedule Consultation</a>
-            </Button>
-          </div>
-        )}
       </div>
-    </nav>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-white border-t border-border/50 px-6 py-4 flex flex-col gap-4">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={handleNavClick}
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-1"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="tel:718-268-3937"
+            className="bg-primary text-white text-sm font-semibold px-5 py-3 rounded-full text-center hover:bg-primary/90 transition-colors mt-2"
+          >
+            Call (718) 268-3937
+          </a>
+        </div>
+      )}
+    </header>
   );
 }

@@ -1,91 +1,90 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Activity, Glasses, Target } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import cutoutSrc from '@assets/generated_images/cutout-glasses-girl.png';
+
+const VISUAL_SKILLS = [
+  { term: 'Tracking', def: 'Smoothly follow a slow-moving object with your eyes' },
+  { term: 'Fixation', def: 'Hold a steady gaze on a stationary object' },
+  { term: 'Focus change', def: 'Quickly switch focus between near and far without blur' },
+  { term: 'Depth perception', def: 'Judge the space between objects; move without clumsiness' },
+  { term: 'Peripheral vision', def: 'Notice what\'s happening around you while focused on a task' },
+  { term: 'Binocularity', def: 'Coordinate both eyes smoothly for maximum visual information' },
+  { term: 'Maintaining attention', def: 'Stay on a visual task without losing concentration' },
+  { term: 'Visualization', def: 'Form mental images and manipulate them to synthesize new ones' },
+];
 
 export default function VisionTherapy() {
   const ref = useScrollAnimation();
 
   return (
-    <section id="vision-therapy" className="py-24 bg-white relative">
-      <div 
-        ref={ref as any}
-        className="container mx-auto px-4 md:px-6 scroll-section"
-      >
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground font-medium mb-4">
-            What Is Vision Therapy?
-          </h2>
-          <div className="h-1 w-20 bg-secondary mx-auto rounded-full"></div>
-        </div>
+    <section id="vision-therapy" className="relative bg-secondary overflow-hidden py-20 md:py-28">
+      {/* Decorative circle */}
+      <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none" />
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          
-          <div className="prose prose-lg prose-blue max-w-none text-muted-foreground">
-            <p className="lead text-xl text-foreground font-medium mb-6">
-              Vision therapy is safe, drug-free, and effective for both children and adults. 
+      <div
+        ref={ref as any}
+        className="relative z-10 container mx-auto px-6 md:px-10 scroll-section"
+      >
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+          {/* Left — definition */}
+          <div>
+            <p className="text-white/60 text-xs font-semibold tracking-[0.18em] uppercase mb-4">
+              What is Vision Therapy?
             </p>
-            <p>
-              While visual acuity (the "20/20" part of vision) requires glasses to improve, visual skills such as tracking together along a line of text must be learned during development — and these skills can also be improved later in life at any age.
-            </p>
-            <p>
-              It is estimated that 1 in 10 children have a vision problem severe enough to affect their learning in school, but school vision screenings can miss up to half of these problems. A comprehensive vision exam with a developmental optometrist checks all aspects of eye health, vision, and visual skills, ensuring you or your child is not struggling unnecessarily with an undiagnosed vision problem.
-            </p>
-            
-            <p className="text-sm mt-8 text-muted-foreground/70 italic">
-              Source: OVDRA (Optometric Vision Development & Rehabilitation Association) — covd.org
-            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-white font-medium mb-8 leading-tight">
+              Training the visual system,{' '}
+              <em>not just the eye</em>
+            </h2>
+
+            <div className="space-y-5 text-white/80 text-base leading-relaxed">
+              <p>
+                Vision therapy works on developing, improving or enhancing a patient's visual skills.
+                These skills are necessary for proper achievement in school, work or play.
+              </p>
+              <p>
+                Vision therapy utilizes various exercises combined with specialized lenses to train
+                the internal and external eye muscles, together with the brain.
+              </p>
+              <p className="font-semibold text-white">
+                The goal is to achieve harmonious, smooth coordination of the two eyes and to gain
+                the ability to hold and change focus when necessary — so the patient can{' '}
+                <em>see to work, rather than work to see.</em>
+              </p>
+            </div>
+
+            <div className="mt-8 inline-flex items-center gap-3 bg-white/15 border border-white/20 text-white px-5 py-3 rounded-full text-sm font-medium">
+              ✓&nbsp; OVDRA Recognized Provider — Dr. Marcie Evans Stein, OD FABM OVDRA
+            </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <Card className="border-border shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3 flex flex-row items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center shrink-0">
-                  <Activity className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl">What is Vision Therapy?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> A progressive program of vision procedures</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Performed under doctor supervision</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Individualized to fit the visual needs of each patient</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Conducted in-office, once or twice weekly (30–60 minutes), with optional home activities</li>
-                </ul>
-              </CardContent>
-            </Card>
+          {/* Right — visual skills */}
+          <div className="relative">
+            <p className="text-white/60 text-xs font-semibold tracking-[0.18em] uppercase mb-5">
+              Visual Skills We Develop
+            </p>
+            <ul className="space-y-0 divide-y divide-white/15">
+              {VISUAL_SKILLS.map((skill) => (
+                <li key={skill.term} className="py-3.5 flex gap-4 items-baseline">
+                  <span className="text-white font-semibold shrink-0 w-36 text-sm md:text-base">
+                    {skill.term}
+                  </span>
+                  <span className="text-white/70 text-sm leading-snug">{skill.def}</span>
+                </li>
+              ))}
+            </ul>
 
-            <Card className="border-border shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3 flex flex-row items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center shrink-0">
-                  <Glasses className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl">Tools Used</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Therapeutic lenses and prisms</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Filters and occluders/patches</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Electronic targets with timing mechanisms</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Balance boards and specialized equipment</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3 flex flex-row items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center shrink-0">
-                  <Target className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl">Goals of Therapy</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Develop or improve fundamental visual skills and abilities</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Improve visual comfort, ease, and efficiency</li>
-                  <li className="flex items-start gap-2"><span className="text-secondary mt-1">•</span> Change how a patient processes or interprets visual information</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Cutout — bleeds off the right edge on large screens */}
+            <div
+              className="hidden xl:block absolute -bottom-28 -right-16 pointer-events-none select-none"
+              style={{ height: '340px' }}
+            >
+              <img
+                src={cutoutSrc}
+                alt=""
+                aria-hidden="true"
+                className="h-full w-auto object-contain object-bottom drop-shadow-xl"
+              />
+            </div>
           </div>
 
         </div>
