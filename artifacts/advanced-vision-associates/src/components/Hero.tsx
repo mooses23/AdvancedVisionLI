@@ -396,15 +396,17 @@ export default function Hero() {
           }}
         />
 
-        {/* copy */}
+        {/* copy — occupies left ~58% so buttons don't run under the girl */}
         <div
           className="relative"
           style={{
             zIndex: 3,
-            paddingLeft: 20,
-            paddingRight: 20,
-            paddingTop: 76,
-            paddingBottom: 26,
+            paddingLeft: 22,
+            paddingRight: 16,
+            paddingTop: 80,
+            paddingBottom: 28,
+            width: '62%',
+            minWidth: 210,
           }}
         >
           <p
@@ -427,7 +429,6 @@ export default function Hero() {
               fontSize: 24,
               lineHeight: 1.19,
               color: NAVY,
-              maxWidth: 235,
               marginBottom: 12,
             }}
           >
@@ -444,18 +445,14 @@ export default function Hero() {
               lineHeight: 1.55,
               color: NAVY,
               opacity: 0.72,
-              maxWidth: 235,
-              marginBottom: 16,
+              marginBottom: 18,
             }}
           >
             Vision therapy treats the functional issues that glasses alone
             can't fix — for children and adults of all ages.
           </p>
 
-          <div
-            className="flex flex-col"
-            style={{ gap: 10, width: '90%', maxWidth: 330 }}
-          >
+          <div className="flex flex-col" style={{ gap: 10 }}>
             <a
               href="#contact"
               className="inline-flex items-center justify-center text-white font-semibold hover:opacity-90 transition-all"
@@ -463,7 +460,8 @@ export default function Hero() {
                 backgroundColor: CORAL,
                 height: 46,
                 borderRadius: 30,
-                fontSize: 14,
+                fontSize: 13.5,
+                whiteSpace: 'nowrap',
               }}
             >
               Schedule a Consultation
@@ -476,7 +474,8 @@ export default function Hero() {
                 borderRadius: 30,
                 border: '1.5px solid #3AA3AB',
                 color: EYEBROW_TEAL,
-                fontSize: 14,
+                fontSize: 13.5,
+                whiteSpace: 'nowrap',
               }}
             >
               Learn More
