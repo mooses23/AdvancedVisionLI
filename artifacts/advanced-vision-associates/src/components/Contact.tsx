@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-primary py-20 md:py-28">
+    <section id="contact" className="bg-primary py-14 md:py-20">
       <div
         ref={ref as any}
         className="container mx-auto px-6 md:px-10 scroll-section"

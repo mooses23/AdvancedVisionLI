@@ -76,54 +76,54 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  /* Warm cream background */
-  --background: 44 50% 97%;
-  --foreground: 220 20% 18%;
+  /* Clean white background */
+  --background: 0 0% 100%;
+  --foreground: 220 30% 15%;
   --border: 220 15% 88%;
 
   --card: 0 0% 100%;
-  --card-foreground: 220 20% 18%;
+  --card-foreground: 220 30% 15%;
   --card-border: 220 15% 88%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 18%;
+  --popover-foreground: 220 30% 15%;
   --popover-border: 220 15% 88%;
 
-  /* Magenta / hot-pink primary */
-  --primary: 330 68% 48%;
+  /* Cobalt blue primary */
+  --primary: 210 82% 47%;
   --primary-foreground: 0 0% 100%;
 
-  /* Teal secondary */
-  --secondary: 178 52% 42%;
-  --secondary-foreground: 0 0% 100%;
+  /* Pale sky — for alternating section tints */
+  --secondary: 210 40% 97%;
+  --secondary-foreground: 220 30% 20%;
 
-  --muted: 44 30% 91%;
+  --muted: 210 20% 95%;
   --muted-foreground: 220 12% 46%;
 
-  /* Sky blue accent */
-  --accent: 198 65% 60%;
-  --accent-foreground: 220 20% 18%;
+  /* Amber gold accent */
+  --accent: 38 88% 52%;
+  --accent-foreground: 220 30% 12%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
   --input: 220 15% 86%;
-  --ring: 330 68% 48%;
+  --ring: 210 82% 47%;
 
-  --chart-1: 330 68% 48%;
-  --chart-2: 178 52% 42%;
-  --chart-3: 198 65% 60%;
-  --chart-4: 44 50% 97%;
-  --chart-5: 220 20% 18%;
+  --chart-1: 210 82% 47%;
+  --chart-2: 38 88% 52%;
+  --chart-3: 210 40% 97%;
+  --chart-4: 0 0% 100%;
+  --chart-5: 220 30% 15%;
 
-  --sidebar: 44 50% 97%;
-  --sidebar-foreground: 220 20% 18%;
+  --sidebar: 210 40% 97%;
+  --sidebar-foreground: 220 30% 15%;
   --sidebar-border: 220 15% 88%;
-  --sidebar-primary: 330 68% 48%;
+  --sidebar-primary: 210 82% 47%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 198 65% 60%;
-  --sidebar-accent-foreground: 220 20% 18%;
-  --sidebar-ring: 330 68% 48%;
+  --sidebar-accent: 38 88% 52%;
+  --sidebar-accent-foreground: 220 30% 12%;
+  --sidebar-ring: 210 82% 47%;
 
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-serif: 'Lora', Georgia, serif;

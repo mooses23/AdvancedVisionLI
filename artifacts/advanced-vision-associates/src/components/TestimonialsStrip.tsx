@@ -15,18 +15,19 @@ const TESTIMONIALS = [
 
 export default function TestimonialsStrip() {
   return (
-    <section id="testimonials" className="bg-secondary py-10">
+    <section id="testimonials" className="bg-white border-t border-b border-border/40 py-8">
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-3 gap-4">
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white/15 border border-white/20 rounded-2xl px-6 py-5 flex flex-col gap-3"
+              className="flex flex-col gap-2 px-5 py-4 rounded-xl bg-secondary"
             >
-              <p className="font-serif text-white/90 italic text-sm leading-relaxed">
-                "{t.text}"
+              <span className="text-accent font-bold text-xl leading-none" aria-hidden="true">"</span>
+              <p className="font-serif text-foreground/80 italic text-sm leading-relaxed -mt-1">
+                {t.text}
               </p>
-              <p className="text-white/55 text-xs font-semibold uppercase tracking-wide">
+              <p className="text-muted-foreground text-xs font-semibold uppercase tracking-wide">
                 — {t.attribution}
               </p>
             </div>

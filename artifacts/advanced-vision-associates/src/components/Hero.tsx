@@ -2,14 +2,14 @@ import cutoutSrc from '@assets/generated_images/cutout-convergence.png';
 
 export default function Hero() {
   return (
-    <section className="relative bg-primary overflow-hidden" style={{ minHeight: '88vh' }}>
+    <section className="relative bg-primary overflow-hidden" style={{ minHeight: '76vh' }}>
       {/* Subtle decorative circles */}
       <div className="absolute top-16 right-[38%] w-72 h-72 rounded-full bg-white/5 pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-48 h-48 rounded-full bg-white/5 pointer-events-none" />
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-10 flex items-center" style={{ minHeight: '88vh' }}>
-        <div className="max-w-2xl pt-20 pb-16">
+      <div className="relative z-10 container mx-auto px-6 md:px-10 flex items-center" style={{ minHeight: '76vh' }}>
+        <div className="max-w-2xl pt-20 pb-14">
           <p className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase mb-6">
             Advanced Vision Associates · Inwood, NY
           </p>
@@ -17,7 +17,7 @@ export default function Hero() {
           <h1 className="font-serif font-medium text-white leading-[1.08] mb-8"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)' }}>
             Did you know that a person can have{' '}
-            <em className="not-italic" style={{ color: 'hsl(50 100% 75%)' }}>20/20 vision</em>{' '}
+            <em className="not-italic" style={{ color: 'hsl(var(--accent))' }}>20/20 vision</em>{' '}
             and still have a vision problem?
           </h1>
 
