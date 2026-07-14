@@ -1,0 +1,645 @@
+This mobile hero is a very different composition from the desktop version. It isn’t simply “shrunk”—it has been redesigned to preserve the visual hierarchy on a narrow canvas. Below is a design specification detailed enough that a designer or AI could reproduce it closely.
+
+⸻
+
+Overall Style
+
+Design language
+
+* Premium pediatric healthcare
+* Soft editorial aesthetic
+* Calm and welcoming
+* Modern Apple-like spacing
+* Organic rather than geometric
+* Light, airy, approachable
+
+The hero never feels crowded despite containing a large amount of information.
+
+⸻
+
+Canvas
+
+Approximate viewport
+
+390 × 844 px
+
+The hero fills approximately
+
+0–930 px
+
+before transitioning into the next section.
+
+⸻
+
+Layout
+
+Everything follows a strict vertical hierarchy.
+
+Navigation
+↓
+Eyebrow
+↓
+Headline
+↓
+Supporting paragraph
+↓
+Primary CTA
+↓
+Secondary CTA
+↓
+Transition into next section
+
+The girl acts almost like a floating illustration beside the content rather than a separate column.
+
+⸻
+
+Navigation
+
+Height
+
+Approximately
+
+88px
+
+White background.
+
+No shadow.
+
+Very subtle warm gradient.
+
+⸻
+
+Left
+
+Logo
+
+Advanced Vision Associates
+
+Bold teal.
+
+Around
+
+24px
+
+Below
+
+Inwood, NY
+
+Dark gray.
+
+Smaller.
+
+⸻
+
+Center
+
+Nothing.
+
+Creates breathing room.
+
+⸻
+
+Right
+
+Two elements.
+
+Large coral phone button
+
+then
+
+Hamburger menu.
+
+⸻
+
+Phone Button
+
+Large rounded capsule.
+
+Color
+
+#F86B53
+
+to
+
+#F96D57
+
+Very subtle gradient.
+
+White text.
+
+Height
+
+46px
+
+Corner radius
+
+24px
+
+Feels touch friendly.
+
+⸻
+
+Hamburger
+
+Three thick navy lines.
+
+Very minimal.
+
+Approximately
+
+38px
+
+square.
+
+⸻
+
+Hero Background
+
+There are around eight visual layers.
+
+⸻
+
+Layer 1
+
+Warm off-white.
+
+#F8F5F2
+
+⸻
+
+Layer 2
+
+Large aqua gradient.
+
+#DDF3F2
+
+Very soft.
+
+No hard edge.
+
+⸻
+
+Layer 3
+
+Large translucent circle.
+
+Top left.
+
+Approximately
+
+280px
+
+Diameter.
+
+Opacity
+
+10%
+
+Creates depth.
+
+⸻
+
+Layer 4
+
+Large teal blob.
+
+Lower center.
+
+Partially hidden.
+
+Approximately
+
+180px
+
+Diameter.
+
+#72D4D6
+
+20% opacity.
+
+⸻
+
+Layer 5
+
+Sand colored blob.
+
+Bottom left.
+
+#F3D8AA
+
+Organic.
+
+Looks hand painted.
+
+⸻
+
+Layer 6
+
+Right turquoise panel.
+
+Unlike desktop—
+
+there is an actual vertical rectangle.
+
+Around
+
+23% width
+
+Acts as framing behind the girl.
+
+⸻
+
+Layer 7
+
+White dotted pattern.
+
+Upper right.
+
+About
+
+8 × 8
+
+Dots.
+
+Very subtle.
+
+⸻
+
+Layer 8
+
+Soft lighting gradient.
+
+Bright behind text.
+
+Slight vignette toward girl.
+
+⸻
+
+Headline Block
+
+Occupies approximately
+
+53%
+
+of screen width.
+
+Girl occupies
+
+47%
+
+Unlike desktop—
+
+they overlap much more.
+
+⸻
+
+Eyebrow
+
+Tiny.
+
+Uppercase.
+
+Letter spacing
+
+Very wide.
+
+Teal.
+
+Approximately
+
+12px
+
+⸻
+
+Headline
+
+Very editorial.
+
+Probably
+
+58–64px
+
+Desktop equivalent.
+
+Scaled to around
+
+30–34px
+
+on mobile.
+
+⸻
+
+Typeface
+
+Elegant serif.
+
+Feels similar to
+
+Canela
+
+Editorial New
+
+No exaggerated flourishes.
+
+⸻
+
+Weight
+
+Semi Bold.
+
+⸻
+
+Color
+
+#163444
+
+Almost black navy.
+
+⸻
+
+Line Height
+
+Extremely tight.
+
+0.92
+
+Every line feels stacked.
+
+⸻
+
+Highlighted Text
+
+Only
+
+20/20 vision
+
+is coral.
+
+#F46B54
+
+Creates immediate attention.
+
+⸻
+
+Girl
+
+This is where most of the redesign occurred.
+
+⸻
+
+Position
+
+Instead of sitting beside the headline—
+
+she overlaps into it.
+
+Her shoulder starts around
+
+58%
+
+of screen width.
+
+Hair touches right edge.
+
+Sweater reaches bottom fold.
+
+⸻
+
+Crop
+
+Top of head almost reaches navigation.
+
+Bottom crop cuts below elbows.
+
+No wasted body.
+
+⸻
+
+Pose
+
+Focused.
+
+Eyes downward.
+
+Not smiling.
+
+Looking along Brock string.
+
+⸻
+
+Lighting
+
+Very soft.
+
+Window light.
+
+Low contrast.
+
+Warm skin.
+
+⸻
+
+Brock String
+
+This is actually the strongest compositional element.
+
+It creates a diagonal line from
+
+Lower left
+↓
+Upper right
+↓
+Girl's nose
+
+Approximately
+
+35°
+
+angle.
+
+⸻
+
+Beads
+
+Approximately
+
+7
+
+Large.
+
+Bright.
+
+Colors alternate.
+
+White
+Coral
+Turquoise
+Cream
+Blue
+Orange
+
+The beads gradually shrink toward the girl.
+
+Very intentional perspective.
+
+⸻
+
+Paragraph
+
+Placed directly under headline.
+
+Maximum width
+
+260px
+
+Dark gray.
+
+Approximately
+
+18px
+
+Sans serif.
+
+Large line spacing.
+
+⸻
+
+Buttons
+
+Stack vertically.
+
+Unlike desktop.
+
+⸻
+
+Primary
+
+Width
+
+Nearly full content width.
+
+90%
+
+Height
+
+58px
+
+Rounded capsule.
+
+Coral gradient.
+
+White text.
+
+Bold.
+
+⸻
+
+Secondary
+
+Same width.
+
+White fill.
+
+Thin teal outline.
+
+Teal text.
+
+Large spacing underneath.
+
+⸻
+
+Negative Space
+
+The mobile version still breathes.
+
+Margins
+
+Approximately
+
+28px
+
+left.
+
+28px
+
+right.
+
+Nothing touches screen edges.
+
+⸻
+
+Color Palette
+
+Navy
+
+#163444
+
+⸻
+
+Coral
+
+#F46B54
+
+⸻
+
+Aqua
+
+#DDF2F2
+
+⸻
+
+Turquoise
+
+#71D5D5
+
+⸻
+
+Sand
+
+#F3D7A7
+
+⸻
+
+Cream
+
+#F7F3EE
+
+⸻
+
+White
+
+#FFFFFF
+
+⸻
+
+Visual Weight
+
+Approximately
+
+Headline
+35%
+Girl
+30%
+Buttons
+15%
+Background artwork
+10%
+Navigation
+10%
+
+Nothing dominates.
+
+⸻
+
+Why It Works
+
+Several subtle decisions make the hero feel premium rather than like a responsive desktop page:
+
+* The girl’s portrait is enlarged relative to the viewport, making her feel immersive rather than decorative.
+* The Brock string acts as a visual guide, pulling the eye from the lower-left CTA area back toward the girl’s face.
+* Background elements are oversized and partially cropped, avoiding the “sticker” look common on mobile layouts.
+* Only one phrase (“20/20 vision”) receives an accent color, giving the eye a single focal point.
+* Buttons span almost the full content width, making them thumb-friendly without overwhelming the layout.
+* The typography remains the dominant element, even though the portrait occupies nearly half of the hero.
+
+The result is a hero that feels intentionally designed for mobile instead of a compressed desktop layout.
