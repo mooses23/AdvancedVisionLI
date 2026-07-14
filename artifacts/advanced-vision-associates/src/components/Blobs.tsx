@@ -34,23 +34,6 @@ export function BlobSand({ className = '' }: { className?: string }) {
   );
 }
 
-export function BlobTealSmall({ className = '' }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 300 300"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        d="M240,170Q220,220,175,245Q130,270,90,240Q50,210,45,160Q40,110,75,75Q110,40,160,42Q210,44,240,90Q270,136,240,170Z"
-        fill="#7ecac3"
-        fillOpacity="0.40"
-      />
-    </svg>
-  );
-}
-
 export function WaveDecoration({ className = '' }: { className?: string }) {
   return (
     <svg
