@@ -33,7 +33,8 @@ export default function Contact() {
       name: '',
       email: '',
       phone: '',
-      message: "I'm interested in learning more about vision therapy. Please contact me to schedule a consultation.",
+      message:
+        "I'm interested in learning more about vision therapy. Please contact me to schedule a consultation.",
     },
   });
 
@@ -51,14 +52,14 @@ export default function Contact() {
         ref={ref as any}
         className="container mx-auto px-6 md:px-10 scroll-section"
       >
-        {/* Insurance callout — compact banner */}
+        {/* Insurance callout */}
         <div className="max-w-3xl mx-auto mb-12">
           <div className="bg-white/15 border border-white/25 rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
             <div className="flex items-center gap-3 text-white">
               <ShieldCheck className="h-5 w-5 shrink-0 opacity-80" />
               <span className="text-sm font-medium">
-                Vision therapy may be covered by medical insurance.
-                We'll help you navigate your benefits.
+                Vision therapy may be covered by medical insurance. We'll help
+                you navigate your benefits.
               </span>
             </div>
             <a
@@ -81,22 +82,24 @@ export default function Contact() {
           </div>
 
           <div className="grid md:grid-cols-5 gap-8 items-start">
-
-            {/* Contact info — left column (narrower) */}
+            {/* Contact info */}
             <div className="md:col-span-2 flex flex-col gap-7 pt-2">
               <div className="flex items-start gap-4">
                 <div className="bg-white/20 p-3 rounded-full shrink-0">
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Location</p>
+                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">
+                    Location
+                  </p>
                   <a
                     href="https://maps.google.com/?q=148C+Doughty+Blvd,+Inwood,+NY+11096"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white font-medium hover:text-white/80 transition-colors leading-relaxed"
                   >
-                    148c Doughty Blvd<br />
+                    148c Doughty Blvd
+                    <br />
                     Inwood, NY 11096
                   </a>
                 </div>
@@ -107,7 +110,9 @@ export default function Contact() {
                   <Phone className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Phone</p>
+                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">
+                    Phone
+                  </p>
                   <a
                     href="tel:718-268-3937"
                     className="text-white font-medium text-xl hover:text-white/80 transition-colors"
@@ -118,11 +123,16 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Form — right column (wider) */}
+            {/* Form */}
             <div className="md:col-span-3 bg-white rounded-2xl p-6 md:p-8 shadow-xl">
-              <h3 className="text-lg font-semibold text-foreground mb-5">Send us a message</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-5">
+                Send us a message
+              </h3>
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-5"
+                >
                   <FormField
                     control={form.control}
                     name="name"
@@ -130,7 +140,11 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Name *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Jane Doe" {...field} data-testid="input-name" />
+                          <Input
+                            placeholder="Jane Doe"
+                            {...field}
+                            data-testid="input-name"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -145,7 +159,12 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email *</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="jane@example.com" {...field} data-testid="input-email" />
+                            <Input
+                              type="email"
+                              placeholder="jane@example.com"
+                              {...field}
+                              data-testid="input-email"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -158,7 +177,12 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Phone</FormLabel>
                           <FormControl>
-                            <Input type="tel" placeholder="(555) 123-4567" {...field} data-testid="input-phone" />
+                            <Input
+                              type="tel"
+                              placeholder="(555) 123-4567"
+                              {...field}
+                              data-testid="input-phone"
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -185,13 +209,17 @@ export default function Contact() {
                     )}
                   />
 
-                  <Button type="submit" size="lg" className="w-full rounded-full" data-testid="button-submit">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full rounded-full"
+                    data-testid="button-submit"
+                  >
                     Send Message
                   </Button>
                 </form>
               </Form>
             </div>
-
           </div>
         </div>
       </div>

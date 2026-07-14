@@ -22,7 +22,9 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white/90 backdrop-blur-sm'
+        scrolled
+          ? 'bg-white/96 backdrop-blur-md shadow-sm'
+          : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
@@ -47,9 +49,13 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+          {/* Coral phone CTA */}
           <a
             href="tel:718-268-3937"
-            className="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary/90 transition-colors"
+            className="text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            style={{ backgroundColor: 'hsl(var(--accent))' }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'hsl(12 62% 52%)')}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'hsl(var(--accent))')}
           >
             (718) 268-3937
           </a>
@@ -82,7 +88,8 @@ export default function Nav() {
           ))}
           <a
             href="tel:718-268-3937"
-            className="bg-primary text-white text-sm font-semibold px-5 py-3 rounded-full text-center hover:bg-primary/90 transition-colors mt-2"
+            className="text-white text-sm font-semibold px-5 py-3 rounded-full text-center mt-2 transition-colors"
+            style={{ backgroundColor: 'hsl(var(--accent))' }}
           >
             Call (718) 268-3937
           </a>
