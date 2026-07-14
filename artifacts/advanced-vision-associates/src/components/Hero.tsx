@@ -18,7 +18,7 @@ function DotGrid({ cols = 10, rows = 10 }: { cols?: number; rows?: number }) {
           cy={Math.floor(i / cols) * gap + r + 2}
           r={r}
           fill="white"
-          opacity={0.65}
+          opacity={0.45}
         />
       ))}
     </svg>
@@ -62,7 +62,7 @@ export default function Hero() {
       {/* ═══════════════════════════════════════════════════════════
           DESKTOP  (md and up)
       ═══════════════════════════════════════════════════════════ */}
-      <div className="hidden md:block relative" style={{ height: 540, backgroundColor: '#C6DADA' }}>
+      <div className="hidden md:block relative" style={{ height: 540, backgroundColor: '#C6DADA', isolation: 'isolate' }}>
 
         {/* Dark teal circle — top-right corner, partially clipped */}
         <div
@@ -75,18 +75,12 @@ export default function Hero() {
           }}
         />
 
-        {/* Dot grid — upper right, behind circle */}
-        <div className="absolute pointer-events-none select-none" style={{ top: 18, right: 18, zIndex: 3 }}>
+        {/* Dot grid — upper left teal area, behind img (z:1) so it shows as background texture */}
+        <div className="absolute pointer-events-none select-none" style={{ top: 18, left: 18, zIndex: 1 }}>
           <DotGrid cols={10} rows={10} />
         </div>
 
-        {/* Subtle large circle behind girl */}
-        <div className="absolute rounded-full pointer-events-none" style={{
-          width: 480, height: 480,
-          background: 'rgba(255,255,255,0.09)',
-          top: -100, right: '18%',
-          zIndex: 1,
-        }} />
+        {/* (large white circle removed — backdrop div now ensures clean teal behind girl) */}
 
         {/* Sand blob — bottom left */}
         <SandBlob style={{ width: 210, height: 190, bottom: -30, left: -20, zIndex: 4 }} />
@@ -94,16 +88,24 @@ export default function Hero() {
         {/* Small teal blob — bottom center */}
         <TealBlobSmall style={{ width: 185, height: 170, bottom: -60, left: '30%', zIndex: 4 }} />
 
-        {/* Girl PNG — <img> so her transparent areas show the teal background behind */}
-        {/*
-          PNG is 1536×1024 (ratio 1.5:1).
-          At height=680px: width=1020px (scale=0.664).
-          top=-100px: img starts 100px above hero, clipped by section overflow:hidden.
-            Girl head in PNG ≈ y=230 → rendered y=153 → section y=53px (just below 64px nav).
-          right=0: img right edge flush with viewport right.
-            Girl body center PNG x≈1050 → rendered x=697 → viewport x=(1280-1020)+697=957 (≈75%).
-            String far end PNG x≈75 → rendered x=50 → viewport x=310 (≈24%).
-        */}
+        {/* Solid teal backdrop — same position as the girl img.
+            A physical div at z:1 guarantees transparent PNG pixels show
+            teal rather than the cream page background, regardless of how
+            the browser handles compositing transparent PNGs in stacking contexts. */}
+        <div
+          aria-hidden="true"
+          className="absolute pointer-events-none"
+          style={{
+            top: -100,
+            right: 0,
+            height: 680,
+            width: 1020,
+            backgroundColor: '#C6DADA',
+            zIndex: 1,
+          }}
+        />
+
+        {/* Girl PNG */}
         <img
           src="/images/hero-girl-cutout.png"
           aria-hidden="true"
@@ -187,7 +189,7 @@ export default function Hero() {
         <div
           aria-hidden="true"
           className="absolute top-0 right-0 bottom-0 overflow-hidden pointer-events-none"
-          style={{ width: '48%', zIndex: 2 }}
+          style={{ width: '48%', zIndex: 2, backgroundColor: '#C6DADA' }}
         >
           <img
             src="/images/hero-girl-cutout.png"
@@ -203,9 +205,9 @@ export default function Hero() {
           />
         </div>
 
-        {/* Dot grid — upper right */}
-        <div className="absolute top-3 right-3 pointer-events-none select-none" style={{ zIndex: 4 }}>
-          <DotGrid cols={7} rows={7} />
+        {/* Dot grid — behind girl container (z:1), texture in left teal area */}
+        <div className="absolute top-3 left-3 pointer-events-none select-none" style={{ zIndex: 1 }}>
+          <DotGrid cols={6} rows={6} />
         </div>
 
         {/* Sand blob — lower left, partially clipped */}
