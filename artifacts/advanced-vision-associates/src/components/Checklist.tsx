@@ -1,4 +1,12 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from '@/components/ui/carousel';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useSymptoms } from '@/context/SymptomsContext';
 
@@ -22,23 +30,49 @@ const SYMPTOMS = [
   'Reverses letters',
   'Avoids reading',
   'Poor reading comprehension',
-  'Misaligns digits in columns',
+  'Misaligns digits in columns of numbers',
   'Poor stamina in visual tasks',
-  'Eye turn (one eye drifts)',
-  'Covers or closes one eye',
+  'Eye turn',
+  'Covers/closes an eye',
   'Double vision complaints',
-  'Eye strain or headache complaints',
+  'Eye strain complaints',
+  'Headache complaints',
+  'Eye irritation complaints',
   'Eye rubbing / tearing',
-  'Head turn or tilt',
-  'Blurry near or distance vision',
-  'Bumps into surroundings / clumsy',
+  'Head turn / tilt',
+  'Blurry near vision',
+  'Blurry distance vision',
+  'Bumps into surroundings',
+  'Clumsy',
   'Underperforms relative to intelligence',
-  'Avoids sports or outdoor activities',
+  'Avoids sports',
+  'Amblyopia diagnosis',
+];
+
+const PAGE_SIZE = 8;
+/** Fixed three-page split; each entry keeps its global index into SYMPTOMS. */
+const PAGES: { symptom: string; idx: number }[][] = [
+  SYMPTOMS.slice(0,        PAGE_SIZE  ).map((symptom, i) => ({ symptom, idx: i })),
+  SYMPTOMS.slice(PAGE_SIZE, PAGE_SIZE * 2).map((symptom, i) => ({ symptom, idx: i + PAGE_SIZE })),
+  SYMPTOMS.slice(PAGE_SIZE * 2).map((symptom, i) => ({ symptom, idx: i + PAGE_SIZE * 2 })),
 ];
 
 export default function Checklist() {
   const ref = useScrollAnimation();
   const { checked, toggleSymptom } = useSymptoms();
+
+  const [api, setApi] = useState<CarouselApi>();
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setPage(api.selectedScrollSnap());
+    onSelect();
+    api.on('select', onSelect);
+    return () => {
+      api.off('select', onSelect);
+    };
+  }, [api]);
 
   const count = checked.size;
 
@@ -118,45 +152,113 @@ export default function Checklist() {
         className="relative z-10 container mx-auto px-6 md:px-10 pb-8 scroll-section"
       >
         <div className="bg-white rounded-2xl shadow-sm border border-black/[0.06] p-3 md:p-4 mb-2.5">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-0.5 sm:gap-1">
-            {SYMPTOMS.map((symptom, idx) => {
-              const isChecked = checked.has(idx);
-              return (
-                <button
-                  key={idx}
-                  onClick={() => toggleSymptom(idx)}
-                  className={`flex items-center gap-2 sm:gap-2.5 text-left px-2 sm:px-2.5 py-1.5 rounded-lg transition-all duration-150 text-[12.5px] sm:text-[13.5px] cursor-pointer select-none
-                    ${isChecked
-                      ? 'bg-[#0B3B49]/[0.06] text-[#0B3B49]'
-                      : 'text-[#0B3B49]/65 hover:bg-[#0B3B49]/[0.04]'
-                    }`}
-                  aria-pressed={isChecked}
-                >
-                  {/* Radio-style circular indicator */}
-                  <span
-                    className={`shrink-0 rounded-full border-2 flex items-center justify-center transition-all
-                      ${isChecked
-                        ? 'border-[#0B3B49] bg-[#0B3B49]'
-                        : 'border-[#0B3B49]/30'
-                      }`}
-                    style={{ width: 16, height: 16, minWidth: 16 }}
+          {/* ── Pager: 2 pages of 9 symptoms ── */}
+          <div className="relative">
+            {/* Screen-reader announcement of page changes */}
+            <span className="sr-only" aria-live="polite">
+              Page {page + 1} of {PAGES.length}
+            </span>
+
+            {/* Left arrow */}
+            <button
+              type="button"
+              onClick={() => api?.scrollPrev()}
+              aria-label={`Previous symptoms page (page ${page + 1} of ${PAGES.length} shown)`}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#0B3B49]/15 bg-white shadow-sm text-[#0B3B49] hover:bg-[#0B3B49]/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B3B49] transition-colors cursor-pointer"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+            </button>
+
+            {/* Right arrow */}
+            <button
+              type="button"
+              onClick={() => api?.scrollNext()}
+              aria-label={`Next symptoms page (page ${page + 1} of ${PAGES.length} shown)`}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#0B3B49]/15 bg-white shadow-sm text-[#0B3B49] hover:bg-[#0B3B49]/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B3B49] transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+            </button>
+
+            <Carousel
+              setApi={setApi}
+              opts={{ loop: true, align: 'start' }}
+              className="mx-9 sm:mx-11"
+            >
+              <CarouselContent className="-ml-0">
+                {PAGES.map((pageItems, pageIdx) => (
+                  <CarouselItem
+                    key={pageIdx}
+                    className="pl-0"
+                    aria-label={`Symptoms page ${pageIdx + 1} of ${PAGES.length}`}
+                    inert={pageIdx !== page || undefined}
                   >
-                    {isChecked && (
-                      <svg width="7" height="5" viewBox="0 0 8 6" fill="none">
-                        <path
-                          d="M1 3L2.8 5L7 1"
-                          stroke="white"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    )}
-                  </span>
-                  <span className="font-medium leading-snug">{symptom}</span>
-                </button>
-              );
-            })}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-0.5 sm:gap-1 h-full content-start">
+                      {pageItems.map(({ symptom, idx }) => {
+                        const isChecked = checked.has(idx);
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => toggleSymptom(idx)}
+                            className={`flex items-center gap-2 sm:gap-2.5 text-left px-2 sm:px-2.5 py-1.5 rounded-lg transition-all duration-150 text-[12.5px] sm:text-[13.5px] cursor-pointer select-none
+                              ${isChecked
+                                ? 'bg-[#0B3B49]/[0.06] text-[#0B3B49]'
+                                : 'text-[#0B3B49]/65 hover:bg-[#0B3B49]/[0.04]'
+                              }`}
+                            aria-pressed={isChecked}
+                          >
+                            {/* Radio-style circular indicator */}
+                            <span
+                              className={`shrink-0 rounded-full border-2 flex items-center justify-center transition-all
+                                ${isChecked
+                                  ? 'border-[#0B3B49] bg-[#0B3B49]'
+                                  : 'border-[#0B3B49]/30'
+                                }`}
+                              style={{ width: 16, height: 16, minWidth: 16 }}
+                            >
+                              {isChecked && (
+                                <svg width="7" height="5" viewBox="0 0 8 6" fill="none">
+                                  <path
+                                    d="M1 3L2.8 5L7 1"
+                                    stroke="white"
+                                    strokeWidth="1.6"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                  />
+                                </svg>
+                              )}
+                            </span>
+                            <span className="font-medium leading-snug">{symptom}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+
+          {/* Page indicator */}
+          <div className="mt-2.5 flex items-center justify-center gap-2" aria-hidden="true">
+            <span className="text-[13px] font-bold tabular-nums" style={{ color: NAVY }}>
+              {page + 1} / {PAGES.length}
+            </span>
+            <span className="flex items-center gap-1.5">
+              {PAGES.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  tabIndex={-1}
+                  onClick={() => api?.scrollTo(i)}
+                  className="rounded-full transition-all duration-200 cursor-pointer"
+                  style={{
+                    width: i === page ? 18 : 7,
+                    height: 7,
+                    backgroundColor: i === page ? CORAL : 'rgba(11,59,73,0.2)',
+                  }}
+                />
+              ))}
+            </span>
           </div>
 
           {/* Live count feedback */}
