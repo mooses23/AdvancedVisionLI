@@ -2,8 +2,6 @@ modules = ["nodejs-24"]
 
 [deployment]
 router = "application"
-deploymentTarget = "static"
-publicDir = "artifacts/advanced-vision-associates/dist/public"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
