@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const TEAM = [
@@ -23,6 +24,11 @@ const TEAM = [
 
 export default function Team() {
   const ref = useScrollAnimation();
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+
+  const toggle = (index: number) => {
+    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
 
   return (
     <section id="team" className="bg-background py-14 md:py-20 border-t border-border/40">
@@ -39,41 +45,63 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-          {TEAM.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-2xl overflow-hidden p-5 flex items-start gap-5 shadow-xs border border-border/40"
-            >
-              {/* Portrait */}
-              <div className="shrink-0 w-24 h-24 rounded-xl overflow-hidden bg-muted">
-                <img
-                  src={member.imageSrc}
-                  alt={member.imageAlt}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+        <div className="grid grid-cols-2 gap-3 md:gap-5 max-w-4xl mx-auto">
+          {TEAM.map((member, index) => {
+            const isExpanded = !!expanded[index];
+            return (
+              <div
+                key={member.name}
+                className="bg-white rounded-2xl overflow-hidden p-3 md:p-5 flex flex-col gap-3 shadow-xs border border-border/40"
+              >
+                {/* Portrait + header row */}
+                <div className="flex items-start gap-2 md:gap-4">
+                  <div className="shrink-0 w-14 h-14 md:w-24 md:h-24 rounded-xl overflow-hidden bg-muted">
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
 
-              {/* Text */}
-              <div className="min-w-0">
-                <p className="text-primary/60 font-bold text-xs tracking-widest uppercase mb-0.5">
-                  {member.credentials}
-                </p>
-                <h3 className="font-serif text-lg text-primary font-medium leading-snug mb-0.5">
-                  {member.name}
-                </h3>
-                <p
-                  className="text-xs font-semibold mb-2"
-                  style={{ color: 'hsl(var(--accent))' }}
-                >
-                  {member.role}
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {member.bio}
-                </p>
+                  {/* Name / credentials */}
+                  <div className="min-w-0">
+                    <p className="text-primary/60 font-bold text-[10px] md:text-xs tracking-widest uppercase mb-0.5">
+                      {member.credentials}
+                    </p>
+                    <h3 className="font-serif text-sm md:text-lg text-primary font-medium leading-snug mb-0.5">
+                      {member.name}
+                    </h3>
+                    <p
+                      className="text-[10px] md:text-xs font-semibold"
+                      style={{ color: 'hsl(var(--accent))' }}
+                    >
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bio + toggle */}
+                <div>
+                  <p
+                    className={[
+                      'text-muted-foreground text-xs md:text-sm leading-relaxed transition-all duration-300',
+                      isExpanded ? '' : 'line-clamp-3',
+                    ].join(' ')}
+                  >
+                    {member.bio}
+                  </p>
+                  <button
+                    onClick={() => toggle(index)}
+                    className="mt-1 text-[10px] md:text-xs font-semibold min-h-[28px] px-0 py-1"
+                    style={{ color: 'hsl(var(--accent))' }}
+                    aria-expanded={isExpanded}
+                  >
+                    {isExpanded ? 'Collapse' : 'Read more'}
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
