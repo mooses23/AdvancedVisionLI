@@ -6,6 +6,15 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
+const isDevelopment = process.env.NODE_ENV !== "production";
+
+const allowedOrigins = [
+  "https://AdvancedVisionLI.com",
+  "https://www.AdvancedVisionLI.com",
+  process.env.ALLOWED_ORIGIN,
+  process.env.REPLIT_DEV_DOMAIN ? `https://${process.env.REPLIT_DEV_DOMAIN}` : undefined,
+].filter((origin): origin is string => Boolean(origin));
+
 app.use(
   pinoHttp({
     logger,
@@ -25,7 +34,17 @@ app.use(
     },
   }),
 );
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN ?? "https://AdvancedVisionLI.com" }));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || isDevelopment || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

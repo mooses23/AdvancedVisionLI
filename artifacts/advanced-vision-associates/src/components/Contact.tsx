@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -36,6 +36,10 @@ const RELATIONSHIP_OPTIONS: { value: Relationship; label: string }[] = [
 export default function Contact() {
   const ref = useScrollAnimation();
   const { checked, relationship, setRelationship } = useSymptoms();
+  const [submitState, setSubmitState] = useState<{
+    status: 'idle' | 'submitting' | 'success' | 'error';
+    message?: string;
+  }>({ status: 'idle' });
 
   // Track whether the user has manually typed in the message field.
   // We use a ref (not state) so toggling this doesn't re-render the component.
@@ -67,14 +71,34 @@ export default function Contact() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checked, relationship, watchedName, watchedPhone, watchedEmail, setValue]);
 
-  const onSubmit = (data: FormValues) => {
-    // TODO: connect to Formspree or email backend once domain email is confirmed
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data) })
-    console.log('Form submitted:', data);
-    alert("Thank you! We'll be in touch soon.");
-    form.reset();
-    // Allow auto-fill to resume after a clean reset
-    manuallyEdited.current = false;
+  const onSubmit = async (data: FormValues) => {
+    setSubmitState({ status: 'submitting' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          relationship: relationship ? RELATIONSHIP_OPTIONS.find((o) => o.value === relationship)?.label : '',
+        }),
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || 'Something went wrong. Please try again.');
+      }
+
+      setSubmitState({ status: 'success', message: "Thank you! We'll be in touch soon." });
+      form.reset();
+      setRelationship('');
+      manuallyEdited.current = false;
+    } catch (err) {
+      setSubmitState({
+        status: 'error',
+        message: err instanceof Error ? err.message : 'Failed to send message. Please try again.',
+      });
+    }
   };
 
   return (
@@ -286,13 +310,25 @@ export default function Contact() {
                     )}
                   />
 
+                  {submitState.status === 'success' && (
+                    <div className="rounded-xl bg-green-50 text-green-800 px-4 py-3 text-sm font-medium">
+                      {submitState.message}
+                    </div>
+                  )}
+                  {submitState.status === 'error' && (
+                    <div className="rounded-xl bg-red-50 text-red-800 px-4 py-3 text-sm font-medium">
+                      {submitState.message}
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full rounded-full"
                     data-testid="button-submit"
+                    disabled={submitState.status === 'submitting' || submitState.status === 'success'}
                   >
-                    Send Message
+                    {submitState.status === 'submitting' ? 'Sending…' : 'Send Message'}
                   </Button>
                 </form>
               </Form>
