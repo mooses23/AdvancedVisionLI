@@ -78,7 +78,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-primary py-14 md:py-20">
+    <section
+      id="contact"
+      className="bg-primary py-14 md:py-20"
+      style={{ borderTop: '3px solid #147E93' }}
+    >
       <div
         ref={ref as any}
         className="container mx-auto px-6 md:px-10 scroll-section"
@@ -120,7 +124,7 @@ export default function Contact() {
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">
+                  <p className="text-[#7CC6D6] text-xs font-semibold uppercase tracking-widest mb-1">
                     Location
                   </p>
                   <a
@@ -141,7 +145,7 @@ export default function Contact() {
                   <Phone className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">
+                  <p className="text-[#7CC6D6] text-xs font-semibold uppercase tracking-widest mb-1">
                     Phone
                   </p>
                   <a

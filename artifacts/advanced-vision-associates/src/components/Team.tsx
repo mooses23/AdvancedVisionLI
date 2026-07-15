@@ -37,7 +37,7 @@ export default function Team() {
         className="container mx-auto px-6 md:px-10 scroll-section"
       >
         <div className="text-center mb-10">
-          <p className="text-primary/60 text-xs font-semibold tracking-[0.18em] uppercase mb-3">
+          <p className="text-eyebrow text-xs font-semibold tracking-[0.18em] uppercase mb-3">
             Our Team
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-primary font-medium">
@@ -51,7 +51,7 @@ export default function Team() {
             return (
               <div
                 key={member.name}
-                className="bg-white rounded-2xl overflow-hidden p-3 md:p-5 flex flex-col gap-3 shadow-xs border border-border/40"
+                className="bg-card rounded-2xl overflow-hidden p-3 md:p-5 flex flex-col gap-3 shadow-xs border border-border/40"
               >
                 {/* Portrait + header row */}
                 <div className="flex items-start gap-2 md:gap-4">
@@ -65,7 +65,7 @@ export default function Team() {
 
                   {/* Name / credentials */}
                   <div className="min-w-0">
-                    <p className="text-primary/60 font-bold text-[10px] md:text-xs tracking-widest uppercase mb-0.5">
+                    <p className="text-eyebrow font-bold text-[10px] md:text-xs tracking-widest uppercase mb-0.5">
                       {member.credentials}
                     </p>
                     <h3 className="font-serif text-sm md:text-lg text-primary font-medium leading-snug mb-0.5">
@@ -73,7 +73,7 @@ export default function Team() {
                     </h3>
                     <p
                       className="text-[10px] md:text-xs font-semibold"
-                      style={{ color: 'hsl(var(--accent))' }}
+                      style={{ color: '#F4614B' }}
                     >
                       {member.role}
                     </p>
@@ -84,7 +84,7 @@ export default function Team() {
                 <div>
                   <p
                     className={[
-                      'text-muted-foreground text-xs md:text-sm leading-relaxed transition-all duration-300',
+                      'text-[#0B3B49]/65 text-xs md:text-sm leading-relaxed transition-all duration-300',
                       isExpanded ? '' : 'line-clamp-3',
                     ].join(' ')}
                   >
@@ -93,7 +93,7 @@ export default function Team() {
                   <button
                     onClick={() => toggle(index)}
                     className="mt-1 text-[10px] md:text-xs font-semibold min-h-[28px] px-0 py-1"
-                    style={{ color: 'hsl(var(--accent))' }}
+                    style={{ color: '#F4614B' }}
                     aria-expanded={isExpanded}
                   >
                     {isExpanded ? 'Collapse' : 'Read more'}

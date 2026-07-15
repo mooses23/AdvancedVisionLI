@@ -57,6 +57,8 @@
   --color-sidebar-accent-border: var(--sidebar-accent-border);
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
+  --color-eyebrow: var(--eyebrow);
+
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
   --font-mono: var(--app-font-mono);
@@ -67,7 +69,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Warm cream + dark teal + coral palette */
+/* Sage-teal + navy + coral palette (matches Hero/Checklist reference:
+   bg #D8E4E2, navy #0B3B49, coral #F4614B, eyebrow teal #147E93) */
 :root {
   --button-outline: rgba(0, 0, 0, 0.1);
   --badge-outline: rgba(0, 0, 0, 0.05);
@@ -76,68 +79,74 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  /* Warm cream page background */
-  --background: 38 38% 96%;
-  --foreground: 185 40% 17%;
-  --border: 38 18% 84%;
+  /* Sage-teal page background — #D8E4E2 */
+  --background: 170 18% 87%;
+  /* Deep navy — footer block + base text (#06222C-ish, deeper than primary) */
+  --foreground: 196 70% 12%;
+  --border: 172 14% 78%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 185 40% 17%;
-  --card-border: 38 18% 84%;
+  /* Light sage tint — cards lift off the sage bg without stark white */
+  --card: 168 26% 94%;
+  --card-foreground: 194 74% 16%;
+  --card-border: 172 14% 80%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 185 40% 17%;
-  --popover-border: 38 18% 84%;
+  --popover: 168 26% 96%;
+  --popover-foreground: 194 74% 16%;
+  --popover-border: 172 14% 78%;
 
-  /* Dark teal — headings, logo, nav links */
-  --primary: 185 42% 22%;
+  /* Navy — headings, logo, nav links, Contact block (#0B3B49 exactly) */
+  --primary: 194 74% 16%;
   --primary-foreground: 0 0% 100%;
 
-  /* Rich cream — card backgrounds, section tints */
-  --secondary: 38 28% 91%;
-  --secondary-foreground: 185 40% 17%;
+  /* Soft sage — section tints, quiet fills */
+  --secondary: 170 20% 91%;
+  --secondary-foreground: 194 74% 16%;
 
-  --muted: 38 20% 88%;
-  --muted-foreground: 185 14% 46%;
+  --muted: 170 16% 83%;
+  /* Reads like navy at ~65% over the sage bg */
+  --muted-foreground: 191 21% 41%;
 
-  /* Coral / terracotta — CTAs, highlight text */
-  --accent: 12 62% 58%;
+  /* Coral — CTAs, highlight text (#F4614B exactly) */
+  --accent: 8 88% 63%;
   --accent-foreground: 0 0% 100%;
+
+  /* Eyebrow teal — small all-caps labels above headings */
+  --eyebrow: #147E93;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 38 18% 82%;
-  --ring: 185 42% 22%;
+  --input: 172 14% 76%;
+  --ring: 194 74% 16%;
 
-  --chart-1: 185 42% 22%;
-  --chart-2: 12 62% 58%;
-  --chart-3: 38 28% 91%;
+  --chart-1: 194 74% 16%;
+  --chart-2: 8 88% 63%;
+  --chart-3: 170 20% 91%;
   --chart-4: 0 0% 100%;
-  --chart-5: 185 40% 17%;
+  --chart-5: 196 70% 12%;
 
-  --sidebar: 38 28% 91%;
-  --sidebar-foreground: 185 40% 17%;
-  --sidebar-border: 38 18% 84%;
-  --sidebar-primary: 185 42% 22%;
+  --sidebar: 170 20% 91%;
+  --sidebar-foreground: 194 74% 16%;
+  --sidebar-border: 172 14% 78%;
+  --sidebar-primary: 194 74% 16%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 12 62% 58%;
+  --sidebar-accent: 8 88% 63%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 185 42% 22%;
+  --sidebar-ring: 194 74% 16%;
 
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-serif: 'Playfair Display', Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.75rem;
 
-  --shadow-2xs: 0px 1px 3px 0px hsl(185 40% 30% / 0.12);
-  --shadow-xs:  0px 1px 3px 0px hsl(185 40% 30% / 0.12);
-  --shadow-sm:  0px 2px 6px 0px hsl(185 40% 30% / 0.14);
-  --shadow:     0px 2px 8px 0px hsl(185 40% 30% / 0.14);
-  --shadow-md:  0px 4px 12px 0px hsl(185 40% 30% / 0.16);
-  --shadow-lg:  0px 8px 20px 0px hsl(185 40% 30% / 0.18);
-  --shadow-xl:  0px 12px 28px 0px hsl(185 40% 30% / 0.2);
-  --shadow-2xl: 0px 16px 40px 0px hsl(185 40% 30% / 0.22);
+  --shadow-2xs: 0px 1px 3px 0px hsl(194 40% 25% / 0.12);
+  --shadow-xs:  0px 1px 3px 0px hsl(194 40% 25% / 0.12);
+  --shadow-sm:  0px 2px 6px 0px hsl(194 40% 25% / 0.14);
+  --shadow:     0px 2px 8px 0px hsl(194 40% 25% / 0.14);
+  --shadow-md:  0px 4px 12px 0px hsl(194 40% 25% / 0.16);
+  --shadow-lg:  0px 8px 20px 0px hsl(194 40% 25% / 0.18);
+  --shadow-xl:  0px 12px 28px 0px hsl(194 40% 25% / 0.2);
+  --shadow-2xl: 0px 16px 40px 0px hsl(194 40% 25% / 0.22);
 
   --tracking-normal: 0em;
   --spacing: 0.25rem;

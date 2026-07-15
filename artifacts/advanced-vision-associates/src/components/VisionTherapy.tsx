@@ -76,19 +76,19 @@ export default function VisionTherapy() {
 
           {/* Left — description */}
           <div>
-            <p className="text-primary/60 text-xs font-semibold tracking-[0.18em] uppercase mb-4">
+            <p className="text-eyebrow text-xs font-semibold tracking-[0.18em] uppercase mb-4">
               What is Vision Therapy?
             </p>
             <h2
               className="font-serif text-3xl md:text-4xl text-primary font-medium mb-5 leading-tight"
             >
               Training the visual system,{' '}
-              <em className="not-italic" style={{ color: 'hsl(var(--accent))' }}>
+              <em className="not-italic" style={{ color: '#F4614B' }}>
                 not just the eye
               </em>
             </h2>
 
-            <div className="space-y-4 text-foreground/65 text-base leading-relaxed">
+            <div className="space-y-4 text-[#0B3B49]/65 text-base leading-relaxed">
               <p>
                 Vision therapy works on developing, improving or enhancing a
                 patient's visual skills. These skills are necessary for proper
@@ -99,10 +99,10 @@ export default function VisionTherapy() {
                 specialized lenses to train the internal and external eye
                 muscles, together with the brain.
               </p>
-              <p className="font-semibold text-foreground/80">
+              <p className="font-semibold text-[#0B3B49]/80">
                 The goal is to achieve harmonious, smooth coordination of the
                 two eyes — so the patient can{' '}
-                <em style={{ color: 'hsl(var(--accent))' }}>
+                <em style={{ color: '#F4614B' }}>
                   see to work, rather than work to see.
                 </em>
               </p>
@@ -114,7 +114,7 @@ export default function VisionTherapy() {
             {/* OVDRA badge */}
             <div className="inline-flex items-center gap-2.5 border border-primary/25 text-primary/75 px-4 py-2.5 rounded-full text-sm font-medium bg-primary/5">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M7 1L8.5 5H13L9.5 7.5L11 12L7 9L3 12L4.5 7.5L1 5H5.5L7 1Z" fill="hsl(185 42% 22%)" fillOpacity="0.7" />
+                <path d="M7 1L8.5 5H13L9.5 7.5L11 12L7 9L3 12L4.5 7.5L1 5H5.5L7 1Z" fill="#0B3B49" fillOpacity="0.7" />
               </svg>
               OVDRA Recognized Provider — Dr. Marcie Evans Stein, OD FABM OVDRA
             </div>
@@ -122,7 +122,7 @@ export default function VisionTherapy() {
 
           {/* Right — visual skills grid */}
           <div>
-            <p className="text-primary/60 text-xs font-semibold tracking-[0.18em] uppercase mb-5">
+            <p className="text-eyebrow text-xs font-semibold tracking-[0.18em] uppercase mb-5">
               Visual Skills We Develop
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -131,7 +131,7 @@ export default function VisionTherapy() {
                 return (
                   <div
                     key={skill.term}
-                    className="flex items-start gap-3 bg-white rounded-xl px-3.5 py-3 shadow-xs"
+                    className="flex items-start gap-3 bg-card rounded-xl px-3.5 py-3 shadow-xs"
                   >
                     {/* Colored circular icon */}
                     <div
@@ -145,10 +145,10 @@ export default function VisionTherapy() {
                       />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-foreground font-semibold text-sm leading-snug">
+                      <p className="text-[#0B3B49] font-semibold text-sm leading-snug">
                         {skill.term}
                       </p>
-                      <p className="text-muted-foreground text-xs leading-snug mt-0.5">
+                      <p className="text-[#0B3B49]/65 text-xs leading-snug mt-0.5">
                         {skill.def}
                       </p>
                     </div>
@@ -177,13 +177,13 @@ export default function VisionTherapy() {
             className="absolute inset-0 z-10"
             style={{
               background:
-                'linear-gradient(to right, hsl(38 38% 96% / 0) 0%, transparent 100%), linear-gradient(to top, transparent 0%, transparent 85%, hsl(38 38% 96%) 100%)',
+                'linear-gradient(to right, rgba(216,228,226,0) 0%, transparent 100%), linear-gradient(to top, transparent 0%, transparent 85%, #D8E4E2 100%)',
             }}
           />
           <div
             className="absolute left-0 top-0 bottom-0 z-10 w-24"
             style={{
-              background: 'linear-gradient(to right, hsl(38 38% 96%), transparent)',
+              background: 'linear-gradient(to right, #D8E4E2, transparent)',
             }}
           />
           <img
