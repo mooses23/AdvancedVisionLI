@@ -21,8 +21,9 @@ args = ["pnpm", "--filter", "@workspace/api-server", "run", "build"]
 NODE_ENV = "production"
 
 [services.production.run]
-# Run without --enable-source-maps to keep startup lean in Cloud Run
-args = ["node", "artifacts/api-server/dist/index.mjs"]
+# Use pnpm to run the start script — pnpm executes from the package directory,
+# ensuring dist/index.mjs resolves correctly regardless of Cloud Run's CWD.
+args = ["pnpm", "--filter", "@workspace/api-server", "run", "start"]
 
 [services.production.run.env]
 PORT = "8080"
