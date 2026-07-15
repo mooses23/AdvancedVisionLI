@@ -25,7 +25,7 @@ app.use(
     },
   }),
 );
-app.use(cors());
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN ?? "https://AdvancedVisionLI.com" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
