@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { MapPin, Phone, ShieldCheck } from 'lucide-react';
@@ -53,15 +53,18 @@ export default function Contact() {
 
   const { setValue } = form;
 
-  // Whenever checked symptoms or the relationship change, auto-compose the
-  // message — but only if the user hasn't started typing their own content.
+  // Watch name + phone live so they flow into the auto-composed message.
+  const watchedName  = useWatch({ control: form.control, name: 'name' })  ?? '';
+  const watchedPhone = useWatch({ control: form.control, name: 'phone' }) ?? '';
+
+  // Re-compose whenever symptoms, relationship, name, or phone change —
+  // but only if the user hasn't manually edited the message field.
   useEffect(() => {
     if (manuallyEdited.current) return;
-    const text = composeMessage(checked, relationship);
+    const text = composeMessage(checked, relationship, watchedName, watchedPhone);
     setValue('message', text, { shouldDirty: false, shouldTouch: false });
-  // Use the Set size + a sorted key string so the effect fires on actual changes.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checked, relationship, setValue]);
+  }, [checked, relationship, watchedName, watchedPhone, setValue]);
 
   const onSubmit = (data: FormValues) => {
     // TODO: connect to Formspree or email backend once domain email is confirmed

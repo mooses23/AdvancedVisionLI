@@ -60,39 +60,62 @@ const SYMPTOMS = [
 ];
 
 const SUBJECT: Record<Relationship, string> = {
-  '': 'Someone close to me has',
-  'my-child': 'My child has',
-  'myself': 'I have',
-  'my-spouse': 'My spouse has',
+  '':             'Someone close to me has',
+  'my-child':     'My child has',
+  'myself':       'I have',
+  'my-spouse':    'My spouse has',
   'someone-else': 'Someone I care for has',
 };
 
-function naturalList(items: string[]): string {
-  if (items.length === 1) return items[0];
-  if (items.length === 2) return `${items[0]} and ${items[1]}`;
-  const init = items.slice(0, -1).join(', ');
-  return `${init}, and ${items[items.length - 1]}`;
+/** Build the optional closing line from sender details. */
+function closingLine(name: string, phone: string): string {
+  const n = name.trim();
+  const p = phone.trim();
+  if (!n && !p) return '';
+  if (n && p)   return `My name is ${n}, and I can be reached at ${p}.`;
+  if (n)        return `My name is ${n}.`;
+  return `I can be reached at ${p}.`;
 }
 
-export function composeMessage(checked: Set<number>, relationship: Relationship): string {
-  if (checked.size === 0) return '';
+/**
+ * Compose the contact-form message from checked symptoms, the selected
+ * relationship, and optional sender details pulled live from the form fields.
+ *
+ * Rules enforced here:
+ *  - No symptoms → friendly default (never an empty box).
+ *  - Symptoms → opening line + numbered list + closing ask.
+ *  - "free" is never used — the practice doesn't advertise free consultations.
+ *  - Sender name/phone appended when available so the message is self-contained.
+ */
+export function composeMessage(
+  checked: Set<number>,
+  relationship: Relationship,
+  senderName = '',
+  senderPhone = '',
+): string {
+  const closing = closingLine(senderName, senderPhone);
 
-  const selected = [...checked]
-    .sort((a, b) => a - b)
-    .map((i) => SYMPTOMS[i].charAt(0).toLowerCase() + SYMPTOMS[i].slice(1));
+  // ── No symptoms: sensible default (fixes the empty-box bug) ───────────────
+  if (checked.size === 0) {
+    const base =
+      "I'd like to learn more about your vision therapy services and would like to schedule an evaluation. Please don't hesitate to reach out.";
+    return closing ? `${base}\n\n${closing}` : base;
+  }
 
-  const subject = SUBJECT[relationship];
-  const quantity =
-    selected.length === 1
-      ? 'a sign'
-      : selected.length <= 3
-      ? 'a few signs'
-      : 'several signs';
+  // ── Symptoms checked: numbered list ───────────────────────────────────────
+  const selected = [...checked].sort((a, b) => a - b).map((i) => SYMPTOMS[i]);
+  const subject  = SUBJECT[relationship];
+  const list     = selected.map((s, i) => `${i + 1}. ${s}`).join('\n');
 
-  return (
-    `${subject} been showing ${quantity} that may point to a vision concern, ` +
-    `including ${naturalList(selected)}. ` +
-    `I'd like to schedule a free evaluation to learn more about what might be going on. ` +
-    `Please feel free to reach out at your convenience.`
-  );
+  const lines = [
+    `${subject} been showing signs that may point to a vision concern:`,
+    '',
+    list,
+    '',
+    "I'd like to schedule an evaluation to discuss this further. Please reach out at your convenience.",
+  ];
+
+  if (closing) lines.push('', closing);
+
+  return lines.join('\n');
 }
