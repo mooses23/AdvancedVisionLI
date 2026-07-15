@@ -2,7 +2,7 @@ modules = ["nodejs-24"]
 
 [deployment]
 router = "application"
-deploymentTarget = "cloudrun"
+deploymentTarget = "gce"
 
 [workflows]
 runButton = "Project"
