@@ -51,6 +51,7 @@ app.use(express.urlencoded({ extended: true }));
 // Root health check — Cloud Run startup probes hit GET / by default.
 // Returning 200 here ensures the promote step succeeds even if the
 // platform doesn't honour the custom [services.production.health.startup] path.
+// v2: force fresh build after standby-build cache miss
 app.get("/", (_req, res) => {
   res.json({ status: "ok" });
 });
