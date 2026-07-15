@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,6 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useSymptoms, composeMessage, type Relationship } from '@/context/SymptomsContext';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
@@ -24,8 +26,20 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+const RELATIONSHIP_OPTIONS: { value: Relationship; label: string }[] = [
+  { value: 'my-child',      label: 'My child' },
+  { value: 'myself',        label: 'Myself' },
+  { value: 'my-spouse',     label: 'My spouse / partner' },
+  { value: 'someone-else',  label: 'Someone else' },
+];
+
 export default function Contact() {
   const ref = useScrollAnimation();
+  const { checked, relationship, setRelationship } = useSymptoms();
+
+  // Track whether the user has manually typed in the message field.
+  // We use a ref (not state) so toggling this doesn't re-render the component.
+  const manuallyEdited = useRef(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -33,10 +47,21 @@ export default function Contact() {
       name: '',
       email: '',
       phone: '',
-      message:
-        "I'm interested in learning more about vision therapy. Please contact me to schedule a consultation.",
+      message: '',
     },
   });
+
+  const { setValue } = form;
+
+  // Whenever checked symptoms or the relationship change, auto-compose the
+  // message — but only if the user hasn't started typing their own content.
+  useEffect(() => {
+    if (manuallyEdited.current) return;
+    const text = composeMessage(checked, relationship);
+    setValue('message', text, { shouldDirty: false, shouldTouch: false });
+  // Use the Set size + a sorted key string so the effect fires on actual changes.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checked, relationship, setValue]);
 
   const onSubmit = (data: FormValues) => {
     // TODO: connect to Formspree or email backend once domain email is confirmed
@@ -44,6 +69,8 @@ export default function Contact() {
     console.log('Form submitted:', data);
     alert("Thank you! We'll be in touch soon.");
     form.reset();
+    // Allow auto-fill to resume after a clean reset
+    manuallyEdited.current = false;
   };
 
   return (
@@ -190,16 +217,58 @@ export default function Contact() {
                     />
                   </div>
 
+                  {/* ── Who are you contacting us for? ── */}
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="relationship-select"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Who are you contacting us for?
+                    </label>
+                    <select
+                      id="relationship-select"
+                      value={relationship}
+                      onChange={(e) => setRelationship(e.target.value as Relationship)}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-foreground"
+                    >
+                      <option value="" disabled>
+                        Select who this is for…
+                      </option>
+                      {RELATIONSHIP_OPTIONS.map((opt) => (
+                        <option key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* ── Message ── */}
                   <FormField
                     control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message *</FormLabel>
+                        <div className="flex items-center justify-between">
+                          <FormLabel>Message *</FormLabel>
+                          {manuallyEdited.current && checked.size > 0 && (
+                            <span className="text-[11px] text-muted-foreground">
+                              Symptom changes won't override your message
+                            </span>
+                          )}
+                        </div>
                         <FormControl>
                           <Textarea
-                            rows={3}
+                            rows={5}
+                            placeholder={
+                              checked.size === 0
+                                ? 'Tell us a bit about what you\'ve been noticing…'
+                                : undefined
+                            }
                             {...field}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              manuallyEdited.current = true;
+                            }}
                             data-testid="input-message"
                             className="resize-none"
                           />

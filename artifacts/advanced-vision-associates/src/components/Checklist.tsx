@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useSymptoms } from '@/context/SymptomsContext';
 
 /** Matches the Hero's background exactly — combined with the hero's bottom
  *  seam-dissolve gradient, the two sections read as one continuous canvas. */
@@ -38,15 +38,7 @@ const SYMPTOMS = [
 
 export default function Checklist() {
   const ref = useScrollAnimation();
-  const [checked, setChecked] = useState<Set<number>>(new Set());
-
-  const toggle = (idx: number) => {
-    setChecked((prev) => {
-      const next = new Set(prev);
-      next.has(idx) ? next.delete(idx) : next.add(idx);
-      return next;
-    });
-  };
+  const { checked, toggleSymptom } = useSymptoms();
 
   const count = checked.size;
 
@@ -132,7 +124,7 @@ export default function Checklist() {
               return (
                 <button
                   key={idx}
-                  onClick={() => toggle(idx)}
+                  onClick={() => toggleSymptom(idx)}
                   className={`flex items-center gap-2 sm:gap-2.5 text-left px-2 sm:px-2.5 py-1.5 rounded-lg transition-all duration-150 text-[12.5px] sm:text-[13.5px] cursor-pointer select-none
                     ${isChecked
                       ? 'bg-[#0B3B49]/[0.06] text-[#0B3B49]'
