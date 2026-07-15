@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const NAV_LINKS = [
   { label: 'Vision Therapy', href: '#vision-therapy' },
@@ -14,9 +14,29 @@ const LOGO_SRC = `${import.meta.env.BASE_URL}images/logo.png`;
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => {
+      const y = window.scrollY;
+      const prev = lastScrollY.current;
+
+      setScrolled(y > 30);
+
+      if (y < 30) {
+        // Always show at the very top
+        setVisible(true);
+      } else if (y > prev && y > 60) {
+        // Scrolling down past threshold — hide
+        setVisible(false);
+      } else if (y < prev) {
+        // Scrolling up — show
+        setVisible(true);
+      }
+
+      lastScrollY.current = y;
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -29,7 +49,7 @@ export default function Nav() {
         scrolled
           ? 'bg-white/96 backdrop-blur-md shadow-sm'
           : 'bg-white/90 backdrop-blur-sm'
-      }`}
+      } ${!visible && !open ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
 
