@@ -3,7 +3,6 @@ previewPath = "/"
 title = "Advanced Vision Associates"
 version = "1.0.0"
 id = "artifacts/advanced-vision-associates"
-router = "path"
 
 [[services]]
 name = "web"

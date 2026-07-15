@@ -2,6 +2,7 @@ modules = ["nodejs-24"]
 
 [deployment]
 router = "application"
+deploymentTarget = "cloudrun"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
