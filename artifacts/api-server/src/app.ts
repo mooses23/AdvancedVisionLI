@@ -9,8 +9,9 @@ const app: Express = express();
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 const allowedOrigins = [
-  "https://AdvancedVisionLI.com",
-  "https://www.AdvancedVisionLI.com",
+  "https://advancedvisionli.com",
+  "https://www.advancedvisionli.com",
+  "https://advanced-vision-li.replit.app",
   process.env.ALLOWED_ORIGIN,
   process.env.REPLIT_DEV_DOMAIN ? `https://${process.env.REPLIT_DEV_DOMAIN}` : undefined,
 ].filter((origin): origin is string => Boolean(origin));
