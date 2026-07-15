@@ -7,6 +7,10 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+// The logo PNG has a white background. mix-blend-mode: multiply makes white
+// transparent so it sits cleanly on the white / near-white nav.
+const LOGO_SRC = `${import.meta.env.BASE_URL}images/logo.png`;
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,13 +33,26 @@ export default function Nav() {
     >
       <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
 
-        {/* Logo */}
-        <a href="#" className="flex flex-col leading-tight">
-          <span className="text-primary font-bold text-base tracking-tight">
-            Advanced Vision Associates
-          </span>
-          <span className="text-muted-foreground text-xs font-medium">
-            Inwood, NY
+        {/* Logo lockup — exact PNG + stacked wordmark */}
+        <a href="#" className="flex items-center gap-3 leading-none">
+          <img
+            src={LOGO_SRC}
+            alt="Advanced Vision Long Island logo"
+            style={{
+              height: 36,
+              width: 'auto',
+              display: 'block',
+              flexShrink: 0,
+              mixBlendMode: 'multiply',   // white bg disappears on light nav
+            }}
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif font-semibold text-primary text-[15px] tracking-tight">
+              Advanced Vision
+            </span>
+            <span className="font-sans font-normal text-primary/70 text-[11px] tracking-wide uppercase">
+              Long Island
+            </span>
           </span>
         </a>
 
@@ -61,7 +78,7 @@ export default function Nav() {
           </a>
         </nav>
 
-        {/* Mobile: coral phone pill + hamburger — both visible inline in the nav bar */}
+        {/* Mobile: coral phone pill + hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <a
             href="tel:718-268-3937"
@@ -81,7 +98,7 @@ export default function Nav() {
           </button>
         </div>
 
-      </div>{/* end container */}
+      </div>
 
       {/* Mobile dropdown menu */}
       {open && (

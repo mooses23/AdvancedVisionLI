@@ -278,7 +278,7 @@ export default function Hero() {
               marginBottom: 14,
             }}
           >
-            Advanced Vision Associates · Inwood, NY
+            Advanced Vision Long Island · Inwood, NY
           </p>
 
           <h1
@@ -451,7 +451,7 @@ export default function Hero() {
               marginBottom: 8,
             }}
           >
-            Advanced Vision Associates
+            Advanced Vision Long Island
             <br />· Inwood, NY
           </p>
 
