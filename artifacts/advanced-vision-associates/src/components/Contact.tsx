@@ -19,8 +19,8 @@ import { useSymptoms, composeMessage, type Relationship } from '@/context/Sympto
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
-  email: z.string().email('Valid email is required'),
-  phone: z.string().optional(),
+  phone: z.string().min(7, 'Phone number is required'),
+  email: z.string().email('Must be a valid email address').or(z.literal('')),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
@@ -53,18 +53,19 @@ export default function Contact() {
 
   const { setValue } = form;
 
-  // Watch name + phone live so they flow into the auto-composed message.
+  // Watch name, phone, and email live so they flow into the auto-composed message.
   const watchedName  = useWatch({ control: form.control, name: 'name' })  ?? '';
   const watchedPhone = useWatch({ control: form.control, name: 'phone' }) ?? '';
+  const watchedEmail = useWatch({ control: form.control, name: 'email' }) ?? '';
 
-  // Re-compose whenever symptoms, relationship, name, or phone change —
+  // Re-compose whenever symptoms, relationship, or contact details change —
   // but only if the user hasn't manually edited the message field.
   useEffect(() => {
     if (manuallyEdited.current) return;
-    const text = composeMessage(checked, relationship, watchedName, watchedPhone);
+    const text = composeMessage(checked, relationship, watchedName, watchedPhone, watchedEmail);
     setValue('message', text, { shouldDirty: false, shouldTouch: false });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checked, relationship, watchedName, watchedPhone, setValue]);
+  }, [checked, relationship, watchedName, watchedPhone, watchedEmail, setValue]);
 
   const onSubmit = (data: FormValues) => {
     // TODO: connect to Formspree or email backend once domain email is confirmed
@@ -184,16 +185,16 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
-                      name="email"
+                      name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email *</FormLabel>
+                          <FormLabel>Phone *</FormLabel>
                           <FormControl>
                             <Input
-                              type="email"
-                              placeholder="jane@example.com"
+                              type="tel"
+                              placeholder="(555) 123-4567"
                               {...field}
-                              data-testid="input-email"
+                              data-testid="input-phone"
                             />
                           </FormControl>
                           <FormMessage />
@@ -202,16 +203,16 @@ export default function Contact() {
                     />
                     <FormField
                       control={form.control}
-                      name="phone"
+                      name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone</FormLabel>
+                          <FormLabel>Email</FormLabel>
                           <FormControl>
                             <Input
-                              type="tel"
-                              placeholder="(555) 123-4567"
+                              type="email"
+                              placeholder="jane@example.com"
                               {...field}
-                              data-testid="input-phone"
+                              data-testid="input-email"
                             />
                           </FormControl>
                           <FormMessage />

@@ -68,13 +68,18 @@ const SUBJECT: Record<Relationship, string> = {
 };
 
 /** Build the optional closing line from sender details. */
-function closingLine(name: string, phone: string): string {
+function closingLine(name: string, phone: string, email: string): string {
   const n = name.trim();
   const p = phone.trim();
-  if (!n && !p) return '';
-  if (n && p)   return `My name is ${n}, and I can be reached at ${p}.`;
-  if (n)        return `My name is ${n}.`;
-  return `I can be reached at ${p}.`;
+  const e = email.trim();
+
+  // Build the contact string from whatever is present
+  const contact = [p, e].filter(Boolean).join(' or ');
+
+  if (n && contact) return `My name is ${n}, and I can be reached at ${contact}.`;
+  if (n)            return `My name is ${n}.`;
+  if (contact)      return `I can be reached at ${contact}.`;
+  return '';
 }
 
 /**
@@ -85,15 +90,16 @@ function closingLine(name: string, phone: string): string {
  *  - No symptoms → friendly default (never an empty box).
  *  - Symptoms → opening line + numbered list + closing ask.
  *  - "free" is never used — the practice doesn't advertise free consultations.
- *  - Sender name/phone appended when available so the message is self-contained.
+ *  - Sender name/phone/email appended when available so the message is self-contained.
  */
 export function composeMessage(
   checked: Set<number>,
   relationship: Relationship,
   senderName = '',
   senderPhone = '',
+  senderEmail = '',
 ): string {
-  const closing = closingLine(senderName, senderPhone);
+  const closing = closingLine(senderName, senderPhone, senderEmail);
 
   // ── No symptoms: sensible default (fixes the empty-box bug) ───────────────
   if (checked.size === 0) {
