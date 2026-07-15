@@ -15,9 +15,9 @@ export default function Home() {
         <Hero />
         <Checklist />
         <VisionTherapy />
-        <TestimonialsStrip />
         <Team />
         <Contact />
+        <TestimonialsStrip />
       </main>
       <Footer />
     </div>
