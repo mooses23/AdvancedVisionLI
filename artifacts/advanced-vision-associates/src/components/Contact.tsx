@@ -190,10 +190,10 @@ export default function Contact() {
                     Email
                   </p>
                   <a
-                    href="mailto:doctor@advancedvisionel.com"
+                    href="mailto:doctors@AdvancedVisionLI.com"
                     className="text-white font-medium hover:text-white/80 transition-colors"
                   >
-                    doctor@advancedvisionel.com
+                    doctors@AdvancedVisionLI.com
                   </a>
                 </div>
               </div>
