@@ -67,7 +67,7 @@ export default function Nav() {
             }}
           />
           <span className="flex flex-col leading-tight">
-            <span className="font-serif font-semibold text-primary text-[15px] tracking-tight">
+            <span className="font-serif font-bold text-primary text-[19px] tracking-tight">
               Advanced Vision
             </span>
             <span className="font-sans font-normal text-primary/70 text-[11px] tracking-wide uppercase">

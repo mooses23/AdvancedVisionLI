@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import {
@@ -177,6 +177,23 @@ export default function Contact() {
                     className="text-white font-medium text-xl hover:text-white/80 transition-colors"
                   >
                     (718) 268-3937
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-white/20 p-3 rounded-full shrink-0">
+                  <Mail className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-[#7CC6D6] text-xs font-semibold uppercase tracking-widest mb-1">
+                    Email
+                  </p>
+                  <a
+                    href="mailto:doctor@advancedvisionel.com"
+                    className="text-white font-medium hover:text-white/80 transition-colors"
+                  >
+                    doctor@advancedvisionel.com
                   </a>
                 </div>
               </div>

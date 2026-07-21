@@ -41,8 +41,8 @@ const VISUAL_SKILLS = [
     iconColor: '#ffffff',
   },
   {
-    term: 'Peripheral vision',
-    def: 'Notice what\'s happening around you',
+    term: 'Visual Processing',
+    def: 'How our brain interprets and uses visual information',
     icon: Maximize2,
     iconBg: '#e8a840',
     iconColor: '#ffffff',
@@ -92,7 +92,7 @@ export default function VisionTherapy() {
               <p>
                 Vision therapy works on developing, improving or enhancing a
                 patient's visual skills. These skills are necessary for proper
-                achievement in school, work or play.
+                achievement in school, work, play or daily living.
               </p>
               <p>
                 Vision therapy utilizes various exercises combined with
@@ -110,14 +110,6 @@ export default function VisionTherapy() {
 
             {/* Teal squiggly wave */}
             <WaveDecoration className="mt-6 mb-5" />
-
-            {/* OVDRA badge */}
-            <div className="inline-flex items-center gap-2.5 border border-primary/25 text-primary/75 px-4 py-2.5 rounded-full text-sm font-medium bg-primary/5">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M7 1L8.5 5H13L9.5 7.5L11 12L7 9L3 12L4.5 7.5L1 5H5.5L7 1Z" fill="#0B3B49" fillOpacity="0.7" />
-              </svg>
-              OVDRA Recognized Provider — Dr. Marcie Evans Stein, OD FABM OVDRA
-            </div>
           </div>
 
           {/* Right — visual skills grid */}
@@ -163,11 +155,11 @@ export default function VisionTherapy() {
 
       {/* Boy-with-glasses photo — positioned below the grid, right side, overflows into Checklist */}
       <div
-        className="hidden xl:block absolute pointer-events-none select-none z-20"
+        className="hidden xl:block absolute pointer-events-none select-none z-0"
         style={{
           right: 0,
           bottom: '-180px',
-          width: '380px',
+          width: '320px',
           height: '480px',
         }}
       >

@@ -4,18 +4,18 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const TEAM = [
   {
     name: 'Dr. Marcie Evans Stein',
-    credentials: 'OD FABM OVDRA',
+    credentials: 'OD, FABM, OVDRA',
     role: 'Optometrist & Founder',
-    bio: 'Dr. Stein has been practicing optometry in Inwood and Far Rockaway for over 40 years. As an OVDRA-recognized developmental optometrist, she is known for her patient, thorough approach — especially with children, for whom vision therapy can be life-changing.',
+    bio: 'Dr. Stein has been practicing optometry for over 40 years, first in Queens and now in Inwood. A graduate of SUNY College of Optometry, she specializes in developmental optometry and binocular vision. Known for her compassionate, patient-centered care, she is an OVDRA member and FABM Fellow dedicated to helping patients of all ages achieve their visual potential.',
     // SWAP: replace with real photo when available
     imageSrc: '/images/dr-stein.jpg',
     imageAlt: 'Dr. Marcie Evans Stein, OD',
   },
   {
     name: 'Dr. Esther Moller',
-    credentials: 'OD FAAO',
-    role: 'Vision Therapist',
-    bio: 'Dr. Moller brings deep expertise in vision therapy and binocular vision rehabilitation. She works closely with each patient to design and guide personalized therapy programs from start to finish.',
+    credentials: 'OD, FAAO',
+    role: 'Optometrist & Low Vision Specialist',
+    bio: 'Dr. Moller is a fellowship-trained optometrist and graduate of SUNY College of Optometry, with a residency completed at the Northport VA Medical Center. A Certified Low Vision Specialist, she provides comprehensive primary eye care with focused expertise in binocular vision and low vision rehabilitation.',
     // SWAP: replace with real photo when available
     imageSrc: '/images/dr-moller.jpg',
     imageAlt: 'Dr. Esther Moller, OD',
