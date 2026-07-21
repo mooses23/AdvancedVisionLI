@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/carousel';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useSymptoms } from '@/context/SymptomsContext';
+import VisionSimulator from '@/components/VisionSimulator';
 
 /** Matches the Hero's background exactly — combined with the hero's bottom
  *  seam-dissolve gradient, the two sections read as one continuous canvas. */
@@ -260,6 +261,9 @@ export default function Checklist() {
               ))}
             </span>
           </div>
+
+          {/* Vision simulator */}
+          <VisionSimulator />
 
           {/* Live count feedback */}
           <div className="mt-3 pt-3 border-t border-black/[0.06] flex flex-col sm:flex-row items-start sm:items-center gap-3 justify-between">
