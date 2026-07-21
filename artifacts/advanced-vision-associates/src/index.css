@@ -170,6 +170,29 @@
   }
 }
 
+@keyframes double-vision-drift {
+  0%   { text-shadow: 6px 3px 0px rgba(11,59,73,0.55), 6px 3px 2px rgba(11,59,73,0.18); }
+  20%  { text-shadow: 8px 5px 0px rgba(11,59,73,0.52), 8px 5px 2px rgba(11,59,73,0.16); }
+  45%  { text-shadow: 4px 2px 0px rgba(11,59,73,0.58), 4px 2px 2px rgba(11,59,73,0.20); }
+  70%  { text-shadow: 9px 4px 0px rgba(11,59,73,0.50), 9px 4px 2px rgba(11,59,73,0.15); }
+  85%  { text-shadow: 5px 6px 0px rgba(11,59,73,0.56), 5px 6px 2px rgba(11,59,73,0.19); }
+  100% { text-shadow: 6px 3px 0px rgba(11,59,73,0.55), 6px 3px 2px rgba(11,59,73,0.18); }
+}
+
+.double-vision-active {
+  text-shadow:
+    6px 3px 0px rgba(11,59,73,0.55),
+    6px 3px 2px rgba(11,59,73,0.18);
+  animation: double-vision-drift 3.4s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .double-vision-active {
+    animation: none;
+  }
+}
+
 @layer utilities {
   input[type='search']::-webkit-search-cancel-button {
     @apply hidden;

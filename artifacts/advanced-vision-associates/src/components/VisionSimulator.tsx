@@ -82,15 +82,9 @@ export default function VisionSimulator() {
             }}
           >
             <p
-              className="text-[14px] md:text-[15px] leading-relaxed font-medium select-none"
+              className="text-[14px] md:text-[15px] leading-relaxed font-medium select-none double-vision-active"
               aria-label="Reading passage with simulated double vision"
-              style={{
-                color: NAVY,
-                textShadow: `
-                  6px 3px 0px rgba(11,59,73,0.55),
-                  6px 3px 2px rgba(11,59,73,0.18)
-                `,
-              }}
+              style={{ color: NAVY }}
             >
               {PASSAGE}
             </p>
