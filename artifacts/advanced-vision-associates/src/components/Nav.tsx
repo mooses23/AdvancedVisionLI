@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: 'Vision Therapy', href: '#vision-therapy' },
   { label: 'Signs', href: '#signs' },
   { label: 'Services', href: '#services' },
+  { label: 'Low Vision', href: '#low-vision' },
   { label: 'Our Team', href: '#team' },
   { label: 'Contact', href: '#contact' },
 ];

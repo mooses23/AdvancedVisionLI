@@ -146,6 +146,17 @@ export default function Services() {
                 <p className="text-[#0B3B49]/60 text-xs md:text-sm leading-relaxed">
                   {service.description}
                 </p>
+                {service.lowVision && (
+                  <a
+                    href="#low-vision"
+                    className="inline-block mt-2 text-xs font-medium transition-colors"
+                    style={{ color: '#147E93' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0f6677')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#147E93')}
+                  >
+                    See Low Vision details ↓
+                  </a>
+                )}
               </div>
             </div>
           ))}
