@@ -67,7 +67,7 @@ const AIDS = [
 
 const ACTIVITY_QUESTIONS = ['Reading', 'Playing cards', 'Cooking meals', 'Watching TV', 'Playing bingo', 'Needlepoint'];
 
-const TABS = ['Consultation', 'Causes', 'Daily Activities', 'Aids'] as const;
+const TABS = ['Consult', 'Causes', 'Activities', 'Aids'] as const;
 
 /* ─── SVG Icons for Consultation panel ─── */
 
