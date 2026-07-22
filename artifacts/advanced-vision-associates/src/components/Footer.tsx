@@ -7,7 +7,6 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-3 mb-1">
-              {/* On the dark footer, invert + hue-rotate keeps the logo legible */}
               <img
                 src={LOGO_SRC}
                 alt=""
@@ -17,8 +16,6 @@ export default function Footer() {
                   width: 'auto',
                   display: 'block',
                   flexShrink: 0,
-                  filter: 'brightness(0) invert(1)',
-                  opacity: 0.85,
                 }}
               />
               <span className="text-white font-bold text-base leading-tight">
