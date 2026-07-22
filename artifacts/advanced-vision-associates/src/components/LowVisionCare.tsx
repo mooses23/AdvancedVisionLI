@@ -69,9 +69,48 @@ const ACTIVITY_QUESTIONS = ['Reading', 'Playing cards', 'Cooking meals', 'Watchi
 
 const TABS = ['Consultation', 'Causes', 'Daily Activities', 'Aids'] as const;
 
+/* ─── SVG Icons for Consultation panel ─── */
+
+const EyeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+const BookIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+  </svg>
+);
+
+const ContrastIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+    <circle cx="12" cy="12" r="9" />
+    {/* Left half filled */}
+    <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const FieldIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="5" />
+    <circle cx="12" cy="12" r="1" fill="currentColor" />
+  </svg>
+);
+
 /* ─── Tab Panels ─── */
 
 function ConsultationPanel() {
+  const items = [
+    { label: 'Distance Vision', Icon: EyeIcon },
+    { label: 'Near Vision', Icon: BookIcon },
+    { label: 'Contrast Levels', Icon: ContrastIcon },
+    { label: 'Visual Fields', Icon: FieldIcon },
+  ];
+
   return (
     <div className="grid md:grid-cols-2 gap-0 h-full">
       <div className="p-8 md:p-10 flex flex-col justify-center">
@@ -87,19 +126,16 @@ function ConsultationPanel() {
       </div>
       <div className="flex items-center justify-center p-8 md:p-10" style={{ backgroundColor: `${TEAL}22` }}>
         <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
-          {[
-            { label: 'Distance Vision', icon: '👁️' },
-            { label: 'Near Vision', icon: '📖' },
-            { label: 'Contrast Levels', icon: '◐' },
-            { label: 'Visual Fields', icon: '◎' },
-          ].map((item) => (
+          {items.map(({ label, Icon }) => (
             <div
-              key={item.label}
+              key={label}
               className="rounded-xl p-4 flex flex-col items-center gap-2 text-center"
               style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
             >
-              <span className="text-2xl">{item.icon}</span>
-              <span className="text-white/90 text-xs font-medium leading-tight">{item.label}</span>
+              <span className="text-white/90">
+                <Icon />
+              </span>
+              <span className="text-white/90 text-xs font-medium leading-tight">{label}</span>
             </div>
           ))}
         </div>
@@ -110,26 +146,26 @@ function ConsultationPanel() {
 
 function CausesPanel() {
   return (
-    <div className="p-8 md:p-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="p-6 md:p-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {CAUSES.map(({ name, description, image, alt }) => (
           <div
             key={name}
-            className="rounded-2xl overflow-hidden border flex flex-col"
-            style={{ backgroundColor: 'hsl(168 26% 94%)', borderColor: 'rgba(20,126,147,0.2)' }}
+            className="rounded-2xl overflow-hidden flex flex-col"
+            style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
           >
-            <div className="w-full aspect-[4/3] overflow-hidden">
+            <div className="w-full overflow-hidden" style={{ height: '120px' }}>
               <img
                 src={image}
                 alt={alt}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-4 flex flex-col gap-1 flex-grow">
-              <h4 className="font-serif text-base font-medium leading-snug" style={{ color: NAVY }}>
+            <div className="p-3 flex flex-col gap-1 flex-grow">
+              <h4 className="font-serif text-sm font-medium leading-snug text-white">
                 {name}
               </h4>
-              <p className="text-xs leading-relaxed" style={{ color: `${NAVY}80` }}>
+              <p className="text-xs leading-relaxed text-white/65">
                 {description}
               </p>
             </div>
@@ -175,16 +211,16 @@ function ActivitiesPanel() {
 
 function AidsPanel() {
   return (
-    <div className="p-8 md:p-10">
-      <p className="text-center text-sm md:text-base leading-relaxed mb-6 max-w-2xl mx-auto" style={{ color: `${NAVY}99` }}>
+    <div className="p-6 md:p-8">
+      <p className="text-center text-sm md:text-base leading-relaxed mb-5 max-w-2xl mx-auto text-white/80">
         Low vision aids utilize the remaining vision through magnification, image shift, and contrast enhancement to maximize visual potential.
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {AIDS.map(({ name, label, image, alt }) => (
           <div
             key={name}
-            className="rounded-2xl overflow-hidden border flex flex-col"
-            style={{ backgroundColor: 'hsl(168 26% 94%)', borderColor: 'rgba(20,126,147,0.2)' }}
+            className="rounded-2xl overflow-hidden flex flex-col"
+            style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
           >
             <div className="w-full aspect-square overflow-hidden">
               <img
@@ -193,18 +229,18 @@ function AidsPanel() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-4 flex flex-col gap-1 flex-grow">
-              <h4 className="font-serif text-sm font-medium leading-snug" style={{ color: NAVY }}>
+            <div className="p-3 flex flex-col gap-1 flex-grow">
+              <h4 className="font-serif text-sm font-medium leading-snug text-white">
                 {name}
               </h4>
-              <p className="text-xs leading-relaxed" style={{ color: `${NAVY}75` }}>
+              <p className="text-xs leading-relaxed text-white/70">
                 {label}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <p className="text-center text-xs mt-4 italic" style={{ color: `${NAVY}60` }}>
+      <p className="text-center text-xs mt-4 italic text-white/45">
         Samples of some of the many low vision aids available at our practice.
       </p>
     </div>
@@ -216,10 +252,8 @@ function AidsPanel() {
 export default function LowVisionCare() {
   const [activeTab, setActiveTab] = useState(0);
 
-  // Consultation tab uses NAVY bg; Activities tab uses TEAL bg; others use light bg
-  const isNavyBg = activeTab === 0;
-  const isTealBg = activeTab === 2;
-  const cardBg = isNavyBg ? NAVY : isTealBg ? TEAL : 'hsl(168 26% 97%)';
+  // Tabs 0 & 1 (Consultation, Causes) → NAVY; Tabs 2 & 3 (Daily Activities, Aids) → TEAL
+  const cardBg = activeTab <= 1 ? NAVY : TEAL;
 
   return (
     <section id="low-vision" className="py-14 md:py-20 border-t border-border/40" style={{ backgroundColor: '#f0f5f5' }}>
@@ -239,8 +273,10 @@ export default function LowVisionCare() {
         </div>
 
         {/* Tabbed card */}
-        <div className="rounded-3xl overflow-hidden shadow-sm mb-10" style={{ backgroundColor: cardBg, transition: 'background-color 0.2s ease' }}>
-
+        <div
+          className="rounded-3xl overflow-hidden shadow-sm mb-10"
+          style={{ backgroundColor: cardBg, transition: 'background-color 0.2s ease' }}
+        >
           {/* Tab bar */}
           <div
             className="lv-tab-bar flex gap-1 p-2 overflow-x-auto"
