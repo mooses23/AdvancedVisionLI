@@ -182,25 +182,25 @@ export default function Checklist() {
 
             <Carousel
               setApi={setApi}
-              opts={{ loop: true, align: 'start' }}
-              className="mx-9 sm:mx-11"
+              opts={{ align: 'start' }}
+              className="mx-11"
             >
               <CarouselContent className="-ml-0">
                 {PAGES.map((pageItems, pageIdx) => (
                   <CarouselItem
                     key={pageIdx}
-                    className="pl-0"
+                    className="pl-0 overflow-hidden w-full"
                     aria-label={`Symptoms page ${pageIdx + 1} of ${PAGES.length}`}
                     inert={pageIdx !== page || undefined}
                   >
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-0.5 sm:gap-1 h-full content-start">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0.5 sm:gap-1 h-full content-start w-full overflow-hidden">
                       {pageItems.map(({ symptom, idx }) => {
                         const isChecked = checked.has(idx);
                         return (
                           <button
                             key={idx}
                             onClick={() => toggleSymptom(idx)}
-                            className={`flex items-center gap-2 sm:gap-2.5 text-left px-2 sm:px-2.5 py-1.5 rounded-lg transition-all duration-150 text-[12.5px] sm:text-[13.5px] cursor-pointer select-none
+                            className={`flex items-center gap-2 sm:gap-2.5 text-left px-2 sm:px-2.5 py-1.5 rounded-lg transition-all duration-150 text-[12.5px] sm:text-[13.5px] cursor-pointer select-none min-w-0
                               ${isChecked
                                 ? 'bg-[#0B3B49]/[0.06] text-[#0B3B49]'
                                 : 'text-[#0B3B49]/65 hover:bg-[#0B3B49]/[0.04]'
@@ -228,7 +228,7 @@ export default function Checklist() {
                                 </svg>
                               )}
                             </span>
-                            <span className="font-medium leading-snug">{symptom}</span>
+                            <span className="font-medium leading-snug break-words min-w-0 w-full">{symptom}</span>
                           </button>
                         );
                       })}

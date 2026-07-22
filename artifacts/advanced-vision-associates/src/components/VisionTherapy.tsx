@@ -117,7 +117,7 @@ export default function VisionTherapy() {
             <p className="text-eyebrow text-xs font-semibold tracking-[0.18em] uppercase mb-5">
               Visual Skills We Develop
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {VISUAL_SKILLS.map((skill) => {
                 const Icon = skill.icon;
                 return (

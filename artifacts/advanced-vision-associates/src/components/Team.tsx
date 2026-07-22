@@ -45,7 +45,7 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 md:gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 max-w-4xl mx-auto">
           {TEAM.map((member, index) => {
             const isExpanded = !!expanded[index];
             return (
@@ -55,7 +55,7 @@ export default function Team() {
               >
                 {/* Portrait + header row */}
                 <div className="flex items-start gap-2 md:gap-4">
-                  <div className="shrink-0 w-14 h-14 md:w-24 md:h-24 rounded-xl overflow-hidden bg-muted">
+                  <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden bg-muted">
                     <img
                       src={member.imageSrc}
                       alt={member.imageAlt}
@@ -65,14 +65,14 @@ export default function Team() {
 
                   {/* Name / credentials */}
                   <div className="min-w-0">
-                    <p className="text-eyebrow font-bold text-[10px] md:text-xs tracking-widest uppercase mb-0.5">
+                    <p className="text-eyebrow font-bold text-xs tracking-widest uppercase mb-0.5">
                       {member.credentials}
                     </p>
-                    <h3 className="font-serif text-sm md:text-lg text-primary font-medium leading-snug mb-0.5">
+                    <h3 className="font-serif text-base md:text-lg text-primary font-medium leading-snug mb-0.5">
                       {member.name}
                     </h3>
                     <p
-                      className="text-[10px] md:text-xs font-semibold"
+                      className="text-xs font-semibold"
                       style={{ color: '#F4614B' }}
                     >
                       {member.role}
