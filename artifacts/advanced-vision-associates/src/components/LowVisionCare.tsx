@@ -185,15 +185,15 @@ function ActivitiesPanel() {
       <p className="text-white/65 text-xs font-semibold tracking-[0.18em] uppercase mb-6 text-center">
         Does this sound familiar?
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8 w-full max-w-lg">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mb-8 w-full max-w-lg">
         {ACTIVITY_QUESTIONS.map((activity) => (
           <div
             key={activity}
-            className="flex items-center gap-2 rounded-xl px-4 py-3"
+            className="flex items-center gap-1 sm:gap-2 rounded-xl px-2 py-2 sm:px-4 sm:py-3"
             style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
           >
-            <span className="text-white/60 text-sm">✓</span>
-            <span className="text-white text-sm font-medium">{activity}</span>
+            <span className="text-white/60 text-xs sm:text-sm shrink-0">✓</span>
+            <span className="text-white text-xs sm:text-sm font-medium">{activity}</span>
           </div>
         ))}
       </div>
@@ -277,10 +277,10 @@ export default function LowVisionCare() {
           className="rounded-3xl overflow-hidden shadow-sm mb-10"
           style={{ backgroundColor: cardBg, transition: 'background-color 0.2s ease' }}
         >
-          {/* Tab bar */}
+          {/* Tab bar — equal-width grid so no tab is ever clipped on mobile */}
           <div
-            className="lv-tab-bar flex gap-1 p-2 overflow-x-auto"
-            style={{ backgroundColor: 'rgba(0,0,0,0.18)', scrollbarWidth: 'none' }}
+            className="grid grid-cols-4 gap-1 p-2"
+            style={{ backgroundColor: 'rgba(0,0,0,0.18)' }}
           >
             {TABS.map((label, i) => {
               const isActive = activeTab === i;
@@ -288,7 +288,7 @@ export default function LowVisionCare() {
                 <button
                   key={label}
                   onClick={() => setActiveTab(i)}
-                  className="shrink-0 px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap"
+                  className="px-1 py-2 md:px-5 rounded-full text-xs md:text-sm font-semibold transition-all text-center leading-tight"
                   style={{
                     backgroundColor: isActive ? TEAL : 'transparent',
                     color: isActive ? '#fff' : 'rgba(255,255,255,0.65)',
