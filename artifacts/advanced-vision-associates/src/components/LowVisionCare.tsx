@@ -312,36 +312,6 @@ export default function LowVisionCare() {
           </div>
         </div>
 
-        {/* CTA Strip */}
-        <div
-          className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
-          style={{ backgroundColor: NAVY }}
-        >
-          <div>
-            <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-2" style={{ color: TEAL }}>
-              Ready to start again?
-            </p>
-            <h3 className="font-serif text-xl md:text-2xl font-medium text-white leading-snug">
-              Get back your quality of life.
-            </h3>
-            <p className="text-white/70 text-sm mt-1">
-              Call today to book a Low Vision consultation.
-            </p>
-          </div>
-          <a
-            href="tel:718-268-3937"
-            className="shrink-0 inline-flex items-center gap-2 text-white font-semibold text-base md:text-lg px-7 py-4 rounded-full transition-colors whitespace-nowrap"
-            style={{ backgroundColor: TEAL }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0f6677')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = TEAL)}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            (718) 268-3937
-          </a>
-        </div>
-
       </div>
     </section>
   );
