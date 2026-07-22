@@ -17,7 +17,7 @@ export default function Footer() {
                   width: 'auto',
                   display: 'block',
                   flexShrink: 0,
-                  filter: 'invert(1) hue-rotate(180deg) saturate(0.5) brightness(1.4)',
+                  filter: 'brightness(0) invert(1)',
                   opacity: 0.85,
                 }}
               />

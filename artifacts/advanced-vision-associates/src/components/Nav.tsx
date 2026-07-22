@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Phone } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Vision Therapy', href: '#vision-therapy' },
@@ -60,12 +61,14 @@ export default function Nav() {
             src={LOGO_SRC}
             alt="Advanced Vision Long Island logo"
             style={{
-              height: 36,
-              width: 'auto',
+              height: 44,
+              width: 44,
               display: 'block',
               flexShrink: 0,
+              objectFit: 'contain',
               mixBlendMode: 'multiply',   // white bg disappears on light nav
             }}
+            className="md:w-[44px] md:h-[44px] w-[40px] h-[40px]"
           />
           <span className="flex flex-col leading-tight">
             <span className="font-serif font-bold text-primary text-[19px] tracking-tight">
@@ -90,7 +93,7 @@ export default function Nav() {
           ))}
           <a
             href="tel:718-268-3937"
-            className="text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
             style={{ backgroundColor: 'hsl(var(--accent))' }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'hsl(12 62% 52%)')}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'hsl(var(--accent))')}
@@ -99,14 +102,15 @@ export default function Nav() {
           </a>
         </nav>
 
-        {/* Mobile: coral phone pill + hamburger */}
+        {/* Mobile: compact phone icon button + hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <a
             href="tel:718-268-3937"
-            className="text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors whitespace-nowrap"
+            aria-label="Call (718) 268-3937"
+            className="flex items-center justify-center w-9 h-9 rounded-full text-white transition-colors flex-shrink-0"
             style={{ backgroundColor: 'hsl(var(--accent))' }}
           >
-            (718) 268-3937
+            <Phone size={16} strokeWidth={2.5} />
           </a>
           <button
             className="flex flex-col gap-1.5 p-2"
