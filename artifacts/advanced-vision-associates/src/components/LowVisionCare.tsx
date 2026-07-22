@@ -303,10 +303,12 @@ export default function LowVisionCare() {
 
           {/* Panel */}
           <div style={{ minHeight: '380px' }}>
-            {activeTab === 0 && <ConsultationPanel />}
-            {activeTab === 1 && <CausesPanel />}
-            {activeTab === 2 && <ActivitiesPanel />}
-            {activeTab === 3 && <AidsPanel />}
+            <div key={activeTab} className="lv-panel-fade">
+              {activeTab === 0 && <ConsultationPanel />}
+              {activeTab === 1 && <CausesPanel />}
+              {activeTab === 2 && <ActivitiesPanel />}
+              {activeTab === 3 && <AidsPanel />}
+            </div>
           </div>
         </div>
 
