@@ -204,6 +204,11 @@
     pointer-events: none;
   }
 
+  /* Hide scrollbar on the Low Vision tab bar while keeping scroll functional */
+  .lv-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
   .scroll-section {
     opacity: 0;
     transform: translateY(20px);
