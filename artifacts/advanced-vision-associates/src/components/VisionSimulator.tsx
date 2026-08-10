@@ -10,33 +10,56 @@ const PASSAGE =
 
 export default function VisionSimulator() {
   const [stage, setStage] = useState<'idle' | 'simulating' | 'revealed'>('idle');
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      if (timerRef.current !== null) clearTimeout(timerRef.current);
-    };
-  }, []);
+  const delayTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const simulationTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   const handleShowMe = () => {
+    if (delayTimerRef.current !== null) {
+      clearTimeout(delayTimerRef.current);
+      delayTimerRef.current = null;
+    }
+    setExpanded(true);
     setStage('simulating');
-    timerRef.current = setTimeout(() => {
+    simulationTimerRef.current = setTimeout(() => {
       setStage((prev) => (prev === 'simulating' ? 'revealed' : prev));
-      timerRef.current = null;
+      simulationTimerRef.current = null;
     }, 2200);
   };
 
-  const handleReset = () => {
-    if (timerRef.current !== null) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-    setStage('idle');
-  };
+  // One-shot IntersectionObserver — fires once per page load
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          delayTimerRef.current = setTimeout(() => {
+            delayTimerRef.current = null;
+            handleShowMe();
+          }, 1000);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      if (delayTimerRef.current !== null) clearTimeout(delayTimerRef.current);
+      if (simulationTimerRef.current !== null) clearTimeout(simulationTimerRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="mt-3 pt-3 border-t border-black/[0.06]">
-      {/* Trigger row — always visible */}
+    <div ref={rootRef} className="mt-3 pt-3 border-t border-black/[0.06]">
+      {/* Label row — no buttons */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <span className="flex items-center gap-1.5 text-[12.5px]" style={{ color: `${NAVY}99` }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -45,33 +68,20 @@ export default function VisionSimulator() {
           </svg>
           Wonder what your child sees?
         </span>
-
-        {stage === 'idle' ? (
-          <button
-            type="button"
-            onClick={handleShowMe}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-semibold transition-opacity hover:opacity-85 cursor-pointer"
-            style={{ backgroundColor: `${TEAL}18`, color: TEAL, border: `1px solid ${TEAL}30` }}
-          >
-            <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M3 2L12 7L3 12V2Z" fill={TEAL} />
-            </svg>
-            Show me
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={handleReset}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-semibold transition-opacity hover:opacity-85 cursor-pointer"
-            style={{ backgroundColor: 'rgba(11,59,73,0.06)', color: `${NAVY}bb`, border: '1px solid rgba(11,59,73,0.12)' }}
-          >
-            ✕ Reset
-          </button>
-        )}
       </div>
 
-      {/* Expandable passage — only shown when active */}
-      {stage !== 'idle' && (
+      {/* Expandable passage — slow, heavy drop */}
+      <div
+        style={{
+          overflow: 'hidden',
+          maxHeight: expanded ? '300px' : '0',
+          opacity: expanded ? 1 : 0,
+          transform: expanded ? 'translateY(0)' : 'translateY(24px)',
+          // cubic-bezier gives a weighty deceleration (heavy drop feel)
+          transition:
+            'max-height 2.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 2.2s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
         <div className="mt-2.5 space-y-2">
           {/* Passage with double-vision effect */}
           <div
@@ -119,7 +129,7 @@ export default function VisionSimulator() {
             <span className="font-semibold" style={{ color: NAVY }}>20/20!</span>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
