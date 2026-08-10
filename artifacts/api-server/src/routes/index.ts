@@ -4,6 +4,8 @@ import contactRouter from "./contact";
 import visionTherapyRouter from "./visionTherapy";
 import lowVisionCareRouter from "./lowVisionCare";
 import contactPageRouter from "./contactPage";
+import faqPageRouter from "./faqPage";
+import checklistPageRouter from "./checklistPage";
 
 const router: IRouter = Router();
 
@@ -13,4 +15,4 @@ router.use(contactRouter);
 export default router;
 
 // SSR public HTML pages — registered directly on app, not under /api
-export { visionTherapyRouter, lowVisionCareRouter, contactPageRouter };
+export { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter };

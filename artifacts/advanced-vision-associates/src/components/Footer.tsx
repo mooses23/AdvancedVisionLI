@@ -37,6 +37,7 @@ export default function Footer() {
             <nav className="flex gap-3 mb-1" aria-label="Footer navigation">
               <a href="/vision-therapy" className="hover:text-white transition-colors">Vision Therapy</a>
               <a href="/low-vision-care" className="hover:text-white transition-colors">Low Vision Care</a>
+              <a href="/faq" className="hover:text-white transition-colors">FAQ</a>
               <a href="/contact" className="hover:text-white transition-colors">Contact</a>
             </nav>
             <p>© {new Date().getFullYear()} Advanced Vision Long Island. All rights reserved.</p>

@@ -161,6 +161,7 @@ ${bodyHtml}
       <a href="https://AdvancedVisionLI.com/">Home</a>
       <a href="/vision-therapy">Vision Therapy</a>
       <a href="/low-vision-care">Low Vision Care</a>
+      <a href="/faq">FAQ</a>
       <a href="/contact">Contact</a>
       <span class="footer-copy">© ${new Date().getFullYear()} ${escapeHtml(PRACTICE_NAME)}. All rights reserved.</span>
       <span class="footer-copy">This website is for informational purposes only and does not constitute medical advice.</span>
