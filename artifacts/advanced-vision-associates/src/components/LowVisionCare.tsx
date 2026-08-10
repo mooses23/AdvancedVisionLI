@@ -256,7 +256,7 @@ export default function LowVisionCare() {
   const cardBg = activeTab <= 1 ? NAVY : TEAL;
 
   return (
-    <section id="low-vision" className="py-14 md:py-20 border-t border-border/40" style={{ backgroundColor: '#f0f5f5' }}>
+    <section id="low-vision" className="py-14 md:py-20 border-t border-border/40" style={{ backgroundColor: '#d6e8eb' }}>
       <div className="container mx-auto px-6 md:px-10">
 
         {/* Section header */}
