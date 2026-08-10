@@ -34,6 +34,17 @@ const SERVICES = [
     name: 'Vision Therapy',
     description: 'Individualized, doctor-supervised program to improve eye teaming, tracking, and focusing skills.',
   },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+      </svg>
+    ),
+    name: 'Low Vision',
+    description: 'Specialized evaluation and management for patients with significant visual impairment, including optical aids and adaptive strategies.',
+  },
 ];
 
 export default function Services() {
@@ -76,7 +87,7 @@ export default function Services() {
         </div>
 
         {/* Service cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {SERVICES.map((service) => (
             <div
               key={service.name}

@@ -17,8 +17,8 @@ export default function Home() {
         <Hero />
         <Checklist />
         <VisionTherapy />
-        <Services />
         <LowVisionCare />
+        <Services />
         <Team />
         <Contact />
         <TestimonialsStrip />
