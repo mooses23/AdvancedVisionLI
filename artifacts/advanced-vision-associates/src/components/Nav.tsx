@@ -12,7 +12,8 @@ const NAV_LINKS = [
 
 // The logo PNG has a white background. mix-blend-mode: multiply makes white
 // transparent so it sits cleanly on the white / near-white nav.
-const LOGO_SRC = `${import.meta.env.BASE_URL}images/logo.png`;
+import logoSrc from '@/assets/images/logo.png';
+const LOGO_SRC = logoSrc;
 
 export default function Nav() {
   const [open, setOpen] = useState(false);

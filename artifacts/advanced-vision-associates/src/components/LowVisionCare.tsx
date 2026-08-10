@@ -1,4 +1,13 @@
 import { useState } from 'react';
+import lvCauseMacular from '@/assets/images/lv-cause-macular.jpg';
+import lvCauseGlaucoma from '@/assets/images/lv-cause-glaucoma.jpg';
+import lvCauseDiabetes from '@/assets/images/lv-cause-diabetes.jpg';
+import lvCauseStroke from '@/assets/images/lv-cause-stroke.jpg';
+import lvAidAddGlasses from '@/assets/images/lv-aid-add-glasses.jpg';
+import lvAidPrismGlasses from '@/assets/images/lv-aid-prism-glasses.jpg';
+import lvAidStandMagnifier from '@/assets/images/lv-aid-stand-magnifier.jpg';
+import lvAidHandMagnifier from '@/assets/images/lv-aid-hand-magnifier.jpg';
+import lvAidDomeMagnifier from '@/assets/images/lv-aid-dome-magnifier.jpg';
 
 const TEAL = '#147E93';
 const NAVY = '#0B3B49';
@@ -9,25 +18,25 @@ const CAUSES = [
   {
     name: 'Macular Degeneration',
     description: 'Damage to the central retina reduces sharp, detailed vision used for reading and recognizing faces.',
-    image: `${import.meta.env.BASE_URL}images/lv-cause-macular.jpg`,
+    image: lvCauseMacular,
     alt: 'Vision simulation showing macular degeneration: clear peripheral vision with a dark blurry patch obscuring the center',
   },
   {
     name: 'Glaucoma',
     description: 'Elevated intraocular pressure progressively damages the optic nerve, narrowing the visual field over time.',
-    image: `${import.meta.env.BASE_URL}images/lv-cause-glaucoma.jpg`,
+    image: lvCauseGlaucoma,
     alt: 'Vision simulation showing glaucoma tunnel vision: narrow circle of clear central vision surrounded by darkness',
   },
   {
     name: 'Diabetes',
     description: 'Diabetic retinopathy causes blood vessels in the retina to leak or grow abnormally, blurring or blocking vision.',
-    image: `${import.meta.env.BASE_URL}images/lv-cause-diabetes.jpg`,
+    image: lvCauseDiabetes,
     alt: 'Vision simulation showing diabetic retinopathy: scattered dark floating spots and blotches across a normal scene',
   },
   {
     name: 'Post Stroke',
     description: 'Stroke can damage the visual cortex or optic pathways, resulting in field loss, double vision, or processing difficulties.',
-    image: `${import.meta.env.BASE_URL}images/lv-cause-stroke.jpg`,
+    image: lvCauseStroke,
     alt: 'Vision simulation showing hemianopia after stroke: left half of the visual field is completely lost while the right half remains clear',
   },
 ];
@@ -36,31 +45,31 @@ const AIDS = [
   {
     name: 'High Powered Add Glasses',
     label: 'Precision reading lenses with high magnification for near tasks',
-    image: `${import.meta.env.BASE_URL}images/lv-aid-add-glasses.jpg`,
+    image: lvAidAddGlasses,
     alt: 'High-powered add glasses with thick strong lenses designed for low vision reading',
   },
   {
     name: 'Prism Half Eyes',
     label: 'Prismatic spectacles that shift the image for easier reading',
-    image: `${import.meta.env.BASE_URL}images/lv-aid-prism-glasses.jpg`,
+    image: lvAidPrismGlasses,
     alt: 'Prism half-eye glasses with half-moon frames and prismatic lenses for low vision patients',
   },
   {
     name: 'Stand Magnifier',
     label: 'Stable desktop lens that rests on the page for hands-free use',
-    image: `${import.meta.env.BASE_URL}images/lv-aid-stand-magnifier.jpg`,
+    image: lvAidStandMagnifier,
     alt: 'Stand magnifier with a large lens mounted on adjustable legs, positioned above a printed page',
   },
   {
     name: 'Hand Magnifier',
     label: 'Portable handheld lens ideal for spotting text on the go',
-    image: `${import.meta.env.BASE_URL}images/lv-aid-hand-magnifier.jpg`,
+    image: lvAidHandMagnifier,
     alt: 'Handheld magnifying glass with a round lens and black handle for portable low vision use',
   },
   {
     name: 'Dome Magnifier',
     label: 'Curved acrylic dome that lays directly on text for wide-area clarity',
-    image: `${import.meta.env.BASE_URL}images/lv-aid-dome-magnifier.jpg`,
+    image: lvAidDomeMagnifier,
     alt: 'Clear acrylic dome magnifier resting on printed text, providing wide-area magnification',
   },
 ];

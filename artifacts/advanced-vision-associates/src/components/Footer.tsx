@@ -1,4 +1,5 @@
-const LOGO_SRC = `${import.meta.env.BASE_URL}images/logo.png`;
+import logoSrc from '@/assets/images/logo.png';
+const LOGO_SRC = logoSrc;
 
 export default function Footer() {
   return (

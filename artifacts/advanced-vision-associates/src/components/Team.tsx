@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import drSteinImg from '@/assets/images/dr-stein.jpg';
+import drMollerImg from '@/assets/images/dr-moller.jpg';
 
 const TEAM = [
   {
@@ -8,7 +10,7 @@ const TEAM = [
     role: 'Optometrist & Founder',
     bio: 'Dr. Stein has been practicing optometry for over 40 years, first in Queens and now in Inwood. A graduate of SUNY College of Optometry, she specializes in developmental optometry and binocular vision. Known for her compassionate, patient-centered care, she is an OVDRA member and FABM Fellow dedicated to helping patients of all ages achieve their visual potential.',
     // SWAP: replace with real photo when available
-    imageSrc: `${import.meta.env.BASE_URL}images/dr-stein.jpg`,
+    imageSrc: drSteinImg,
     imageAlt: 'Dr. Marcie Evans Stein, OD',
   },
   {
@@ -17,7 +19,7 @@ const TEAM = [
     role: 'Optometrist & Low Vision Specialist',
     bio: 'Dr. Moller is a fellowship-trained optometrist and graduate of SUNY College of Optometry, with a residency completed at the Northport VA Medical Center. A Certified Low Vision Specialist, she provides comprehensive primary eye care with focused expertise in binocular vision and low vision rehabilitation.',
     // SWAP: replace with real photo when available
-    imageSrc: `${import.meta.env.BASE_URL}images/dr-moller.jpg`,
+    imageSrc: drMollerImg,
     imageAlt: 'Dr. Esther Moller, OD',
   },
 ];

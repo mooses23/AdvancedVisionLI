@@ -18,7 +18,8 @@ const NAVY = '#0B3B49';
 const CORAL = '#F4614B';
 const SAND = '#EBCE9D';
 const BLOB_TEAL = '#99CBC1';
-const CHILD_IMG = `${import.meta.env.BASE_URL}images/signs-child.jpg`;
+import childImg from '@/assets/images/signs-child.jpg';
+const CHILD_IMG = childImg;
 
 /* closed organic blob — same visual language as the hero's decorations */
 const BLOB_D =

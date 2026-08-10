@@ -17,7 +17,8 @@ const SAND = '#EBCE9D';
 const GOLD = '#E9C185';
 const CIRCLE_LIGHT = '#E0EBE8'; // soft circle behind headline
 
-const GIRL = `${import.meta.env.BASE_URL}images/hero-girl.png`;
+import heroGirl from '@/assets/images/hero-girl.png';
+const GIRL = heroGirl;
 
 /* ---------- decorative primitives ---------- */
 

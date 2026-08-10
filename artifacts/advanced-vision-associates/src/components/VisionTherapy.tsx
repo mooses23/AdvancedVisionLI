@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import anaglyphBoy from '@/assets/images/vt-anaglyph-boy.jpg';
 import { WaveDecoration, BlobTeal, BlobSand } from './Blobs';
 import {
   Eye,
@@ -179,7 +180,7 @@ export default function VisionTherapy() {
             }}
           />
           <img
-            src={`${import.meta.env.BASE_URL}images/vt-anaglyph-boy.jpg`}
+            src={anaglyphBoy}
             alt="Child doing vision therapy with anaglyph glasses"
             className="w-full h-full object-cover object-top rounded-tl-3xl"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
