@@ -295,7 +295,7 @@ export default function Checklist() {
                 className="shrink-0 inline-flex items-center text-white font-semibold px-5 py-2 rounded-full text-sm shadow-sm transition-opacity hover:opacity-90"
                 style={{ backgroundColor: CORAL }}
               >
-                Schedule a Free Evaluation
+                Schedule an Evaluation
               </a>
             )}
           </div>
