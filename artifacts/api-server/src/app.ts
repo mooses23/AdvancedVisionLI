@@ -1,7 +1,7 @@
 import express, { type Express } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
-import router from "./routes";
+import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter } from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
@@ -58,5 +58,10 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api", router);
+
+// SSR HTML pages — public, crawlable, no /api prefix
+app.use(visionTherapyRouter);
+app.use(lowVisionCareRouter);
+app.use(contactPageRouter);
 
 export default app;
