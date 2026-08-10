@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="text-sm">
               148c Doughty Blvd, Inwood, NY 11096 &nbsp;·&nbsp;{' '}
               <a href="tel:718-268-3937" className="hover:text-white transition-colors">
-                (718) 268-EYES
+                (718) 268-EYES (3937)
               </a>
             </p>
             <p className="text-sm mt-1">

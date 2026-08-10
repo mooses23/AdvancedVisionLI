@@ -99,7 +99,7 @@ export default function Nav() {
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'hsl(12 62% 52%)')}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'hsl(var(--accent))')}
           >
-            (718) 268-EYES
+            (718) 268-EYES (3937)
           </a>
         </nav>
 
@@ -107,7 +107,7 @@ export default function Nav() {
         <div className="md:hidden flex items-center gap-2">
           <a
             href="tel:718-268-3937"
-            aria-label="Call (718) 268-EYES"
+            aria-label="Call (718) 268-EYES (3937)"
             className="flex items-center justify-center w-9 h-9 rounded-full text-white transition-colors flex-shrink-0"
             style={{ backgroundColor: 'hsl(var(--accent))' }}
           >
@@ -144,7 +144,7 @@ export default function Nav() {
             className="text-white text-sm font-semibold px-5 py-3 rounded-full text-center mt-2 transition-colors"
             style={{ backgroundColor: 'hsl(var(--accent))' }}
           >
-            Call (718) 268-EYES
+            Call (718) 268-EYES (3937)
           </a>
         </div>
       )}
