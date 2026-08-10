@@ -179,7 +179,7 @@ export default function VisionTherapy() {
             }}
           />
           <img
-            src="/images/vt-anaglyph-boy.jpg"
+            src={`${import.meta.env.BASE_URL}images/vt-anaglyph-boy.jpg`}
             alt="Child doing vision therapy with anaglyph glasses"
             className="w-full h-full object-cover object-top rounded-tl-3xl"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

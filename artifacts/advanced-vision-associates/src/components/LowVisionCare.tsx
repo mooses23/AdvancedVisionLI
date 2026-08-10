@@ -9,25 +9,25 @@ const CAUSES = [
   {
     name: 'Macular Degeneration',
     description: 'Damage to the central retina reduces sharp, detailed vision used for reading and recognizing faces.',
-    image: '/images/lv-cause-macular.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-cause-macular.jpg`,
     alt: 'Vision simulation showing macular degeneration: clear peripheral vision with a dark blurry patch obscuring the center',
   },
   {
     name: 'Glaucoma',
     description: 'Elevated intraocular pressure progressively damages the optic nerve, narrowing the visual field over time.',
-    image: '/images/lv-cause-glaucoma.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-cause-glaucoma.jpg`,
     alt: 'Vision simulation showing glaucoma tunnel vision: narrow circle of clear central vision surrounded by darkness',
   },
   {
     name: 'Diabetes',
     description: 'Diabetic retinopathy causes blood vessels in the retina to leak or grow abnormally, blurring or blocking vision.',
-    image: '/images/lv-cause-diabetes.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-cause-diabetes.jpg`,
     alt: 'Vision simulation showing diabetic retinopathy: scattered dark floating spots and blotches across a normal scene',
   },
   {
     name: 'Post Stroke',
     description: 'Stroke can damage the visual cortex or optic pathways, resulting in field loss, double vision, or processing difficulties.',
-    image: '/images/lv-cause-stroke.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-cause-stroke.jpg`,
     alt: 'Vision simulation showing hemianopia after stroke: left half of the visual field is completely lost while the right half remains clear',
   },
 ];
@@ -36,31 +36,31 @@ const AIDS = [
   {
     name: 'High Powered Add Glasses',
     label: 'Precision reading lenses with high magnification for near tasks',
-    image: '/images/lv-aid-add-glasses.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-aid-add-glasses.jpg`,
     alt: 'High-powered add glasses with thick strong lenses designed for low vision reading',
   },
   {
     name: 'Prism Half Eyes',
     label: 'Prismatic spectacles that shift the image for easier reading',
-    image: '/images/lv-aid-prism-glasses.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-aid-prism-glasses.jpg`,
     alt: 'Prism half-eye glasses with half-moon frames and prismatic lenses for low vision patients',
   },
   {
     name: 'Stand Magnifier',
     label: 'Stable desktop lens that rests on the page for hands-free use',
-    image: '/images/lv-aid-stand-magnifier.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-aid-stand-magnifier.jpg`,
     alt: 'Stand magnifier with a large lens mounted on adjustable legs, positioned above a printed page',
   },
   {
     name: 'Hand Magnifier',
     label: 'Portable handheld lens ideal for spotting text on the go',
-    image: '/images/lv-aid-hand-magnifier.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-aid-hand-magnifier.jpg`,
     alt: 'Handheld magnifying glass with a round lens and black handle for portable low vision use',
   },
   {
     name: 'Dome Magnifier',
     label: 'Curved acrylic dome that lays directly on text for wide-area clarity',
-    image: '/images/lv-aid-dome-magnifier.jpg',
+    image: `${import.meta.env.BASE_URL}images/lv-aid-dome-magnifier.jpg`,
     alt: 'Clear acrylic dome magnifier resting on printed text, providing wide-area magnification',
   },
 ];
