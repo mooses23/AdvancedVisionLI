@@ -198,6 +198,24 @@
   }
 }
 
+@keyframes focusCycle {
+  0%   { filter: blur(0px); }
+  25%  { filter: blur(2.5px); }
+  50%  { filter: blur(0px); }
+  75%  { filter: blur(2.5px); }
+  100% { filter: blur(0px); }
+}
+
+.focus-cycle-active {
+  animation: focusCycle 7s ease-in-out 1 forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-cycle-active {
+    animation: none;
+  }
+}
+
 @layer utilities {
   input[type='search']::-webkit-search-cancel-button {
     @apply hidden;
