@@ -15,7 +15,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "What conditions does vision therapy treat?",
-    a: "Vision therapy is effective for a wide range of functional vision disorders, including convergence insufficiency, amblyopia (lazy eye), strabismus (eye turns), accommodative dysfunction (focusing problems), oculomotor deficits (tracking problems), and visual perceptual delays. Many children diagnosed with reading difficulties, attention problems, or learning disabilities are found to have an underlying vision disorder that vision therapy can address. Our team at Advanced Vision Long Island performs a comprehensive evaluation to determine whether a functional vision problem is present.",
+    a: "Vision therapy is effective for a wide range of functional vision disorders, including <a href='/convergence-insufficiency'>convergence insufficiency</a>, <a href='/amblyopia'>amblyopia (lazy eye)</a>, <a href='/strabismus'>strabismus (eye turns)</a>, <a href='/accommodative-dysfunction'>accommodative dysfunction (focusing problems)</a>, <a href='/eye-tracking-disorder'>oculomotor deficits (tracking problems)</a>, and visual perceptual delays. Many children diagnosed with reading difficulties, attention problems, or learning disabilities are found to have an underlying vision disorder that vision therapy can address. Our team at Advanced Vision Long Island performs a comprehensive evaluation to determine whether a functional vision problem is present.",
   },
   {
     q: "What are the signs my child might need vision therapy?",
@@ -27,7 +27,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "Can adults benefit from vision therapy?",
-    a: "Yes. While vision therapy is often associated with children, adults can and do benefit — especially those with convergence insufficiency, traumatic brain injury (TBI), concussion-related visual symptoms, stroke recovery, or acquired strabismus. The brain retains neuroplasticity throughout life, meaning visual skills can be retrained at any age. Many adult patients at our practice notice meaningful improvements in reading endurance, computer comfort, and depth perception.",
+    a: "Yes. While vision therapy is often associated with children, adults can and do benefit — especially those with <a href='/convergence-insufficiency'>convergence insufficiency</a>, traumatic brain injury (TBI), concussion-related visual symptoms, stroke recovery, or acquired <a href='/strabismus'>strabismus</a>. The brain retains neuroplasticity throughout life, meaning visual skills can be retrained at any age. Many adult patients at our practice notice meaningful improvements in reading endurance, computer comfort, and depth perception.",
   },
   {
     q: "How long does a vision therapy program last?",

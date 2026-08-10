@@ -1,7 +1,7 @@
 import express, { type Express } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
-import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter } from "./routes";
+import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter } from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
@@ -65,5 +65,6 @@ app.use(lowVisionCareRouter);
 app.use(contactPageRouter);
 app.use(faqPageRouter);
 app.use(checklistPageRouter);
+app.use(conditionPagesRouter);
 
 export default app;

@@ -161,6 +161,11 @@ ${bodyHtml}
       <a href="https://AdvancedVisionLI.com/">Home</a>
       <a href="/vision-therapy">Vision Therapy</a>
       <a href="/low-vision-care">Low Vision Care</a>
+      <a href="/amblyopia">Amblyopia</a>
+      <a href="/convergence-insufficiency">Convergence Insufficiency</a>
+      <a href="/strabismus">Strabismus</a>
+      <a href="/accommodative-dysfunction">Accommodative Dysfunction</a>
+      <a href="/eye-tracking-disorder">Eye Tracking Disorder</a>
       <a href="/faq">FAQ</a>
       <a href="/contact">Contact</a>
       <span class="footer-copy">© ${new Date().getFullYear()} ${escapeHtml(PRACTICE_NAME)}. All rights reserved.</span>
