@@ -176,7 +176,7 @@ export default function Contact() {
                     href="tel:718-268-3937"
                     className="text-white font-medium text-xl hover:text-white/80 transition-colors"
                   >
-                    (718) 268-3937
+                    (718) 268-EYES
                   </a>
                 </div>
               </div>
