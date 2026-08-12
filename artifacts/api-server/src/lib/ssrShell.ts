@@ -9,13 +9,48 @@ interface SsrShellOptions {
 const NAP_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
 const NAP_PHONE = "(718) 268-3937";
 const PRACTICE_NAME = "Advanced Vision Long Island";
+const SITE_URL = "https://AdvancedVisionLI.com";
+
+// Prepended to every SSR page — signals entity identity to Google's Knowledge Graph.
+const GLOBAL_SCHEMAS: object[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalOrganization", "LocalBusiness"],
+    "@id": `${SITE_URL}/#practice`,
+    name: PRACTICE_NAME,
+    url: `${SITE_URL}/`,
+    telephone: "+17182683937",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "148c Doughty Blvd",
+      addressLocality: "Inwood",
+      addressRegion: "NY",
+      postalCode: "11096",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 40.6218,
+      longitude: -73.7479,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: `${SITE_URL}/`,
+    name: PRACTICE_NAME,
+    publisher: { "@id": `${SITE_URL}/#practice` },
+  },
+];
 
 function schemaTag(obj: object): string {
   return `<script type="application/ld+json">${JSON.stringify(obj, null, 2)}</script>`;
 }
 
 export function ssrShell({ title, description, canonical, schemaJsons = [], bodyHtml }: SsrShellOptions): string {
-  const schemaBlock = schemaJsons.map(schemaTag).join("\n");
+  const allSchemas = [...GLOBAL_SCHEMAS, ...schemaJsons];
+  const schemaBlock = allSchemas.map(schemaTag).join("\n");
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +63,11 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonical)}" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="${escapeHtml(PRACTICE_NAME)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
