@@ -25,6 +25,13 @@ function conditionCtaBox(): string {
   <p>Schedule a comprehensive binocular vision evaluation at our Inwood, NY practice. We'll identify whether vision therapy is right for you or your child and walk you through every step of the process.</p>
   <a href="/contact" class="cta-btn">Schedule a Consultation</a>
   <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-3937</a></span>
+</div>
+<div style="margin-top:1.5rem; text-align:center;">
+  <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">Meet our care team:</p>
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:0.75rem;">
+    <a href="/dr-marcie-stein" class="related-link">Dr. Marcie Evans Stein — Vision Therapy</a>
+    <a href="/dr-esther-moller" class="related-link">Dr. Esther Moller — Low Vision Care</a>
+  </div>
 </div>`;
 }
 

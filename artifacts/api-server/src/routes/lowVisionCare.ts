@@ -161,8 +161,11 @@ const bodyHtml = `
   <div class="prose">
     <p>
       Low vision is a significant visual impairment that cannot be fully corrected by conventional means.
-      At <strong>Advanced Vision Long Island</strong>, Dr. Marcie Evans Stein and Dr. Esther Moller conduct
-      thorough, task-oriented low vision consultations designed not just to measure what you can see —
+      At <strong>Advanced Vision Long Island</strong>, low vision care is led by
+      <a href="/dr-esther-moller"><strong>Dr. Esther Moller, OD, FAAO</strong></a> —
+      a Certified Low Vision Specialist and Fellow of the American Academy of Optometry who completed
+      her residency at the Northport VA Medical Center. Dr. Moller conducts thorough, task-oriented
+      low vision consultations designed not just to measure what you can see —
       but to help you <em>do</em> the things that vision loss has made difficult.
     </p>
     <p>

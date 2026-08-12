@@ -25,10 +25,11 @@ const SCHEMA_MEDICAL_WEB_PAGE = {
 const SCHEMA_PHYSICIAN = {
   "@context": "https://schema.org",
   "@type": "Physician",
+  "@id": "https://AdvancedVisionLI.com/#dr-moller",
   "name": "Dr. Esther Moller, OD FAAO",
   "description":
     "Certified Low Vision Specialist and Fellow of the American Academy of Optometry. Completed her low vision residency at the Northport VA Medical Center. Dr. Moller prescribes optical aids and adaptive strategies to help patients with macular degeneration, glaucoma, diabetic retinopathy, and post-stroke vision loss maintain independence.",
-  "medicalSpecialty": "Optometry",
+  "medicalSpecialty": ["Low Vision Rehabilitation", "Binocular Vision", "Comprehensive Optometry"],
   "url": "https://AdvancedVisionLI.com/dr-esther-moller",
   "worksFor": {
     "@type": "MedicalOrganization",

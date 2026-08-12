@@ -249,7 +249,11 @@ ${bodyHtml}
       <strong>${escapeHtml(PRACTICE_NAME)}</strong>
       <p>${escapeHtml(NAP_ADDRESS)}</p>
       <p><a href="tel:718-268-3937">${escapeHtml(NAP_PHONE)}</a></p>
-      <p>Dr. Marcie Evans Stein, OD FABM OVDRA &nbsp;·&nbsp; Dr. Esther Moller, OD FAAO</p>
+      <p>
+        <a href="/dr-marcie-stein" style="color:rgba(255,255,255,0.75);">Dr. Marcie Evans Stein, OD FABM OVDRA</a>
+        &nbsp;·&nbsp;
+        <a href="/dr-esther-moller" style="color:rgba(255,255,255,0.75);">Dr. Esther Moller, OD FAAO</a>
+      </p>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
       <a href="https://AdvancedVisionLI.com/">Home</a>

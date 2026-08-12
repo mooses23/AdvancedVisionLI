@@ -12,6 +12,7 @@ const TEAM = [
     // SWAP: replace with real photo when available
     imageSrc: drSteinImg,
     imageAlt: 'Dr. Marcie Evans Stein, OD',
+    profileHref: '/dr-marcie-stein',
   },
   {
     name: 'Dr. Esther Moller',
@@ -21,6 +22,7 @@ const TEAM = [
     // SWAP: replace with real photo when available
     imageSrc: drMollerImg,
     imageAlt: 'Dr. Esther Moller, OD',
+    profileHref: '/dr-esther-moller',
   },
 ];
 
@@ -73,7 +75,13 @@ export default function Team() {
                       {member.credentials}
                     </p>
                     <h3 className="font-serif text-base md:text-lg text-primary font-medium leading-snug mb-0.5">
-                      {member.name}
+                      <a
+                        href={member.profileHref}
+                        className="hover:underline"
+                        style={{ color: 'inherit', textDecoration: 'none' }}
+                      >
+                        {member.name}
+                      </a>
                     </h3>
                     <p
                       className="text-xs font-semibold"
@@ -94,14 +102,23 @@ export default function Team() {
                   >
                     {member.bio}
                   </p>
-                  <button
-                    onClick={() => toggle(index)}
-                    className="mt-1 text-[10px] md:text-xs font-semibold min-h-[28px] px-0 py-1"
-                    style={{ color: '#F4614B' }}
-                    aria-expanded={isExpanded}
-                  >
-                    {isExpanded ? 'Collapse' : 'Read more'}
-                  </button>
+                  <div className="flex items-center gap-3 mt-1">
+                    <button
+                      onClick={() => toggle(index)}
+                      className="text-[10px] md:text-xs font-semibold min-h-[28px] px-0 py-1"
+                      style={{ color: '#F4614B' }}
+                      aria-expanded={isExpanded}
+                    >
+                      {isExpanded ? 'Collapse' : 'Read more'}
+                    </button>
+                    <a
+                      href={member.profileHref}
+                      className="text-[10px] md:text-xs font-semibold min-h-[28px] py-1 hover:underline"
+                      style={{ color: '#147E93' }}
+                    >
+                      View full profile →
+                    </a>
+                  </div>
                 </div>
               </div>
             );

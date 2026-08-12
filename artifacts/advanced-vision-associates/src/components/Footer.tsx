@@ -30,7 +30,13 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-sm mt-1">
-              Dr. Marcie Evans Stein, OD FABM OVDRA &nbsp;·&nbsp; Dr. Esther Moller, OD FAAO
+              <a href="/dr-marcie-stein" className="hover:text-white transition-colors">
+                Dr. Marcie Evans Stein, OD FABM OVDRA
+              </a>
+              {' '}&nbsp;·&nbsp;{' '}
+              <a href="/dr-esther-moller" className="hover:text-white transition-colors">
+                Dr. Esther Moller, OD FAAO
+              </a>
             </p>
           </div>
 

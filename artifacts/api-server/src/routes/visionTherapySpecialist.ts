@@ -25,10 +25,11 @@ const SCHEMA_MEDICAL_WEB_PAGE = {
 const SCHEMA_PHYSICIAN = {
   "@context": "https://schema.org",
   "@type": "Physician",
+  "@id": "https://AdvancedVisionLI.com/#dr-stein",
   "name": "Dr. Marcie Evans Stein, OD FABM OVDRA",
   "description":
     "Fellowship-trained developmental optometrist and OVDRA-recognized vision therapy specialist with over 40 years of experience treating binocular vision disorders, convergence insufficiency, amblyopia, and learning-related vision problems in children and adults.",
-  "medicalSpecialty": "Optometry",
+  "medicalSpecialty": ["Developmental Optometry", "Binocular Vision", "Vision Therapy", "Pediatric Optometry"],
   "url": "https://AdvancedVisionLI.com/dr-marcie-stein",
   "worksFor": {
     "@type": "MedicalOrganization",
@@ -149,6 +150,18 @@ const bodyHtml = `
     <p>
       We see patients from Inwood, Long Island, Queens, Nassau County, and the broader New York
       metropolitan area.
+    </p>
+  </div>
+
+  <h2 class="section-title">Our Full Care Team</h2>
+  <div class="prose">
+    <p>
+      Advanced Vision Long Island is a two-doctor practice. Alongside Dr. Stein's vision therapy
+      specialty, <a href="/dr-esther-moller"><strong>Dr. Esther Moller, OD, FAAO</strong></a> —
+      a Certified Low Vision Specialist with a residency at the Northport VA Medical Center —
+      provides comprehensive low vision rehabilitation for patients with macular degeneration,
+      glaucoma, diabetic retinopathy, and post-stroke vision loss. Whether you are seeking vision
+      therapy or low vision care, both specialties are available at our Inwood, NY office.
     </p>
   </div>
 
