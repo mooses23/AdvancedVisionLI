@@ -21,6 +21,7 @@ const SSR_URLS = [
   "/dr-esther-moller",
   "/vision-therapy-specialist",
   "/low-vision-specialist",
+  "/vision-therapy-insurance",
 ];
 
 router.get("/sitemap.xml", (_req, res) => {

@@ -11,6 +11,7 @@ import doctorPagesRouter from "./doctorPages";
 import sitemapRouter from "./sitemapRoute";
 import visionTherapySpecialistRouter from "./visionTherapySpecialist";
 import lowVisionSpecialistRouter from "./lowVisionSpecialist";
+import insurancePageRouter from "./insurancePage";
 
 const router: IRouter = Router();
 
@@ -20,4 +21,4 @@ router.use(contactRouter);
 export default router;
 
 // SSR public HTML pages — registered directly on app, not under /api
-export { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter, doctorPagesRouter, sitemapRouter, visionTherapySpecialistRouter, lowVisionSpecialistRouter };
+export { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter, doctorPagesRouter, sitemapRouter, visionTherapySpecialistRouter, lowVisionSpecialistRouter, insurancePageRouter };
