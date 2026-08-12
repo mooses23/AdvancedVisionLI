@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL } from "../lib/ssrShell";
 
 const router = Router();
 
-const PRACTICE_NAME = "Advanced Vision Long Island";
-const PRACTICE_PHONE = "(718) 268-3937";
-const PRACTICE_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
+// NAP constants imported from ssrShell — use NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME
+const PRACTICE_ADDRESS = NAP_ADDRESS;
+const PRACTICE_PHONE = NAP_PHONE;
 
 const WARNING_SIGNS = [
   {
@@ -222,6 +222,11 @@ router.get("/vision-checklist", (_req, res) => {
     canonical: "https://AdvancedVisionLI.com/vision-checklist",
     schemaJsons: [webPageSchema],
     bodyHtml: buildChecklistBody(),
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy` },
+      { name: "Symptom Checklist", url: `${SITE_URL}/vision-checklist` },
+    ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.send(html);

@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell } from "../lib/ssrShell";
+import { ssrShell, SITE_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -123,6 +123,10 @@ router.get("/contact", (_req, res) => {
     canonical: CANONICAL,
     schemaJsons: [SCHEMA_CONTACT_PAGE],
     bodyHtml,
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Contact", url: `${SITE_URL}/contact` },
+    ],
   });
 
   res

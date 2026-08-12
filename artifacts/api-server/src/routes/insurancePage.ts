@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -218,6 +218,10 @@ router.get("/vision-therapy-insurance", (_req, res) => {
     canonical: "https://AdvancedVisionLI.com/vision-therapy-insurance",
     schemaJsons: [faqSchema, pageSchema],
     bodyHtml: buildBody(),
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Vision Therapy Insurance", url: `${SITE_URL}/vision-therapy-insurance` },
+    ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "public, max-age=86400");

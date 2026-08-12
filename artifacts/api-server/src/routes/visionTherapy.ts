@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell } from "../lib/ssrShell";
+import { ssrShell, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -27,20 +27,7 @@ const SCHEMA_SERVICE = {
   "serviceType": "Vision Therapy",
   "name": "Optometric Vision Therapy",
   "description": "A personalized program of exercises and specialized lenses designed to develop, improve, or enhance a patient's visual skills for school, work, and daily life.",
-  "provider": {
-    "@type": "MedicalOrganization",
-    "name": "Advanced Vision Long Island",
-    "url": "https://AdvancedVisionLI.com",
-    "telephone": "+17182683937",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "148c Doughty Blvd",
-      "addressLocality": "Inwood",
-      "addressRegion": "NY",
-      "postalCode": "11096",
-      "addressCountry": "US"
-    }
-  },
+  "provider": { "@id": `${SITE_URL}/#organization` },
   "areaServed": [
     { "@type": "City", "name": "Inwood, NY" },
     { "@type": "City", "name": "Long Island, NY" },
@@ -171,6 +158,10 @@ router.get("/vision-therapy", (_req, res) => {
     canonical: CANONICAL,
     schemaJsons: [SCHEMA_MEDICAL_WEB_PAGE, SCHEMA_SERVICE],
     bodyHtml,
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy` },
+    ],
   });
 
   res

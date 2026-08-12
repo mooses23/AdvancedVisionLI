@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell } from "../lib/ssrShell";
+import { ssrShell, SITE_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -172,6 +172,11 @@ router.get("/vision-therapy-specialist", (_req, res) => {
     canonical: CANONICAL,
     schemaJsons: [SCHEMA_MEDICAL_WEB_PAGE, SCHEMA_PHYSICIAN],
     bodyHtml,
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy` },
+      { name: "Vision Therapy Specialist", url: `${SITE_URL}/vision-therapy-specialist` },
+    ],
   });
 
   res

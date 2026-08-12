@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -172,6 +172,10 @@ router.get("/dr-marcie-stein", (_req, res) => {
     canonical: "https://AdvancedVisionLI.com/dr-marcie-stein",
     schemaJsons: [steinSchema, steinPageSchema],
     bodyHtml: buildSteinBody(),
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Dr. Marcie Evans Stein", url: `${SITE_URL}/dr-marcie-stein` },
+    ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "public, max-age=86400");
@@ -314,6 +318,10 @@ router.get("/dr-esther-moller", (_req, res) => {
     canonical: "https://AdvancedVisionLI.com/dr-esther-moller",
     schemaJsons: [mollerSchema, mollerPageSchema],
     bodyHtml: buildMollerBody(),
+    breadcrumbs: [
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Dr. Esther Moller", url: `${SITE_URL}/dr-esther-moller` },
+    ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "public, max-age=86400");

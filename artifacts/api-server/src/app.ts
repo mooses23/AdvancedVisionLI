@@ -1,4 +1,5 @@
 import express, { type Express } from "express";
+import { ssrShell, SITE_URL } from "./lib/ssrShell";
 import cors from "cors";
 import pinoHttp from "pino-http";
 import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter, doctorPagesRouter, sitemapRouter, visionTherapySpecialistRouter, lowVisionSpecialistRouter, insurancePageRouter, serviceAreaPagesRouter } from "./routes";
@@ -72,5 +73,23 @@ app.use(visionTherapySpecialistRouter);
 app.use(lowVisionSpecialistRouter);
 app.use(insurancePageRouter);
 app.use(serviceAreaPagesRouter);
+
+// 404 catch-all — must be registered AFTER all routes
+app.use((_req, res) => {
+  const html = ssrShell({
+    title: "Page Not Found — Advanced Vision Long Island",
+    description:
+      "The page you requested could not be found. Return to the Advanced Vision Long Island homepage.",
+    canonical: `${SITE_URL}/`,
+    bodyHtml: `
+<div class="page-content" style="text-align:center;padding:5rem 1.5rem;">
+  <p class="eyebrow">404 · Not Found</p>
+  <h1 class="page-title">Page not found</h1>
+  <p class="lead">Sorry, we couldn't find the page you were looking for. It may have moved or the link may be incorrect.</p>
+  <a href="https://AdvancedVisionLI.com/" class="cta-btn" style="display:inline-block;margin-top:1rem;">Return to Homepage</a>
+</div>`,
+  });
+  res.setHeader("Content-Type", "text/html; charset=utf-8").status(404).send(html);
+});
 
 export default app;

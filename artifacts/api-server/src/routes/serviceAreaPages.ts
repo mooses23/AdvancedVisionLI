@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -356,6 +356,10 @@ for (const area of AREAS) {
       canonical: `https://AdvancedVisionLI.com/vision-therapy-${area.slug}`,
       schemaJsons: [buildAreaSchema(area), buildFaqSchema(area)],
       bodyHtml: buildAreaBody(area),
+      breadcrumbs: [
+        { name: "Home", url: `${SITE_URL}/` },
+        { name: `Vision Therapy near ${area.name}`, url: `${SITE_URL}/vision-therapy-${area.slug}` },
+      ],
     });
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "public, max-age=86400");
