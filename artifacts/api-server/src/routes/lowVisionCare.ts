@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/low-vision-care";
+const CANONICAL = "https://AdvancedVisionLI.com/low-vision-care/";
 
 const FAQ_ITEMS = [
   {
@@ -162,7 +162,7 @@ const bodyHtml = `
     <p>
       Low vision is a significant visual impairment that cannot be fully corrected by conventional means.
       At <strong>Advanced Vision Long Island</strong>, low vision care is led by
-      <a href="/dr-esther-moller"><strong>Dr. Esther Moller, OD, FAAO</strong></a> —
+      <a href="/dr-esther-moller/"><strong>Dr. Esther Moller, OD, FAAO</strong></a> —
       a Certified Low Vision Specialist and Fellow of the American Academy of Optometry who completed
       her residency at the Northport VA Medical Center. Dr. Moller conducts thorough, task-oriented
       low vision consultations designed not just to measure what you can see —
@@ -245,7 +245,7 @@ router.get("/low-vision-care", (_req, res) => {
     bodyHtml,
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Low Vision Care", url: `${SITE_URL}/low-vision-care` },
+      { name: "Low Vision Care", url: `${SITE_URL}/low-vision-care/` },
     ],
   });
 

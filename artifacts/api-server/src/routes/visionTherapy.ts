@@ -3,7 +3,7 @@ import { ssrShell, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL } from "../li
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/vision-therapy";
+const CANONICAL = "https://AdvancedVisionLI.com/vision-therapy/";
 
 const SCHEMA_MEDICAL_WEB_PAGE = {
   "@context": "https://schema.org",
@@ -160,7 +160,7 @@ router.get("/vision-therapy", (_req, res) => {
     bodyHtml,
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy` },
+      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy/` },
     ],
   });
 

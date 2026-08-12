@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/contact";
+const CANONICAL = "https://AdvancedVisionLI.com/contact/";
 
 const SCHEMA_CONTACT_PAGE = {
   "@context": "https://schema.org",
@@ -108,8 +108,8 @@ const bodyHtml = `
   <h2 class="section-title" style="margin-top:2.5rem;">Our Services</h2>
   <div class="prose">
     <ul>
-      <li><a href="/vision-therapy"><strong>Vision Therapy</strong></a> — treatment for binocular vision disorders, convergence insufficiency, amblyopia, and learning-related vision problems</li>
-      <li><a href="/low-vision-care"><strong>Low Vision Care</strong></a> — consultation and optical aids for macular degeneration, glaucoma, diabetic retinopathy, and post-stroke vision loss</li>
+      <li><a href="/vision-therapy/"><strong>Vision Therapy</strong></a> — treatment for binocular vision disorders, convergence insufficiency, amblyopia, and learning-related vision problems</li>
+      <li><a href="/low-vision-care/"><strong>Low Vision Care</strong></a> — consultation and optical aids for macular degeneration, glaucoma, diabetic retinopathy, and post-stroke vision loss</li>
     </ul>
   </div>
 </div>
@@ -125,7 +125,7 @@ router.get("/contact", (_req, res) => {
     bodyHtml,
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Contact", url: `${SITE_URL}/contact` },
+      { name: "Contact", url: `${SITE_URL}/contact/` },
     ],
   });
 

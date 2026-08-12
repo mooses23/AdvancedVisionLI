@@ -12,7 +12,7 @@ const TEAM = [
     // SWAP: replace with real photo when available
     imageSrc: drSteinImg,
     imageAlt: 'Dr. Marcie Evans Stein, OD',
-    profileHref: '/dr-marcie-stein',
+    profileHref: '/dr-marcie-stein/',
   },
   {
     name: 'Dr. Esther Moller',
@@ -22,7 +22,7 @@ const TEAM = [
     // SWAP: replace with real photo when available
     imageSrc: drMollerImg,
     imageAlt: 'Dr. Esther Moller, OD',
-    profileHref: '/dr-esther-moller',
+    profileHref: '/dr-esther-moller/',
   },
 ];
 

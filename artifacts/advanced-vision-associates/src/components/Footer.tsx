@@ -30,11 +30,11 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-sm mt-1">
-              <a href="/dr-marcie-stein" className="hover:text-white transition-colors">
+              <a href="/dr-marcie-stein/" className="hover:text-white transition-colors">
                 Dr. Marcie Evans Stein, OD FABM OVDRA
               </a>
               {' '}&nbsp;·&nbsp;{' '}
-              <a href="/dr-esther-moller" className="hover:text-white transition-colors">
+              <a href="/dr-esther-moller/" className="hover:text-white transition-colors">
                 Dr. Esther Moller, OD FAAO
               </a>
             </p>
@@ -42,10 +42,10 @@ export default function Footer() {
 
           <div className="flex flex-col items-start md:items-end gap-1 text-xs">
             <nav className="flex gap-3 mb-1" aria-label="Footer navigation">
-              <a href="/vision-therapy" className="hover:text-white transition-colors">Vision Therapy</a>
-              <a href="/low-vision-care" className="hover:text-white transition-colors">Low Vision Care</a>
-              <a href="/faq" className="hover:text-white transition-colors">FAQ</a>
-              <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+              <a href="/vision-therapy/" className="hover:text-white transition-colors">Vision Therapy</a>
+              <a href="/low-vision-care/" className="hover:text-white transition-colors">Low Vision Care</a>
+              <a href="/faq/" className="hover:text-white transition-colors">FAQ</a>
+              <a href="/contact/" className="hover:text-white transition-colors">Contact</a>
             </nav>
             <p>© {new Date().getFullYear()} Advanced Vision Long Island. All rights reserved.</p>
             <p>

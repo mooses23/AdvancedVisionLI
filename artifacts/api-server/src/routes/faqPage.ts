@@ -15,7 +15,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "What conditions does vision therapy treat?",
-    a: "Vision therapy is effective for a wide range of functional vision disorders, including <a href='/convergence-insufficiency'>convergence insufficiency</a>, <a href='/amblyopia'>amblyopia (lazy eye)</a>, <a href='/strabismus'>strabismus (eye turns)</a>, <a href='/accommodative-dysfunction'>accommodative dysfunction (focusing problems)</a>, <a href='/eye-tracking-disorder'>oculomotor deficits (tracking problems)</a>, and visual perceptual delays. Many children diagnosed with reading difficulties, attention problems, or learning disabilities are found to have an underlying vision disorder that vision therapy can address. Our team at Advanced Vision Long Island performs a comprehensive evaluation to determine whether a functional vision problem is present.",
+    a: "Vision therapy is effective for a wide range of functional vision disorders, including <a href='/convergence-insufficiency/'>convergence insufficiency</a>, <a href='/amblyopia/'>amblyopia (lazy eye)</a>, <a href='/strabismus/'>strabismus (eye turns)</a>, <a href='/accommodative-dysfunction/'>accommodative dysfunction (focusing problems)</a>, <a href='/eye-tracking-disorder/'>oculomotor deficits (tracking problems)</a>, and visual perceptual delays. Many children diagnosed with reading difficulties, attention problems, or learning disabilities are found to have an underlying vision disorder that vision therapy can address. Our team at Advanced Vision Long Island performs a comprehensive evaluation to determine whether a functional vision problem is present.",
   },
   {
     q: "What are the signs my child might need vision therapy?",
@@ -27,7 +27,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "Can adults benefit from vision therapy?",
-    a: "Yes. While vision therapy is often associated with children, adults can and do benefit — especially those with <a href='/convergence-insufficiency'>convergence insufficiency</a>, traumatic brain injury (TBI), concussion-related visual symptoms, stroke recovery, or acquired <a href='/strabismus'>strabismus</a>. The brain retains neuroplasticity throughout life, meaning visual skills can be retrained at any age. Many adult patients at our practice notice meaningful improvements in reading endurance, computer comfort, and depth perception.",
+    a: "Yes. While vision therapy is often associated with children, adults can and do benefit — especially those with <a href='/convergence-insufficiency/'>convergence insufficiency</a>, traumatic brain injury (TBI), concussion-related visual symptoms, stroke recovery, or acquired <a href='/strabismus/'>strabismus</a>. The brain retains neuroplasticity throughout life, meaning visual skills can be retrained at any age. Many adult patients at our practice notice meaningful improvements in reading endurance, computer comfort, and depth perception.",
   },
   {
     q: "How long does a vision therapy program last?",
@@ -35,7 +35,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "What happens at a first consultation?",
-    a: "Your first visit includes a detailed history interview and a comprehensive binocular vision assessment. The doctor examines how the eyes team together, how efficiently they focus and move, and how visual information is processed. Based on the findings, you receive a clear diagnosis and a personalized treatment plan. We walk you through every step — no ambiguity about what we found or why we're recommending it. You can <a href='/contact'>schedule your consultation online</a> or call us at <a href='tel:718-268-3937'>(718) 268-3937</a>.",
+    a: "Your first visit includes a detailed history interview and a comprehensive binocular vision assessment. The doctor examines how the eyes team together, how efficiently they focus and move, and how visual information is processed. Based on the findings, you receive a clear diagnosis and a personalized treatment plan. We walk you through every step — no ambiguity about what we found or why we're recommending it. You can <a href='/contact/'>schedule your consultation online</a> or call us at <a href='tel:718-268-3937'>(718) 268-3937</a>.",
   },
   {
     q: "Is vision therapy covered by insurance?",
@@ -43,11 +43,11 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "What is low vision and who qualifies for low vision care?",
-    a: "Low vision is a significant visual impairment that cannot be fully corrected with standard glasses, contact lenses, medication, or surgery. It often results from conditions such as macular degeneration, glaucoma, diabetic retinopathy, or retinitis pigmentosa. A person does not need to be legally blind to benefit from low vision care. Our <a href='/low-vision-care'>Low Vision Care</a> program evaluates your remaining functional vision and prescribes specialized optical devices — magnifiers, telescopes, filters, and electronic aids — to help you perform daily activities more independently.",
+    a: "Low vision is a significant visual impairment that cannot be fully corrected with standard glasses, contact lenses, medication, or surgery. It often results from conditions such as macular degeneration, glaucoma, diabetic retinopathy, or retinitis pigmentosa. A person does not need to be legally blind to benefit from low vision care. Our <a href='/low-vision-care/'>Low Vision Care</a> program evaluates your remaining functional vision and prescribes specialized optical devices — magnifiers, telescopes, filters, and electronic aids — to help you perform daily activities more independently.",
   },
   {
     q: "Is low vision care covered by NYS Commission for the Blind (CBVH)?",
-    a: "Yes, in many cases. The New York State Commission for the Blind (CBVH) provides vocational and rehabilitation services for individuals who are legally blind, including funding for low vision evaluations and devices. Advanced Vision Long Island works with CBVH referrals. If you or a family member has been diagnosed with a condition that may qualify, contact CBVH at (866) 871-3000 to inquire about eligibility and then <a href='/contact'>contact our office</a> to coordinate your evaluation.",
+    a: "Yes, in many cases. The New York State Commission for the Blind (CBVH) provides vocational and rehabilitation services for individuals who are legally blind, including funding for low vision evaluations and devices. Advanced Vision Long Island works with CBVH referrals. If you or a family member has been diagnosed with a condition that may qualify, contact CBVH at (866) 871-3000 to inquire about eligibility and then <a href='/contact/'>contact our office</a> to coordinate your evaluation.",
   },
   {
     q: "Does vision therapy help with concussion or traumatic brain injury?",
@@ -81,7 +81,7 @@ function buildFaqBody(): string {
 
   <div class="cta-box" style="margin-top:0; margin-bottom:2.5rem; padding:1.75rem 2rem;">
     <p style="margin-bottom:0.5rem; font-size:1rem;">Ready to find out if vision therapy is right for you or your child?</p>
-    <a href="/contact" class="cta-btn">Schedule a Consultation</a>
+    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 
@@ -96,13 +96,13 @@ function buildFaqBody(): string {
   </section>
 
   <p style="margin-top:1.5rem; font-size:0.85rem; color:var(--text-muted);">
-    More information: <a href="/vision-therapy">Vision Therapy</a> &nbsp;·&nbsp; <a href="/low-vision-care">Low Vision Care</a>
+    More information: <a href="/vision-therapy/">Vision Therapy</a> &nbsp;·&nbsp; <a href="/low-vision-care/">Low Vision Care</a>
   </p>
 
   <div class="cta-box">
     <h2>Still have questions?</h2>
     <p>Our team is happy to answer by phone — or you can book a no-pressure consultation and we'll walk through everything in person.</p>
-    <a href="/contact" class="cta-btn">Schedule a Consultation</a>
+    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">Call us: <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 </div>
@@ -179,7 +179,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 2,
       name: "FAQ",
-      item: "https://AdvancedVisionLI.com/faq",
+      item: "https://AdvancedVisionLI.com/faq/",
     },
   ],
 };
@@ -189,7 +189,7 @@ router.get("/faq", (_req, res) => {
     title: "Vision Therapy FAQs | Advanced Vision Long Island",
     description:
       "Answers to the most common questions about vision therapy, low vision care, insurance coverage, treatment length, and what to expect at your first consultation — Advanced Vision Long Island, Inwood NY.",
-    canonical: "https://AdvancedVisionLI.com/faq",
+    canonical: "https://AdvancedVisionLI.com/faq/",
     schemaJsons: [faqSchema, breadcrumbSchema],
     bodyHtml: buildFaqBody(),
   });
@@ -199,7 +199,7 @@ router.get("/faq", (_req, res) => {
 
 // /resources → /faq (301 redirect)
 router.get("/resources", (_req, res) => {
-  res.redirect(301, "/faq");
+  res.redirect(301, "/faq/");
 });
 
 export default router;

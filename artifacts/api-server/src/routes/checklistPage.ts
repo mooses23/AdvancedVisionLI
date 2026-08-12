@@ -107,13 +107,13 @@ function buildChecklistBody(): string {
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Save as PDF / Print
     </a>
-    <a href="/contact" class="cta-btn">Schedule an Evaluation</a>
+    <a href="/contact/" class="cta-btn">Schedule an Evaluation</a>
   </div>
 
   <div class="cta-box no-print">
     <h2>Recognise several of these signs?</h2>
     <p>A comprehensive visual perceptual evaluation can determine whether a functional vision problem is present — and whether vision therapy can help.</p>
-    <a href="/contact" class="cta-btn">Schedule a Consultation</a>
+    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">Call <a href="tel:718-268-3937">${escapeHtml(PRACTICE_PHONE)}</a></span>
   </div>
 
@@ -198,7 +198,7 @@ const webPageSchema = {
   name: "10 Signs Your Child May Have a Vision Problem — Patient Checklist",
   description:
     "A printable checklist of the 10 key warning signs of a functional vision problem in children, from Advanced Vision Long Island.",
-  url: "https://AdvancedVisionLI.com/vision-checklist",
+  url: "https://AdvancedVisionLI.com/vision-checklist/",
   specialty: "Vision Therapy",
   publisher: {
     "@type": "MedicalOrganization",
@@ -219,13 +219,13 @@ router.get("/vision-checklist", (_req, res) => {
     title: "Vision Problem Warning Signs — Printable Checklist | Advanced Vision Long Island",
     description:
       "10 key warning signs of a functional vision problem in children. Print this checklist and bring it to your appointment at Advanced Vision Long Island, Inwood NY.",
-    canonical: "https://AdvancedVisionLI.com/vision-checklist",
+    canonical: "https://AdvancedVisionLI.com/vision-checklist/",
     schemaJsons: [webPageSchema],
     bodyHtml: buildChecklistBody(),
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy` },
-      { name: "Symptom Checklist", url: `${SITE_URL}/vision-checklist` },
+      { name: "Vision Therapy", url: `${SITE_URL}/vision-therapy/` },
+      { name: "Symptom Checklist", url: `${SITE_URL}/vision-checklist/` },
     ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");

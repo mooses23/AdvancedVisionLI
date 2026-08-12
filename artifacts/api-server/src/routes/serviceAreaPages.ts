@@ -213,7 +213,7 @@ const AREAS: ServiceArea[] = [
 ];
 
 // Export slugs so sitemapRoute can import them — single source of truth.
-export const SERVICE_AREA_SLUGS: string[] = AREAS.map((a) => `/vision-therapy-${a.slug}`);
+export const SERVICE_AREA_SLUGS: string[] = AREAS.map((a) => `/vision-therapy-${a.slug}/`);
 
 // ---------------------------------------------------------------------------
 // Shared styles (injected once per page, not globally)
@@ -248,7 +248,7 @@ function buildAreaSchema(area: ServiceArea): object {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: area.titleTag,
-    url: `https://AdvancedVisionLI.com/vision-therapy-${area.slug}`,
+    url: `https://AdvancedVisionLI.com/vision-therapy-${area.slug}/`,
     about: { "@type": "MedicalTherapy", name: "Vision Therapy" },
     audience: { "@type": "Patient" },
     provider: {
@@ -353,12 +353,12 @@ for (const area of AREAS) {
     const html = ssrShell({
       title: area.titleTag,
       description: area.metaDesc,
-      canonical: `https://AdvancedVisionLI.com/vision-therapy-${area.slug}`,
+      canonical: `https://AdvancedVisionLI.com/vision-therapy-${area.slug}/`,
       schemaJsons: [buildAreaSchema(area), buildFaqSchema(area)],
       bodyHtml: buildAreaBody(area),
       breadcrumbs: [
         { name: "Home", url: `${SITE_URL}/` },
-        { name: `Vision Therapy near ${area.name}`, url: `${SITE_URL}/vision-therapy-${area.slug}` },
+        { name: `Vision Therapy near ${area.name}`, url: `${SITE_URL}/vision-therapy-${area.slug}/` },
       ],
     });
     res.setHeader("Content-Type", "text/html; charset=utf-8");

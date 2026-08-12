@@ -233,7 +233,7 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <ul class="nav-links">
     <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#vision-therapy">Vision Therapy</a></li>
     <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#low-vision">Low Vision</a></li>
-    <li><a href="/contact" class="nav-cta">Schedule</a></li>
+    <li><a href="/contact/" class="nav-cta">Schedule</a></li>
   </ul>
 </nav>
 
@@ -250,22 +250,22 @@ ${bodyHtml}
       <p>${escapeHtml(NAP_ADDRESS)}</p>
       <p><a href="tel:718-268-3937">${escapeHtml(NAP_PHONE)}</a></p>
       <p>
-        <a href="/dr-marcie-stein" style="color:rgba(255,255,255,0.75);">Dr. Marcie Evans Stein, OD FABM OVDRA</a>
+        <a href="/dr-marcie-stein/" style="color:rgba(255,255,255,0.75);">Dr. Marcie Evans Stein, OD FABM OVDRA</a>
         &nbsp;·&nbsp;
-        <a href="/dr-esther-moller" style="color:rgba(255,255,255,0.75);">Dr. Esther Moller, OD FAAO</a>
+        <a href="/dr-esther-moller/" style="color:rgba(255,255,255,0.75);">Dr. Esther Moller, OD FAAO</a>
       </p>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
       <a href="https://AdvancedVisionLI.com/">Home</a>
-      <a href="/vision-therapy">Vision Therapy</a>
-      <a href="/low-vision-care">Low Vision Care</a>
-      <a href="/amblyopia">Amblyopia</a>
-      <a href="/convergence-insufficiency">Convergence Insufficiency</a>
-      <a href="/strabismus">Strabismus</a>
-      <a href="/accommodative-dysfunction">Accommodative Dysfunction</a>
-      <a href="/eye-tracking-disorder">Eye Tracking Disorder</a>
-      <a href="/faq">FAQ</a>
-      <a href="/contact">Contact</a>
+      <a href="/vision-therapy/">Vision Therapy</a>
+      <a href="/low-vision-care/">Low Vision Care</a>
+      <a href="/amblyopia/">Amblyopia</a>
+      <a href="/convergence-insufficiency/">Convergence Insufficiency</a>
+      <a href="/strabismus/">Strabismus</a>
+      <a href="/accommodative-dysfunction/">Accommodative Dysfunction</a>
+      <a href="/eye-tracking-disorder/">Eye Tracking Disorder</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
       <span class="footer-copy">© ${new Date().getFullYear()} ${escapeHtml(PRACTICE_NAME)}. All rights reserved.</span>
       <span class="footer-copy">This website is for informational purposes only and does not constitute medical advice.</span>
     </nav>

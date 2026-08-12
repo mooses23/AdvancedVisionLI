@@ -51,7 +51,7 @@ const steinSchema = {
   familyName: "Stein",
   honorificPrefix: "Dr.",
   honorificSuffix: "OD, FABM, OVDRA",
-  url: "https://AdvancedVisionLI.com/dr-marcie-stein",
+  url: "https://AdvancedVisionLI.com/dr-marcie-stein/",
   description:
     "Dr. Marcie Evans Stein, OD, FABM, OVDRA, is an optometrist and founder of Advanced Vision Long Island in Inwood, NY. A graduate of SUNY College of Optometry with over 40 years of clinical experience, she specializes in developmental optometry and binocular vision therapy for children and adults. She is an OVDRA-recognized provider and Fellow of the American Board of Optometry in Binocular Vision (FABM), committed to helping patients of all ages achieve their full visual potential.",
   medicalSpecialty: [
@@ -88,7 +88,7 @@ const steinPageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "Dr. Marcie Evans Stein, OD, FABM, OVDRA | Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/dr-marcie-stein",
+  url: "https://AdvancedVisionLI.com/dr-marcie-stein/",
   mainEntity: { "@id": "https://AdvancedVisionLI.com/#dr-stein" },
 };
 
@@ -169,12 +169,12 @@ router.get("/dr-marcie-stein", (_req, res) => {
     title: "Dr. Marcie Evans Stein, OD, FABM, OVDRA | Advanced Vision Long Island",
     description:
       "Dr. Marcie Evans Stein is a developmental optometrist and founder of Advanced Vision Long Island in Inwood, NY. FABM Fellow and OVDRA recognized provider with 40+ years of experience in binocular vision and vision therapy.",
-    canonical: "https://AdvancedVisionLI.com/dr-marcie-stein",
+    canonical: "https://AdvancedVisionLI.com/dr-marcie-stein/",
     schemaJsons: [steinSchema, steinPageSchema],
     bodyHtml: buildSteinBody(),
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Dr. Marcie Evans Stein", url: `${SITE_URL}/dr-marcie-stein` },
+      { name: "Dr. Marcie Evans Stein", url: `${SITE_URL}/dr-marcie-stein/` },
     ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
@@ -195,7 +195,7 @@ const mollerSchema = {
   familyName: "Moller",
   honorificPrefix: "Dr.",
   honorificSuffix: "OD, FAAO",
-  url: "https://AdvancedVisionLI.com/dr-esther-moller",
+  url: "https://AdvancedVisionLI.com/dr-esther-moller/",
   description:
     "Dr. Esther Moller, OD, FAAO, is a fellowship-trained optometrist and Certified Low Vision Specialist at Advanced Vision Long Island in Inwood, NY. A graduate of SUNY College of Optometry, she completed her residency at the Northport VA Medical Center. She is a Fellow of the American Academy of Optometry (FAAO) and provides comprehensive primary eye care with focused expertise in low vision rehabilitation and binocular vision.",
   medicalSpecialty: [
@@ -232,7 +232,7 @@ const mollerPageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "Dr. Esther Moller, OD, FAAO | Low Vision Specialist — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/dr-esther-moller",
+  url: "https://AdvancedVisionLI.com/dr-esther-moller/",
   mainEntity: { "@id": "https://AdvancedVisionLI.com/#dr-moller" },
 };
 
@@ -315,12 +315,12 @@ router.get("/dr-esther-moller", (_req, res) => {
     title: "Dr. Esther Moller, OD, FAAO | Low Vision Specialist — Advanced Vision Long Island",
     description:
       "Dr. Esther Moller is a Certified Low Vision Specialist and FAAO Fellow at Advanced Vision Long Island in Inwood, NY. Fellowship-trained, with a residency at the Northport VA Medical Center, she specializes in low vision rehabilitation and comprehensive eye care.",
-    canonical: "https://AdvancedVisionLI.com/dr-esther-moller",
+    canonical: "https://AdvancedVisionLI.com/dr-esther-moller/",
     schemaJsons: [mollerSchema, mollerPageSchema],
     bodyHtml: buildMollerBody(),
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Dr. Esther Moller", url: `${SITE_URL}/dr-esther-moller` },
+      { name: "Dr. Esther Moller", url: `${SITE_URL}/dr-esther-moller/` },
     ],
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8");

@@ -60,6 +60,18 @@ app.get("/", (_req, res) => {
 
 app.use("/api", router);
 
+// Canonical URL enforcement: redirect bare-slug paths to trailing-slash form (301).
+// Covers any SSR page served from a directory index. Excludes root (/), static
+// asset paths (anything with a file extension), and /api/* routes.
+app.use((req, res, next) => {
+  const p = req.path;
+  if (p !== "/" && !p.endsWith("/") && !/\.[a-z0-9]+$/i.test(p) && p !== "/api" && !p.startsWith("/api/")) {
+    const target = req.url.replace(p, p + "/");
+    return res.redirect(301, target);
+  }
+  next();
+});
+
 // SSR HTML pages — public, crawlable, no /api prefix
 app.use(visionTherapyRouter);
 app.use(lowVisionCareRouter);

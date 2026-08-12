@@ -12,7 +12,7 @@ function conditionBreadcrumb(name: string, slug: string): string {
 <nav aria-label="Breadcrumb" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:2rem;">
   <a href="https://AdvancedVisionLI.com/">Home</a>
   <span aria-hidden="true" style="margin:0 0.4rem;">›</span>
-  <a href="/vision-therapy">Vision Therapy</a>
+  <a href="/vision-therapy/">Vision Therapy</a>
   <span aria-hidden="true" style="margin:0 0.4rem;">›</span>
   <span aria-current="page">${escapeHtml(name)}</span>
 </nav>`;
@@ -23,14 +23,14 @@ function conditionCtaBox(): string {
 <div class="cta-box">
   <h2>Ready to take the next step?</h2>
   <p>Schedule a comprehensive binocular vision evaluation at our Inwood, NY practice. We'll identify whether vision therapy is right for you or your child and walk you through every step of the process.</p>
-  <a href="/contact" class="cta-btn">Schedule a Consultation</a>
+  <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
   <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-3937</a></span>
 </div>
 <div style="margin-top:1.5rem; text-align:center;">
   <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">Meet our care team:</p>
   <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:0.75rem;">
-    <a href="/dr-marcie-stein" class="related-link">Dr. Marcie Evans Stein — Vision Therapy</a>
-    <a href="/dr-esther-moller" class="related-link">Dr. Esther Moller — Low Vision Care</a>
+    <a href="/dr-marcie-stein/" class="related-link">Dr. Marcie Evans Stein — Vision Therapy</a>
+    <a href="/dr-esther-moller/" class="related-link">Dr. Esther Moller — Low Vision Care</a>
   </div>
 </div>`;
 }
@@ -139,7 +139,7 @@ const amblyopiaPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Amblyopia (Lazy Eye) Treatment — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/amblyopia",
+  url: "https://AdvancedVisionLI.com/amblyopia/",
   about: { "@type": "MedicalCondition", name: "Amblyopia" },
   audience: { "@type": "Patient" },
   provider: {
@@ -161,8 +161,8 @@ const amblyopiaBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://AdvancedVisionLI.com/" },
-    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy" },
-    { "@type": "ListItem", position: 3, name: "Amblyopia", item: "https://AdvancedVisionLI.com/amblyopia" },
+    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy/" },
+    { "@type": "ListItem", position: 3, name: "Amblyopia", item: "https://AdvancedVisionLI.com/amblyopia/" },
   ],
 };
 
@@ -183,7 +183,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Amblyopia (Lazy Eye)<br>Treatment on Long Island</h1>
   <p class="lead">Amblyopia is the most common cause of vision loss in children — but it is treatable at any age with the right care. Our developmental optometrists help patients build strong, lasting binocular vision.</p>
-  <a href="/contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -276,11 +276,11 @@ ${conditionStyles}
 
   <h2 class="section-title">Related conditions</h2>
   <div class="related-links">
-    <a href="/strabismus" class="related-link">Strabismus (Eye Turn)</a>
-    <a href="/convergence-insufficiency" class="related-link">Convergence Insufficiency</a>
-    <a href="/accommodative-dysfunction" class="related-link">Accommodative Dysfunction</a>
-    <a href="/vision-therapy" class="related-link">Vision Therapy Overview</a>
-    <a href="/faq" class="related-link">FAQs</a>
+    <a href="/strabismus/" class="related-link">Strabismus (Eye Turn)</a>
+    <a href="/convergence-insufficiency/" class="related-link">Convergence Insufficiency</a>
+    <a href="/accommodative-dysfunction/" class="related-link">Accommodative Dysfunction</a>
+    <a href="/vision-therapy/" class="related-link">Vision Therapy Overview</a>
+    <a href="/faq/" class="related-link">FAQs</a>
   </div>
 
   ${conditionCtaBox()}
@@ -292,7 +292,7 @@ router.get("/amblyopia", (_req, res) => {
     title: "Amblyopia (Lazy Eye) Treatment | Advanced Vision Long Island — Inwood, NY",
     description:
       "Treating amblyopia (lazy eye) with vision therapy in Inwood, NY. Advanced Vision Long Island offers binocular, evidence-based programs for children and adults. Schedule a comprehensive evaluation today.",
-    canonical: "https://AdvancedVisionLI.com/amblyopia",
+    canonical: "https://AdvancedVisionLI.com/amblyopia/",
     schemaJsons: [amblyopiaConditionSchema, amblyopiaPageSchema, amblyopiaBreadcrumbSchema, amblyopiaFaqSchema],
     bodyHtml: buildAmblyopiaBody(),
   });
@@ -353,7 +353,7 @@ const ciPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Convergence Insufficiency Treatment — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/convergence-insufficiency",
+  url: "https://AdvancedVisionLI.com/convergence-insufficiency/",
   about: { "@type": "MedicalCondition", name: "Convergence Insufficiency" },
   audience: { "@type": "Patient" },
   provider: {
@@ -375,8 +375,8 @@ const ciBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://AdvancedVisionLI.com/" },
-    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy" },
-    { "@type": "ListItem", position: 3, name: "Convergence Insufficiency", item: "https://AdvancedVisionLI.com/convergence-insufficiency" },
+    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy/" },
+    { "@type": "ListItem", position: 3, name: "Convergence Insufficiency", item: "https://AdvancedVisionLI.com/convergence-insufficiency/" },
   ],
 };
 
@@ -397,7 +397,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Convergence Insufficiency<br>Specialist on Long Island</h1>
   <p class="lead">CI is one of the most under-diagnosed causes of reading struggles, headaches, and screen fatigue in children and adults. Our evidence-based vision therapy program is proven to work.</p>
-  <a href="/contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -484,12 +484,12 @@ ${conditionStyles}
 
   <h2 class="section-title">Related conditions</h2>
   <div class="related-links">
-    <a href="/amblyopia" class="related-link">Amblyopia (Lazy Eye)</a>
-    <a href="/strabismus" class="related-link">Strabismus (Eye Turn)</a>
-    <a href="/accommodative-dysfunction" class="related-link">Accommodative Dysfunction</a>
-    <a href="/eye-tracking-disorder" class="related-link">Eye Tracking Disorder</a>
-    <a href="/vision-therapy" class="related-link">Vision Therapy Overview</a>
-    <a href="/faq" class="related-link">FAQs</a>
+    <a href="/amblyopia/" class="related-link">Amblyopia (Lazy Eye)</a>
+    <a href="/strabismus/" class="related-link">Strabismus (Eye Turn)</a>
+    <a href="/accommodative-dysfunction/" class="related-link">Accommodative Dysfunction</a>
+    <a href="/eye-tracking-disorder/" class="related-link">Eye Tracking Disorder</a>
+    <a href="/vision-therapy/" class="related-link">Vision Therapy Overview</a>
+    <a href="/faq/" class="related-link">FAQs</a>
   </div>
 
   ${conditionCtaBox()}
@@ -501,7 +501,7 @@ router.get("/convergence-insufficiency", (_req, res) => {
     title: "Convergence Insufficiency Treatment | Advanced Vision Long Island — Inwood, NY",
     description:
       "Convergence insufficiency specialist in Inwood, NY. Evidence-based vision therapy proven by the NIH CITT study. Treating children and adults with reading difficulties, headaches, and screen fatigue caused by CI.",
-    canonical: "https://AdvancedVisionLI.com/convergence-insufficiency",
+    canonical: "https://AdvancedVisionLI.com/convergence-insufficiency/",
     schemaJsons: [ciConditionSchema, ciPageSchema, ciBreadcrumbSchema, ciFaqSchema],
     bodyHtml: buildCiBody(),
   });
@@ -558,7 +558,7 @@ const strabismusPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Strabismus (Eye Turn) Treatment — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/strabismus",
+  url: "https://AdvancedVisionLI.com/strabismus/",
   about: { "@type": "MedicalCondition", name: "Strabismus" },
   audience: { "@type": "Patient" },
   provider: {
@@ -580,8 +580,8 @@ const strabismusBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://AdvancedVisionLI.com/" },
-    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy" },
-    { "@type": "ListItem", position: 3, name: "Strabismus", item: "https://AdvancedVisionLI.com/strabismus" },
+    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy/" },
+    { "@type": "ListItem", position: 3, name: "Strabismus", item: "https://AdvancedVisionLI.com/strabismus/" },
   ],
 };
 
@@ -602,7 +602,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Strabismus (Eye Turn)<br>Treatment on Long Island</h1>
   <p class="lead">Strabismus is more than a cosmetic concern — it disrupts depth perception, reading, and the brain's ability to use both eyes together. Vision therapy rebuilds that connection from the ground up.</p>
-  <a href="/contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -688,11 +688,11 @@ ${conditionStyles}
 
   <h2 class="section-title">Related conditions</h2>
   <div class="related-links">
-    <a href="/amblyopia" class="related-link">Amblyopia (Lazy Eye)</a>
-    <a href="/convergence-insufficiency" class="related-link">Convergence Insufficiency</a>
-    <a href="/accommodative-dysfunction" class="related-link">Accommodative Dysfunction</a>
-    <a href="/vision-therapy" class="related-link">Vision Therapy Overview</a>
-    <a href="/faq" class="related-link">FAQs</a>
+    <a href="/amblyopia/" class="related-link">Amblyopia (Lazy Eye)</a>
+    <a href="/convergence-insufficiency/" class="related-link">Convergence Insufficiency</a>
+    <a href="/accommodative-dysfunction/" class="related-link">Accommodative Dysfunction</a>
+    <a href="/vision-therapy/" class="related-link">Vision Therapy Overview</a>
+    <a href="/faq/" class="related-link">FAQs</a>
   </div>
 
   ${conditionCtaBox()}
@@ -704,7 +704,7 @@ router.get("/strabismus", (_req, res) => {
     title: "Strabismus (Eye Turn) Treatment | Advanced Vision Long Island — Inwood, NY",
     description:
       "Strabismus specialist in Inwood, NY. Vision therapy to rebuild binocular function and depth perception after eye turns — for children and adults. Schedule a comprehensive evaluation at Advanced Vision Long Island.",
-    canonical: "https://AdvancedVisionLI.com/strabismus",
+    canonical: "https://AdvancedVisionLI.com/strabismus/",
     schemaJsons: [strabismusConditionSchema, strabismusPageSchema, strabismusBreadcrumbSchema, strabismusFaqSchema],
     bodyHtml: buildStrabismusBody(),
   });
@@ -750,7 +750,7 @@ const accommPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Accommodative Dysfunction Treatment — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/accommodative-dysfunction",
+  url: "https://AdvancedVisionLI.com/accommodative-dysfunction/",
   about: { "@type": "MedicalCondition", name: "Accommodative Dysfunction" },
   audience: { "@type": "Patient" },
   provider: {
@@ -772,8 +772,8 @@ const accommBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://AdvancedVisionLI.com/" },
-    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy" },
-    { "@type": "ListItem", position: 3, name: "Accommodative Dysfunction", item: "https://AdvancedVisionLI.com/accommodative-dysfunction" },
+    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy/" },
+    { "@type": "ListItem", position: 3, name: "Accommodative Dysfunction", item: "https://AdvancedVisionLI.com/accommodative-dysfunction/" },
   ],
 };
 
@@ -794,7 +794,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Accommodative Dysfunction<br>Treatment on Long Island</h1>
   <p class="lead">When the eyes struggle to shift focus quickly and accurately — from board to book, from desk to screen — every school day becomes exhausting. Vision therapy retrains the focusing system for lasting comfort.</p>
-  <a href="/contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -880,11 +880,11 @@ ${conditionStyles}
 
   <h2 class="section-title">Related conditions</h2>
   <div class="related-links">
-    <a href="/convergence-insufficiency" class="related-link">Convergence Insufficiency</a>
-    <a href="/eye-tracking-disorder" class="related-link">Eye Tracking Disorder</a>
-    <a href="/amblyopia" class="related-link">Amblyopia (Lazy Eye)</a>
-    <a href="/vision-therapy" class="related-link">Vision Therapy Overview</a>
-    <a href="/faq" class="related-link">FAQs</a>
+    <a href="/convergence-insufficiency/" class="related-link">Convergence Insufficiency</a>
+    <a href="/eye-tracking-disorder/" class="related-link">Eye Tracking Disorder</a>
+    <a href="/amblyopia/" class="related-link">Amblyopia (Lazy Eye)</a>
+    <a href="/vision-therapy/" class="related-link">Vision Therapy Overview</a>
+    <a href="/faq/" class="related-link">FAQs</a>
   </div>
 
   ${conditionCtaBox()}
@@ -896,7 +896,7 @@ router.get("/accommodative-dysfunction", (_req, res) => {
     title: "Accommodative Dysfunction Treatment | Advanced Vision Long Island — Inwood, NY",
     description:
       "Treating accommodative dysfunction (focusing disorders) with vision therapy in Inwood, NY. Help for children and adults with blurry near vision, focus fatigue, and difficulty copying from the board.",
-    canonical: "https://AdvancedVisionLI.com/accommodative-dysfunction",
+    canonical: "https://AdvancedVisionLI.com/accommodative-dysfunction/",
     schemaJsons: [accommConditionSchema, accommPageSchema, accommBreadcrumbSchema, accommFaqSchema],
     bodyHtml: buildAccommBody(),
   });
@@ -942,7 +942,7 @@ const trackingPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Eye Tracking Disorder Treatment — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/eye-tracking-disorder",
+  url: "https://AdvancedVisionLI.com/eye-tracking-disorder/",
   about: { "@type": "MedicalCondition", name: "Eye Tracking Disorder" },
   audience: { "@type": "Patient" },
   provider: {
@@ -964,8 +964,8 @@ const trackingBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://AdvancedVisionLI.com/" },
-    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy" },
-    { "@type": "ListItem", position: 3, name: "Eye Tracking Disorder", item: "https://AdvancedVisionLI.com/eye-tracking-disorder" },
+    { "@type": "ListItem", position: 2, name: "Vision Therapy", item: "https://AdvancedVisionLI.com/vision-therapy/" },
+    { "@type": "ListItem", position: 3, name: "Eye Tracking Disorder", item: "https://AdvancedVisionLI.com/eye-tracking-disorder/" },
   ],
 };
 
@@ -986,7 +986,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Eye Tracking Disorder<br>Treatment on Long Island</h1>
   <p class="lead">When a child loses their place, skips words, or reads with a finger — it is not laziness or dyslexia. It is often an eye tracking problem. Vision therapy trains the oculomotor system for accurate, effortless reading.</p>
-  <a href="/contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -1070,11 +1070,11 @@ ${conditionStyles}
 
   <h2 class="section-title">Related conditions</h2>
   <div class="related-links">
-    <a href="/convergence-insufficiency" class="related-link">Convergence Insufficiency</a>
-    <a href="/accommodative-dysfunction" class="related-link">Accommodative Dysfunction</a>
-    <a href="/amblyopia" class="related-link">Amblyopia (Lazy Eye)</a>
-    <a href="/vision-therapy" class="related-link">Vision Therapy Overview</a>
-    <a href="/faq" class="related-link">FAQs</a>
+    <a href="/convergence-insufficiency/" class="related-link">Convergence Insufficiency</a>
+    <a href="/accommodative-dysfunction/" class="related-link">Accommodative Dysfunction</a>
+    <a href="/amblyopia/" class="related-link">Amblyopia (Lazy Eye)</a>
+    <a href="/vision-therapy/" class="related-link">Vision Therapy Overview</a>
+    <a href="/faq/" class="related-link">FAQs</a>
   </div>
 
   ${conditionCtaBox()}
@@ -1086,7 +1086,7 @@ router.get("/eye-tracking-disorder", (_req, res) => {
     title: "Eye Tracking Disorder Treatment | Advanced Vision Long Island — Inwood, NY",
     description:
       "Treating eye tracking disorders (oculomotor dysfunction) in Inwood, NY. Vision therapy for children who lose their place while reading, skip words, or struggle with reading fluency. Advanced Vision Long Island.",
-    canonical: "https://AdvancedVisionLI.com/eye-tracking-disorder",
+    canonical: "https://AdvancedVisionLI.com/eye-tracking-disorder/",
     schemaJsons: [trackingConditionSchema, trackingPageSchema, trackingBreadcrumbSchema, trackingFaqSchema],
     bodyHtml: buildTrackingBody(),
   });
