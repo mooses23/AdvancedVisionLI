@@ -1,0 +1,217 @@
+Dr. Esther Moller needs to be a first-class provider/entity in the SEO architecture of Advanced Vision Long Island, alongside Dr. Marcie Stein.
+
+Do NOT treat Dr. Moller as a secondary team member.
+
+The desired entity architecture is:
+
+Advanced Vision Long Island
+→ Dr. Marcie Stein
+→ Dr. Esther Moller
+
+Both doctors should have strong independent provider entities connected to the same practice.
+
+FIRST: AUDIT BEFORE CHANGING ANYTHING
+
+Audit the current implementation of:
+
+/dr-marcie-stein
+/dr-esther-moller
+
+and all homepage/team/service/location structured data.
+
+Report:
+
+1. How prominently each doctor currently appears.
+2. Which pages mention each doctor.
+3. What schema exists for each doctor.
+4. Whether both doctors are connected to Advanced Vision Long Island through consistent @id relationships.
+5. Whether Dr. Moller’s page is included in sitemap.xml.
+6. Internal links pointing to each doctor’s page.
+7. Titles/meta descriptions for each doctor.
+8. Whether any service/location pages unnecessarily imply Dr. Stein is the only provider.
+9. Any factual claims currently being made about Dr. Moller that require verification.
+
+THEN IMPLEMENT
+
+Make Dr. Esther Moller a prominent provider entity throughout the site’s SEO architecture.
+
+Provider page
+
+Strengthen:
+
+/dr-esther-moller
+
+It should have:
+
+* unique SEO title
+* unique meta description
+* canonical URL
+* one clear H1
+* professional biography
+* verified education/training
+* verified credentials
+* verified clinical interests/specialties
+* philosophy/approach if verified
+* Advanced Vision Long Island affiliation
+* Inwood office information
+* relevant service links
+* relevant condition links
+* Request an Evaluation CTA
+* breadcrumbs
+* BreadcrumbList JSON-LD
+* appropriate Person/provider JSON-LD
+
+IMPORTANT:
+
+Do not fabricate any credential, certification, education, specialty, experience, professional membership or medical claim.
+
+If information about Dr. Moller is missing, create clearly labeled content placeholders and tell me exactly what information I need to obtain from her.
+
+Entity architecture
+
+Give both providers stable IDs, for example:
+
+Advanced Vision Long Island:
+https://advancedvisionli.com/#organization
+
+Dr. Stein:
+https://advancedvisionli.com/dr-marcie-stein#person
+
+Dr. Moller:
+https://advancedvisionli.com/dr-esther-moller#person
+
+Connect both provider entities to Advanced Vision Long Island consistently.
+
+Where schema supports the relationship appropriately, establish that both providers work at/are affiliated with Advanced Vision Long Island.
+
+Do not create conflicting entities across SPA/SSR/schema implementations.
+
+Homepage
+
+Audit the Team/Doctors section.
+
+Dr. Moller should be visibly represented alongside Dr. Stein.
+
+Both doctors should have crawlable HTML links to their individual provider pages.
+
+Do not hide Dr. Moller’s information solely inside JavaScript interactions.
+
+Service pages
+
+Audit pages including:
+
+* Vision Therapy
+* Functional Vision Evaluation
+* Developmental Optometry
+* Low Vision Care
+* Vision Therapy for Children
+* relevant condition pages
+
+Where clinically and factually appropriate, reference the practice/providers collectively rather than automatically attributing everything to Dr. Stein.
+
+For example, prefer:
+
+“At Advanced Vision Long Island…”
+
+when discussing the practice generally.
+
+Only attribute a specialty/service specifically to Dr. Stein or Dr. Moller when verified.
+
+Internal linking
+
+Create strong contextual internal links to both provider pages.
+
+The goal is that Google crawling the website can easily establish:
+
+Advanced Vision Long Island
+↔ Dr. Marcie Stein
+↔ Dr. Esther Moller
+↔ relevant services
+↔ relevant conditions
+↔ Inwood/Five Towns location
+
+Neither provider page should be an orphan or merely linked from the footer.
+
+Sitemap
+
+Confirm both:
+
+/dr-marcie-stein
+
+and
+
+/dr-esther-moller
+
+are present in sitemap.xml with 200 status codes and correct canonicals.
+
+Medical/provider schema
+
+Use accurate Schema.org types.
+
+Both doctors should exist as independent Person/provider entities rather than being buried as text inside the organization’s schema.
+
+Connect both to the practice.
+
+Do NOT add:
+
+* fake ratings
+* fake reviews
+* fake credentials
+* fake awards
+* fake specialties
+* fake sameAs links
+
+Only add sameAs links after they are verified to belong to that specific doctor.
+
+Search intent
+
+We eventually want Google to understand searches involving:
+
+* Dr. Esther Moller
+* Esther Moller optometrist
+* Dr. Esther Moller Long Island
+* Dr. Esther Moller Inwood
+* Marcie Stein optometrist
+* Advanced Vision Long Island doctors
+* vision therapy Long Island
+
+Do this naturally through entity architecture and useful content — NOT keyword stuffing.
+
+FINAL QA
+
+After implementation:
+
+1. Run the production build.
+2. Verify both provider URLs return 200.
+3. Verify both have unique titles/descriptions.
+4. Verify both have self-referencing canonicals.
+5. Verify both are in sitemap.xml.
+6. Verify both have valid provider schema.
+7. Verify both connect to the same organization @id.
+8. Verify homepage crawlable links exist to both.
+9. Verify important service pages link appropriately to provider pages.
+10. Verify no unverified facts were introduced.
+
+Then give me a comparison table:
+
+SEO Signal	Dr. Stein	Dr. Moller
+
+Show:
+
+* provider page
+* title
+* description
+* schema
+* sitemap
+* homepage link
+* service-page links
+* condition-page links
+* verified credentials
+* sameAs profiles
+* missing information
+
+Finally, give me a list titled:
+
+“INFORMATION WE STILL NEED FROM DR. MOLLER”
+
+Do not fill those gaps yourself.
