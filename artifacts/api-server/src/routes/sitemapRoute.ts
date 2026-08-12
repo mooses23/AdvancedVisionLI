@@ -19,6 +19,8 @@ const SSR_URLS = [
   "/eye-tracking-disorder",
   "/dr-marcie-stein",
   "/dr-esther-moller",
+  "/vision-therapy-specialist",
+  "/low-vision-specialist",
 ];
 
 router.get("/sitemap.xml", (_req, res) => {
