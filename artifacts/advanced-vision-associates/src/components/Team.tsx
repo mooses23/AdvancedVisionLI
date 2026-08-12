@@ -62,6 +62,8 @@ export default function Team() {
                       src={member.imageSrc}
                       alt={member.imageAlt}
                       className="w-full h-full object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 

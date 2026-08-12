@@ -282,7 +282,12 @@ export default function Hero() {
             Advanced Vision Long Island · Inwood, NY
           </p>
 
+          {/* aria-hidden: mobile layout below has the canonical H1.
+              Both sections are CSS-exclusive (one display:none at a time)
+              so screen readers never see both; aria-hidden prevents Google
+              from counting this desktop copy as a second H1. */}
           <h1
+            aria-hidden="true"
             className="font-serif font-semibold"
             style={{
               fontSize: 'clamp(2.55rem, 4.35vw, 3.95rem)',

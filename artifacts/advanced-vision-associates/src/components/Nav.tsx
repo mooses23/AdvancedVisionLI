@@ -58,7 +58,7 @@ export default function Nav() {
       <div className="container mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
 
         {/* Logo lockup — exact PNG + stacked wordmark */}
-        <a href="#" className="flex items-center gap-3 leading-none">
+        <a href="/" className="flex items-center gap-3 leading-none">
           <img
             src={LOGO_SRC}
             alt="Advanced Vision Long Island logo"

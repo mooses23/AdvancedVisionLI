@@ -168,6 +168,8 @@ function CausesPanel() {
                 src={image}
                 alt={alt}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="p-3 flex flex-col gap-1 flex-grow">
@@ -236,6 +238,8 @@ function AidsPanel() {
                 src={image}
                 alt={alt}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="p-3 flex flex-col gap-1 flex-grow">

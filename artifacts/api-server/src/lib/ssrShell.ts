@@ -19,7 +19,7 @@ const GLOBAL_SCHEMAS: object[] = [
     "@context": "https://schema.org",
     // NOTE: @id must match the SPA homepage (/#organization). Verify GPS below with owner.
     "@id": `${SITE_URL}/#organization`,
-    "@type": ["MedicalOrganization", "LocalBusiness"],
+    "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
     name: PRACTICE_NAME,
     url: `${SITE_URL}/`,
     telephone: "+17182683937",

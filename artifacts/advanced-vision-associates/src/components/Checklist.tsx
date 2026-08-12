@@ -142,6 +142,8 @@ export default function Checklist() {
               src={CHILD_IMG}
               alt="Child resting head on desk, appearing fatigued — a common sign of functional vision problems"
               className="absolute inset-0 w-full h-full object-cover object-[center_22%]"
+              loading="lazy"
+              decoding="async"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
           </div>

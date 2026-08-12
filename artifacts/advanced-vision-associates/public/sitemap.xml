@@ -4,25 +4,25 @@
   Update both files whenever SSR routes are added or removed.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://AdvancedVisionLI.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/low-vision-care</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-checklist</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/amblyopia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/convergence-insufficiency</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/strabismus</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/accommodative-dysfunction</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/eye-tracking-disorder</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/dr-marcie-stein</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/dr-esther-moller</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-specialist</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/low-vision-specialist</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-far-rockaway</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-howard-beach</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-valley-stream</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-five-towns</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://AdvancedVisionLI.com/vision-therapy-jamaica</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/low-vision-care</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/contact</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/faq</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-checklist</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/amblyopia</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/convergence-insufficiency</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/strabismus</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/accommodative-dysfunction</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/eye-tracking-disorder</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/dr-marcie-stein</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/dr-esther-moller</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-specialist</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/low-vision-specialist</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-insurance</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-far-rockaway</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-howard-beach</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-valley-stream</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-five-towns</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://AdvancedVisionLI.com/vision-therapy-jamaica</loc><lastmod>2026-08-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

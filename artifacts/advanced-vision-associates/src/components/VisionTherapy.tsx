@@ -183,6 +183,8 @@ export default function VisionTherapy() {
             src={anaglyphBoy}
             alt="Child doing vision therapy with anaglyph glasses"
             className="w-full h-full object-cover object-top rounded-tl-3xl"
+            loading="lazy"
+            decoding="async"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         </div>
