@@ -17,10 +17,6 @@ build = [ "pnpm", "--filter", "@workspace/advanced-vision-associates", "run", "b
 serve = "static"
 publicDir = "artifacts/advanced-vision-associates/dist/public"
 
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
-
 [services.env]
 PORT = "24388"
 BASE_PATH = "/"
