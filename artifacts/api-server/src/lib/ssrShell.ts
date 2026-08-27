@@ -105,11 +105,14 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="${escapeHtml(PRACTICE_NAME)}" />
   <meta property="og:image" content="${LOGO_URL}" />
+  <meta property="og:image:alt" content="${escapeHtml(PRACTICE_NAME)} eye and wave logo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${LOGO_URL}" />
+  <meta name="twitter:image:alt" content="${escapeHtml(PRACTICE_NAME)} eye and wave logo" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
