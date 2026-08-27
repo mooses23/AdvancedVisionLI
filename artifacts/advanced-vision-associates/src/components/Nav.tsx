@@ -10,8 +10,6 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-// The logo PNG has a white background. mix-blend-mode: multiply makes white
-// transparent so it sits cleanly on the white / near-white nav.
 import logoSrc from '@/assets/images/logo.png';
 const LOGO_SRC = logoSrc;
 
@@ -68,7 +66,6 @@ export default function Nav() {
               display: 'block',
               flexShrink: 0,
               objectFit: 'contain',
-              mixBlendMode: 'multiply',   // white bg disappears on light nav
             }}
             className="md:w-[44px] md:h-[44px] w-[40px] h-[40px]"
           />

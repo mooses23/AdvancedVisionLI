@@ -1,34 +1,4 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Advanced Vision Long Island">
   <title>Advanced Vision Long Island</title>
-  <!--
-    Matches the uploaded logo exactly:
-    - Eye outlines: dark olive green (#4A6741)
-    - Pupil dots:   dark navy (#1A2B3C)
-    - Concentric rings: dark crimson (#8B1F1F)
-
-    Geometry scaled to 180×180 (60:24 base × 3, centered at y=90):
-      Left eye : M 0 90 … 108 90
-      Right eye: M 72 90 … 180 90
-  -->
-
-  <!-- Left eye -->
-  <path d="M 0 90 C 24 60, 84 60, 108 90 C 84 120, 24 120, 0 90 Z"
-        stroke="#4A6741" stroke-width="6" fill="none" stroke-linejoin="round"/>
-
-  <!-- Right eye -->
-  <path d="M 72 90 C 96 60, 156 60, 180 90 C 156 120, 96 120, 72 90 Z"
-        stroke="#4A6741" stroke-width="6" fill="none" stroke-linejoin="round"/>
-
-  <!-- Left pupil dot -->
-  <circle cx="33" cy="90" r="10" fill="#1A2B3C"/>
-
-  <!-- Right pupil dot -->
-  <circle cx="147" cy="90" r="10" fill="#1A2B3C"/>
-
-  <!-- Outer ring -->
-  <circle cx="90" cy="90" r="20" stroke="#8B1F1F" stroke-width="4" fill="none"/>
-  <!-- Middle ring -->
-  <circle cx="90" cy="90" r="12" stroke="#8B1F1F" stroke-width="3.5" fill="none"/>
-  <!-- Inner dot -->
-  <circle cx="90" cy="90" r="4.5" fill="#8B1F1F"/>
+  <image width="96" height="96" href="data:image/png;base64,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" />
 </svg>

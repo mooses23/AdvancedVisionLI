@@ -12,6 +12,7 @@ export const NAP_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
 export const NAP_PHONE = "(718) 268-3937";
 export const PRACTICE_NAME = "Advanced Vision Long Island";
 export const SITE_URL = "https://AdvancedVisionLI.com";
+export const LOGO_URL = `${SITE_URL}/images/logo.png`;
 
 // Prepended to every SSR page — signals entity identity to Google's Knowledge Graph.
 const GLOBAL_SCHEMAS: object[] = [
@@ -22,6 +23,8 @@ const GLOBAL_SCHEMAS: object[] = [
     "@type": ["MedicalBusiness", "MedicalOrganization", "LocalBusiness"],
     name: PRACTICE_NAME,
     url: `${SITE_URL}/`,
+    logo: LOGO_URL,
+    image: LOGO_URL,
     telephone: "+17182683937",
     address: {
       "@type": "PostalAddress",
@@ -101,11 +104,12 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="${escapeHtml(PRACTICE_NAME)}" />
-  <meta property="og:image" content="https://AdvancedVisionLI.com/images/logo.png" />
+  <meta property="og:image" content="${LOGO_URL}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
-  <meta name="twitter:image" content="https://AdvancedVisionLI.com/images/logo.png" />
+  <meta name="twitter:image" content="${LOGO_URL}" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
