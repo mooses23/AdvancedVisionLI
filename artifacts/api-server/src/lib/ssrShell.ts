@@ -12,7 +12,8 @@ export const NAP_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
 export const NAP_PHONE = "(718) 268-3937";
 export const PRACTICE_NAME = "Advanced Vision Long Island";
 export const SITE_URL = "https://AdvancedVisionLI.com";
-export const LOGO_URL = `${SITE_URL}/images/logo.png`;
+export const LOGO_URL = `${SITE_URL}/images/logo-v2.png`;
+export const FAVICON_URL = `${SITE_URL}/favicon-v2.svg`;
 
 // Prepended to every SSR page — signals entity identity to Google's Knowledge Graph.
 const GLOBAL_SCHEMAS: object[] = [
@@ -105,14 +106,17 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="${escapeHtml(PRACTICE_NAME)}" />
   <meta property="og:image" content="${LOGO_URL}" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1254" />
+  <meta property="og:image:height" content="1254" />
   <meta property="og:image:alt" content="${escapeHtml(PRACTICE_NAME)} eye and wave logo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${LOGO_URL}" />
   <meta name="twitter:image:alt" content="${escapeHtml(PRACTICE_NAME)} eye and wave logo" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate icon" type="image/png" href="/images/logo.png" />
+  <link rel="icon" type="image/svg+xml" href="${FAVICON_URL}" />
+  <link rel="alternate icon" type="image/png" href="${LOGO_URL}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
