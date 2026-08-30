@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -100,7 +100,7 @@ ${doctorStyles}
   <h1>Dr. Marcie Evans Stein</h1>
   <p class="creds">OD, FABM, OVDRA</p>
   <p class="role">Optometrist &amp; Founder — Advanced Vision Long Island</p>
-  <a href="https://AdvancedVisionLI.com/#contact" class="hero-cta">Schedule a Consultation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule a Consultation</a>
 </div>
 
 <div class="page-content">
@@ -157,7 +157,7 @@ ${doctorStyles}
   <div class="cta-box">
     <h2>Schedule a Vision Evaluation</h2>
     <p>Dr. Stein and the team at Advanced Vision Long Island offer comprehensive binocular vision evaluations for children and adults. If you or your child experiences headaches, reading difficulty, or persistent eye strain, we can help.</p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Request an Appointment</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Request an Appointment</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-EYES (3937)</a></span>
   </div>
 
@@ -244,7 +244,7 @@ ${doctorStyles}
   <h1>Dr. Esther Moller</h1>
   <p class="creds">OD, FAAO</p>
   <p class="role">Optometrist &amp; Low Vision Specialist — Advanced Vision Long Island</p>
-  <a href="https://AdvancedVisionLI.com/#contact" class="hero-cta">Schedule a Consultation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule a Consultation</a>
 </div>
 
 <div class="page-content">
@@ -303,7 +303,7 @@ ${doctorStyles}
   <div class="cta-box">
     <h2>Request a Low Vision Evaluation</h2>
     <p>If standard glasses or contact lenses can no longer fully correct your vision, Dr. Moller can help. Advanced Vision Long Island offers comprehensive low vision consultations at our Inwood, NY office.</p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Request an Appointment</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Request an Appointment</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-EYES (3937)</a></span>
   </div>
 

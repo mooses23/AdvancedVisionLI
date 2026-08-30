@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -299,7 +299,7 @@ ${areaStyles}
   <p class="eyebrow">${escapeHtml(area.eyebrow)}</p>
   <h1>${escapeHtml(area.h1)}</h1>
   <p class="lead">${escapeHtml(area.heroPara)}</p>
-  <a href="https://AdvancedVisionLI.com/#contact" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -340,7 +340,7 @@ ${areaStyles}
   <div class="cta-box">
     <h2>Serving ${escapeHtml(area.name)} and the surrounding area</h2>
     <p>Advanced Vision Long Island is at 148c Doughty Blvd, Inwood, NY — easily reached from ${escapeHtml(area.name)} by car or public transit. Call to schedule a binocular vision evaluation or low vision consultation.</p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Request an Appointment</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Request an Appointment</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-EYES (3937)</a></span>
   </div>
 

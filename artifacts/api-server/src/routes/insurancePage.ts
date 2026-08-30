@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -122,7 +122,7 @@ function buildBody(): string {
   <p class="eyebrow">Insurance &amp; Coverage · Inwood, NY</p>
   <h1>Does Insurance Cover Vision Therapy?</h1>
   <p class="lead">A plain-language guide to insurance coverage for vision therapy and low vision care — which plans may help, what to ask your insurer, and what to do if your plan says no.</p>
-  <a href="https://AdvancedVisionLI.com/#contact" class="hero-cta">Call for a Benefits Check</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Call for a Benefits Check</a>
 </div>
 
 <div class="page-content">
@@ -203,7 +203,7 @@ function buildBody(): string {
   <div class="cta-box">
     <h2>We'll help you check your benefits</h2>
     <p>Call our Inwood, NY office and our team will help you understand your coverage options before your first appointment. We have experience navigating medical insurance billing for vision therapy and low vision care.</p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Contact Our Office</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Contact Our Office</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-EYES (3937)</a></span>
   </div>
 

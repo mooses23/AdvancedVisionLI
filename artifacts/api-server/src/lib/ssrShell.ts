@@ -12,6 +12,7 @@ export const NAP_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
 export const NAP_PHONE = "(718) 268-3937";
 export const PRACTICE_NAME = "Advanced Vision Long Island";
 export const SITE_URL = "https://AdvancedVisionLI.com";
+export const CONTACT_URL = `${SITE_URL}/#contact`;
 export const LOGO_URL = `${SITE_URL}/images/logo-v2.png`;
 export const FAVICON_URL = `${SITE_URL}/favicon-v2.svg`;
 
@@ -244,7 +245,7 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <ul class="nav-links">
     <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#vision-therapy">Vision Therapy</a></li>
     <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#low-vision">Low Vision</a></li>
-    <li><a href="/contact/" class="nav-cta">Schedule</a></li>
+    <li><a href="${CONTACT_URL}" class="nav-cta">Schedule</a></li>
   </ul>
 </nav>
 

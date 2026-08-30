@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -35,7 +35,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "What happens at a first consultation?",
-    a: "Your first visit includes a detailed history interview and a comprehensive binocular vision assessment. The doctor examines how the eyes team together, how efficiently they focus and move, and how visual information is processed. Based on the findings, you receive a clear diagnosis and a personalized treatment plan. We walk you through every step — no ambiguity about what we found or why we're recommending it. You can <a href='/contact/'>schedule your consultation online</a> or call us at <a href='tel:718-268-3937'>(718) 268-3937</a>.",
+    a: `Your first visit includes a detailed history interview and a comprehensive binocular vision assessment. The doctor examines how the eyes team together, how efficiently they focus and move, and how visual information is processed. Based on the findings, you receive a clear diagnosis and a personalized treatment plan. We walk you through every step — no ambiguity about what we found or why we're recommending it. You can <a href='${CONTACT_URL}'>schedule your consultation online</a> or call us at <a href='tel:718-268-3937'>(718) 268-3937</a>.`,
   },
   {
     q: "Is vision therapy covered by insurance?",
@@ -47,7 +47,7 @@ const FAQS: FaqPair[] = [
   },
   {
     q: "Is low vision care covered by NYS Commission for the Blind (CBVH)?",
-    a: "Yes, in many cases. The New York State Commission for the Blind (CBVH) provides vocational and rehabilitation services for individuals who are legally blind, including funding for low vision evaluations and devices. Advanced Vision Long Island works with CBVH referrals. If you or a family member has been diagnosed with a condition that may qualify, contact CBVH at (866) 871-3000 to inquire about eligibility and then <a href='/contact/'>contact our office</a> to coordinate your evaluation.",
+    a: `Yes, in many cases. The New York State Commission for the Blind (CBVH) provides vocational and rehabilitation services for individuals who are legally blind, including funding for low vision evaluations and devices. Advanced Vision Long Island works with CBVH referrals. If you or a family member has been diagnosed with a condition that may qualify, contact CBVH at (866) 871-3000 to inquire about eligibility and then <a href='${CONTACT_URL}'>contact our office</a> to coordinate your evaluation.`,
   },
   {
     q: "Does vision therapy help with concussion or traumatic brain injury?",
@@ -81,7 +81,7 @@ function buildFaqBody(): string {
 
   <div class="cta-box" style="margin-top:0; margin-bottom:2.5rem; padding:1.75rem 2rem;">
     <p style="margin-bottom:0.5rem; font-size:1rem;">Ready to find out if vision therapy is right for you or your child?</p>
-    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 
@@ -102,7 +102,7 @@ function buildFaqBody(): string {
   <div class="cta-box">
     <h2>Still have questions?</h2>
     <p>Our team is happy to answer by phone — or you can book a no-pressure consultation and we'll walk through everything in person.</p>
-    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">Call us: <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -107,13 +107,13 @@ function buildChecklistBody(): string {
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Save as PDF / Print
     </a>
-    <a href="/contact/" class="cta-btn">Schedule an Evaluation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Schedule an Evaluation</a>
   </div>
 
   <div class="cta-box no-print">
     <h2>Recognise several of these signs?</h2>
     <p>A comprehensive visual perceptual evaluation can determine whether a functional vision problem is present — and whether vision therapy can help.</p>
-    <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">Call <a href="tel:718-268-3937">${escapeHtml(PRACTICE_PHONE)}</a></span>
   </div>
 

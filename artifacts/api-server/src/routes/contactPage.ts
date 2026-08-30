@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -93,7 +93,7 @@ const bodyHtml = `
     </p>
     <p>
       If you prefer to send a message, use the contact form on our
-      <a href="https://AdvancedVisionLI.com/#contact">main website</a> and we will respond within
+      <a href="${CONTACT_URL}">main website</a> and we will respond within
       one business day.
     </p>
   </div>
@@ -101,7 +101,7 @@ const bodyHtml = `
   <div class="cta-box" style="margin-top:2rem;">
     <h2>Request an Appointment</h2>
     <p>Use the contact form on our main website to describe your needs and preferred times.</p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Send a Message</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Send a Message</a>
     <span class="cta-phone">Or call us directly: <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 

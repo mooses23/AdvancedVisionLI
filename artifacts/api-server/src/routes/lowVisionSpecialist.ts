@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -169,7 +169,7 @@ const bodyHtml = `
       recommend a personalized plan to maximize your independence. We serve patients from
       Inwood, Long Island, Queens, and Nassau County.
     </p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Request a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Request a Consultation</a>
     <span class="cta-phone">Or call us at <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -144,7 +144,7 @@ const bodyHtml = `
       Schedule a vision therapy consultation at our Inwood, NY office.
       We serve patients from throughout Long Island, Queens, and Nassau County.
     </p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Schedule a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Schedule a Consultation</a>
     <span class="cta-phone">Or call us at <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 </div>

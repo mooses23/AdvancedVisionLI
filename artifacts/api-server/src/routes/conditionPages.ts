@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ssrShell, escapeHtml } from "../lib/ssrShell";
+import { ssrShell, escapeHtml, CONTACT_URL } from "../lib/ssrShell";
 
 const router = Router();
 
@@ -23,7 +23,7 @@ function conditionCtaBox(): string {
 <div class="cta-box">
   <h2>Ready to take the next step?</h2>
   <p>Schedule a comprehensive binocular vision evaluation at our Inwood, NY practice. We'll identify whether vision therapy is right for you or your child and walk you through every step of the process.</p>
-  <a href="/contact/" class="cta-btn">Schedule a Consultation</a>
+  <a href="${CONTACT_URL}" class="cta-btn">Schedule a Consultation</a>
   <span class="cta-phone">or call <a href="tel:718-268-3937">(718) 268-3937</a></span>
 </div>
 <div style="margin-top:1.5rem; text-align:center;">
@@ -183,7 +183,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Amblyopia (Lazy Eye)<br>Treatment on Long Island</h1>
   <p class="lead">Amblyopia is the most common cause of vision loss in children — but it is treatable at any age with the right care. Our developmental optometrists help patients build strong, lasting binocular vision.</p>
-  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -397,7 +397,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Convergence Insufficiency<br>Specialist on Long Island</h1>
   <p class="lead">CI is one of the most under-diagnosed causes of reading struggles, headaches, and screen fatigue in children and adults. Our evidence-based vision therapy program is proven to work.</p>
-  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -602,7 +602,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Strabismus (Eye Turn)<br>Treatment on Long Island</h1>
   <p class="lead">Strabismus is more than a cosmetic concern — it disrupts depth perception, reading, and the brain's ability to use both eyes together. Vision therapy rebuilds that connection from the ground up.</p>
-  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -794,7 +794,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Accommodative Dysfunction<br>Treatment on Long Island</h1>
   <p class="lead">When the eyes struggle to shift focus quickly and accurately — from board to book, from desk to screen — every school day becomes exhausting. Vision therapy retrains the focusing system for lasting comfort.</p>
-  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">
@@ -986,7 +986,7 @@ ${conditionStyles}
   <p class="eyebrow">Vision Therapy · Inwood, NY</p>
   <h1>Eye Tracking Disorder<br>Treatment on Long Island</h1>
   <p class="lead">When a child loses their place, skips words, or reads with a finger — it is not laziness or dyslexia. It is often an eye tracking problem. Vision therapy trains the oculomotor system for accurate, effortless reading.</p>
-  <a href="/contact/" class="hero-cta">Schedule an Evaluation</a>
+  <a href="${CONTACT_URL}" class="hero-cta">Schedule an Evaluation</a>
 </div>
 
 <div class="page-content">

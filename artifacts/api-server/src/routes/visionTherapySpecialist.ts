@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { ssrShell, SITE_URL } from "../lib/ssrShell";
+import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
@@ -171,7 +171,7 @@ const bodyHtml = `
       A comprehensive functional vision evaluation is the first step. Dr. Stein will identify which
       visual skills need development and walk you through a personalized treatment plan.
     </p>
-    <a href="https://AdvancedVisionLI.com/#contact" class="cta-btn">Request a Consultation</a>
+    <a href="${CONTACT_URL}" class="cta-btn">Request a Consultation</a>
     <span class="cta-phone">Or call us at <a href="tel:718-268-3937">(718) 268-3937</a></span>
   </div>
 </div>
