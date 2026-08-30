@@ -14,7 +14,7 @@ export const PRACTICE_NAME = "Advanced Vision Long Island";
 export const SITE_URL = "https://AdvancedVisionLI.com";
 export const CONTACT_URL = `${SITE_URL}/#contact`;
 export const LOGO_URL = `${SITE_URL}/images/logo-v2.png`;
-export const FAVICON_URL = `${SITE_URL}/favicon-v2.svg`;
+export const FAVICON_URL = `${SITE_URL}/favicon-v3.png`;
 
 // Prepended to every SSR page — signals entity identity to Google's Knowledge Graph.
 const GLOBAL_SCHEMAS: object[] = [
@@ -116,8 +116,9 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${LOGO_URL}" />
   <meta name="twitter:image:alt" content="${escapeHtml(PRACTICE_NAME)} eye and wave logo" />
-  <link rel="icon" type="image/svg+xml" href="${FAVICON_URL}" />
-  <link rel="alternate icon" type="image/png" href="${LOGO_URL}" />
+  <link rel="icon" type="image/png" sizes="64x64" href="${FAVICON_URL}" />
+  <link rel="shortcut icon" href="${SITE_URL}/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="${SITE_URL}/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
