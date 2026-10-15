@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { ssrShell, escapeHtml, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
+import { doctorPortrait } from "../lib/doctorPortraits";
 
 const router = Router();
 
@@ -96,6 +97,7 @@ function buildSteinBody(): string {
   return `
 ${doctorStyles}
 <div class="doctor-hero">
+  ${doctorPortrait(SITE_URL, "stein", true)}
   <p class="eyebrow">Developmental Optometry · Inwood, NY</p>
   <h1>Dr. Marcie Evans Stein</h1>
   <p class="creds">OD, FABM, OVDRA</p>
@@ -240,6 +242,7 @@ function buildMollerBody(): string {
   return `
 ${doctorStyles}
 <div class="doctor-hero">
+  ${doctorPortrait(SITE_URL, "moller", true)}
   <p class="eyebrow">Low Vision Rehabilitation · Inwood, NY</p>
   <h1>Dr. Esther Moller</h1>
   <p class="creds">OD, FAAO</p>

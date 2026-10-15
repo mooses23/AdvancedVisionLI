@@ -1,3 +1,5 @@
+import { doctorPhotoUrl, relatedDoctors } from "./doctorPortraits";
+
 interface SsrShellOptions {
   title: string;
   description: string;
@@ -89,7 +91,14 @@ function buildBreadcrumbNav(breadcrumbs: Array<{ name: string; url: string }>): 
 
 export function ssrShell({ title, description, canonical, schemaJsons = [], bodyHtml, breadcrumbs }: SsrShellOptions): string {
   const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 1 ? [buildBreadcrumbSchema(breadcrumbs)] : [];
-  const allSchemas = [...GLOBAL_SCHEMAS, ...schemaJsons, ...breadcrumbSchema];
+  const doctorSchemas = schemaJsons.map(schema => {
+    const entity = schema as { "@type"?: string; "@id"?: string };
+    if (entity["@type"] !== "Physician") return schema;
+    const key = entity["@id"] === `${SITE_URL}/#dr-stein` ? "stein"
+      : entity["@id"] === `${SITE_URL}/#dr-moller` ? "moller" : undefined;
+    return key ? { ...schema, image: doctorPhotoUrl(SITE_URL, key) } : schema;
+  });
+  const allSchemas = [...GLOBAL_SCHEMAS, ...doctorSchemas, ...breadcrumbSchema];
   const schemaBlock = allSchemas.map(schemaTag).join("\n");
   const breadcrumbHtml = breadcrumbs && breadcrumbs.length > 1 ? buildBreadcrumbNav(breadcrumbs) : "";
   return `<!DOCTYPE html>
@@ -125,6 +134,19 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
   ${schemaBlock}
   <style>
+    .doctor-profile-portrait { display: block; width: 200px; height: 200px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 4px solid white; margin: 0 auto 1.5rem; }
+    .seo-doctors { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .seo-doctors h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+    .doctor-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 1.25rem; }
+    .doctor-photo-card { display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem; border-radius: 16px; background: var(--card); border: 1px solid rgba(20,126,147,0.2); }
+    .doctor-card-portrait { width: 112px; height: 112px; flex: 0 0 112px; object-fit: cover; border-radius: 50%; }
+    .doctor-photo-card h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+    .doctor-photo-card p { margin: 0 0 0.5rem; font-size: 0.9rem; }
+    .doctor-photo-card a { font-weight: 700; text-decoration: underline; }
+    @media (max-width: 480px) {
+      .doctor-profile-portrait { width: 160px; height: 160px; }
+      .doctor-photo-card { flex-direction: column; text-align: center; }
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy: #0B3B49;
@@ -254,6 +276,7 @@ ${breadcrumbHtml}
 
 <main>
 ${bodyHtml}
+${relatedDoctors(SITE_URL, canonical)}
 </main>
 
 <footer class="site-footer">
