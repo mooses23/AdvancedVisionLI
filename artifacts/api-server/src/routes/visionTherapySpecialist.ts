@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/vision-therapy-specialist/";
+const CANONICAL = "https://advancedvisionli.com/vision-therapy-specialist/";
 
 const SCHEMA_MEDICAL_WEB_PAGE = {
   "@context": "https://schema.org",
@@ -25,16 +25,16 @@ const SCHEMA_MEDICAL_WEB_PAGE = {
 const SCHEMA_PHYSICIAN = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "@id": "https://AdvancedVisionLI.com/#dr-stein",
+  "@id": "https://advancedvisionli.com/#dr-stein",
   "name": "Dr. Marcie Evans Stein, OD FABM OVDRA",
   "description":
     "Fellowship-trained developmental optometrist and OVDRA-recognized vision therapy specialist with over 40 years of experience treating binocular vision disorders, convergence insufficiency, amblyopia, and learning-related vision problems in children and adults.",
   "medicalSpecialty": ["Developmental Optometry", "Binocular Vision", "Vision Therapy", "Pediatric Optometry"],
-  "url": "https://AdvancedVisionLI.com/dr-marcie-stein/",
+  "url": "https://advancedvisionli.com/dr-marcie-stein/",
   "worksFor": {
     "@type": "MedicalOrganization",
     "name": "Advanced Vision Long Island",
-    "url": "https://AdvancedVisionLI.com",
+    "url": "https://advancedvisionli.com",
     "telephone": "+17182683937",
     "address": {
       "@type": "PostalAddress",

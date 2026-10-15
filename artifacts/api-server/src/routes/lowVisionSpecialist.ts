@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/low-vision-specialist/";
+const CANONICAL = "https://advancedvisionli.com/low-vision-specialist/";
 
 const SCHEMA_MEDICAL_WEB_PAGE = {
   "@context": "https://schema.org",
@@ -25,16 +25,16 @@ const SCHEMA_MEDICAL_WEB_PAGE = {
 const SCHEMA_PHYSICIAN = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "@id": "https://AdvancedVisionLI.com/#dr-moller",
+  "@id": "https://advancedvisionli.com/#dr-moller",
   "name": "Dr. Esther Moller, OD FAAO",
   "description":
     "Certified Low Vision Specialist and Fellow of the American Academy of Optometry. Completed her low vision residency at the Northport VA Medical Center. Dr. Moller prescribes optical aids and adaptive strategies to help patients with macular degeneration, glaucoma, diabetic retinopathy, and post-stroke vision loss maintain independence.",
   "medicalSpecialty": ["Low Vision Rehabilitation", "Binocular Vision", "Comprehensive Optometry"],
-  "url": "https://AdvancedVisionLI.com/dr-esther-moller/",
+  "url": "https://advancedvisionli.com/dr-esther-moller/",
   "worksFor": {
     "@type": "MedicalOrganization",
     "name": "Advanced Vision Long Island",
-    "url": "https://AdvancedVisionLI.com",
+    "url": "https://advancedvisionli.com",
     "telephone": "+17182683937",
     "address": {
       "@type": "PostalAddress",

@@ -86,7 +86,7 @@ function buildFaqBody(): string {
   </div>
 
   <nav aria-label="Breadcrumb" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:2rem;">
-    <a href="https://AdvancedVisionLI.com/">Home</a>
+    <a href="https://advancedvisionli.com/">Home</a>
     <span aria-hidden="true" style="margin:0 0.4rem;">›</span>
     <span aria-current="page">FAQ</span>
   </nav>
@@ -173,13 +173,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://AdvancedVisionLI.com/",
+      item: "https://advancedvisionli.com/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "FAQ",
-      item: "https://AdvancedVisionLI.com/faq/",
+      item: "https://advancedvisionli.com/faq/",
     },
   ],
 };
@@ -189,7 +189,7 @@ router.get("/faq", (_req, res) => {
     title: "Vision Therapy FAQs | Advanced Vision Long Island",
     description:
       "Answers to the most common questions about vision therapy, low vision care, insurance coverage, treatment length, and what to expect at your first consultation — Advanced Vision Long Island, Inwood NY.",
-    canonical: "https://AdvancedVisionLI.com/faq/",
+    canonical: "https://advancedvisionli.com/faq/",
     schemaJsons: [faqSchema, breadcrumbSchema],
     bodyHtml: buildFaqBody(),
   });

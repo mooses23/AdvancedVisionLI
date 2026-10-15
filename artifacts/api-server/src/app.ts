@@ -2,7 +2,7 @@ import express, { type Express } from "express";
 import { ssrShell, SITE_URL } from "./lib/ssrShell";
 import cors from "cors";
 import pinoHttp from "pino-http";
-import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter, doctorPagesRouter, sitemapRouter, visionTherapySpecialistRouter, lowVisionSpecialistRouter, insurancePageRouter, serviceAreaPagesRouter } from "./routes";
+import router, { visionTherapyRouter, lowVisionCareRouter, contactPageRouter, faqPageRouter, checklistPageRouter, conditionPagesRouter, doctorPagesRouter, sitemapRouter, visionTherapySpecialistRouter, lowVisionSpecialistRouter, insurancePageRouter, serviceAreaPagesRouter, longIslandHubRouter, parentsPageRouter } from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
@@ -60,6 +60,17 @@ app.get("/", (_req, res) => {
 
 app.use("/api", router);
 
+// Enforce HTTPS: 301 redirect any http:// request to https://.
+// Behind Replit/GCE the original protocol arrives via x-forwarded-proto;
+// direct localhost hits carry no header and are left alone.
+app.use((req, res, next) => {
+  const proto = (req.get("x-forwarded-proto") || "").split(",")[0].trim();
+  if (proto && proto !== "https") {
+    return res.redirect(301, `https://${req.get("host")}${req.originalUrl}`);
+  }
+  next();
+});
+
 // Canonical URL enforcement: redirect bare-slug paths to trailing-slash form (301).
 // Covers any SSR page served from a directory index. Excludes root (/), static
 // asset paths (anything with a file extension), and /api/* routes.
@@ -85,6 +96,8 @@ app.use(visionTherapySpecialistRouter);
 app.use(lowVisionSpecialistRouter);
 app.use(insurancePageRouter);
 app.use(serviceAreaPagesRouter);
+app.use(longIslandHubRouter);
+app.use(parentsPageRouter);
 
 // 404 catch-all — must be registered AFTER all routes
 app.use((_req, res) => {
@@ -98,7 +111,7 @@ app.use((_req, res) => {
   <p class="eyebrow">404 · Not Found</p>
   <h1 class="page-title">Page not found</h1>
   <p class="lead">Sorry, we couldn't find the page you were looking for. It may have moved or the link may be incorrect.</p>
-  <a href="https://AdvancedVisionLI.com/" class="cta-btn" style="display:inline-block;margin-top:1rem;">Return to Homepage</a>
+  <a href="https://advancedvisionli.com/" class="cta-btn" style="display:inline-block;margin-top:1rem;">Return to Homepage</a>
 </div>`,
   });
   res.setHeader("Content-Type", "text/html; charset=utf-8").status(404).send(html);

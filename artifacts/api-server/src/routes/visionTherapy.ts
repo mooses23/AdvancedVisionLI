@@ -3,7 +3,7 @@ import { ssrShell, NAP_ADDRESS, NAP_PHONE, PRACTICE_NAME, SITE_URL, CONTACT_URL 
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/vision-therapy/";
+const CANONICAL = "https://advancedvisionli.com/vision-therapy/";
 
 const SCHEMA_MEDICAL_WEB_PAGE = {
   "@context": "https://schema.org",
@@ -110,7 +110,7 @@ const bodyHtml = `
   <h2 class="section-title">Conditions We Treat</h2>
   <div class="prose">
     <ul>
-      <li><strong>Convergence Insufficiency</strong> — eyes struggle to work together at near distances, causing eyestrain and double vision during reading</li>
+      <li><strong><a href="/convergence-insufficiency/">Convergence Insufficiency</a></strong> — eyes struggle to work together at near distances, causing eyestrain and double vision during reading</li>
       <li><strong>Amblyopia (Lazy Eye)</strong> — reduced vision in one eye due to abnormal visual development during childhood</li>
       <li><strong>Strabismus (Crossed Eyes)</strong> — eyes that point in different directions, causing misalignment and suppression</li>
       <li><strong>Binocular Vision Disorder</strong> — the two eyes fail to work as a coordinated team, leading to headaches, fatigue, and difficulty concentrating</li>

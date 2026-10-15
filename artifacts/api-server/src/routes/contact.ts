@@ -6,9 +6,9 @@ const router: IRouter = Router();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const PRACTICE_EMAIL = "doctors@AdvancedVisionLI.com";
+const PRACTICE_EMAIL = "doctors@advancedvisionli.com";
 // Default to Resend's test sender until the practice domain is verified in Resend.
-// Set FROM_EMAIL env var to a Resend-verified address (e.g. website@AdvancedVisionLI.com)
+// Set FROM_EMAIL env var to a Resend-verified address (e.g. website@advancedvisionli.com)
 // once DNS verification is complete.
 const FROM_EMAIL = process.env.FROM_EMAIL ?? "onboarding@resend.dev";
 
@@ -71,7 +71,7 @@ router.post("/contact", async (req, res) => {
       const userMessage =
         error.message?.toLowerCase().includes("verify") ||
         error.message?.toLowerCase().includes("domain")
-          ? "Email service needs domain verification. Please verify AdvancedVisionLI.com in Resend or contact support."
+          ? "Email service needs domain verification. Please verify advancedvisionli.com in Resend or contact support."
           : "Failed to send message. Please try again.";
       res.status(500).json({ error: userMessage });
       return;

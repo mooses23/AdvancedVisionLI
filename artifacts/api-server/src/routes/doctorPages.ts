@@ -7,7 +7,7 @@ const router = Router();
 const PRACTICE = {
   "@type": "MedicalOrganization",
   name: "Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/",
+  url: "https://advancedvisionli.com/",
   address: {
     "@type": "PostalAddress",
     streetAddress: "148c Doughty Blvd",
@@ -46,13 +46,13 @@ const doctorStyles = `
 const steinSchema = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "@id": "https://AdvancedVisionLI.com/#dr-stein",
+  "@id": "https://advancedvisionli.com/#dr-stein",
   name: "Dr. Marcie Evans Stein",
   givenName: "Marcie",
   familyName: "Stein",
   honorificPrefix: "Dr.",
   honorificSuffix: "OD, FABM, OVDRA",
-  url: "https://AdvancedVisionLI.com/dr-marcie-stein/",
+  url: "https://advancedvisionli.com/dr-marcie-stein/",
   description:
     "Dr. Marcie Evans Stein, OD, FABM, OVDRA, is an optometrist and founder of Advanced Vision Long Island in Inwood, NY. A graduate of SUNY College of Optometry with over 40 years of clinical experience, she specializes in developmental optometry and binocular vision therapy for children and adults. She is an OVDRA-recognized provider and Fellow of the American Board of Optometry in Binocular Vision (FABM), committed to helping patients of all ages achieve their full visual potential.",
   medicalSpecialty: [
@@ -89,8 +89,21 @@ const steinPageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "Dr. Marcie Evans Stein, OD, FABM, OVDRA | Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/dr-marcie-stein/",
-  mainEntity: { "@id": "https://AdvancedVisionLI.com/#dr-stein" },
+  url: "https://advancedvisionli.com/dr-marcie-stein/",
+  mainEntity: { "@id": "https://advancedvisionli.com/#dr-stein" },
+};
+
+const steinWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://advancedvisionli.com/dr-marcie-stein/#webpage",
+  url: "https://advancedvisionli.com/dr-marcie-stein/",
+  name: "Dr. Marcie Evans Stein, OD, FABM, OVDRA | Advanced Vision Long Island",
+  description:
+    "Physician profile of Dr. Marcie Evans Stein — developmental optometrist and founder of Advanced Vision Long Island in Inwood, NY, with 40+ years of experience in binocular vision and vision therapy.",
+  isPartOf: { "@id": "https://advancedvisionli.com/#website" },
+  about: { "@id": "https://advancedvisionli.com/#dr-stein" },
+  author: { "@id": "https://advancedvisionli.com/#organization" },
 };
 
 function buildSteinBody(): string {
@@ -138,7 +151,7 @@ ${doctorStyles}
     </div>
     <div class="spec-card">
       <div class="spec-label">Conditions Treated</div>
-      <div class="spec-value">Amblyopia, Strabismus, Convergence Insufficiency, Accommodative Disorders</div>
+      <div class="spec-value">Amblyopia, Strabismus, <a href="/convergence-insufficiency/" style="color:var(--teal);">Convergence Insufficiency</a>, Accommodative Disorders</div>
     </div>
   </div>
 
@@ -171,8 +184,8 @@ router.get("/dr-marcie-stein", (_req, res) => {
     title: "Dr. Marcie Evans Stein, OD, FABM, OVDRA | Advanced Vision Long Island",
     description:
       "Dr. Marcie Evans Stein is a developmental optometrist and founder of Advanced Vision Long Island in Inwood, NY. FABM Fellow and OVDRA recognized provider with 40+ years of experience in binocular vision and vision therapy.",
-    canonical: "https://AdvancedVisionLI.com/dr-marcie-stein/",
-    schemaJsons: [steinSchema, steinPageSchema],
+    canonical: "https://advancedvisionli.com/dr-marcie-stein/",
+    schemaJsons: [steinSchema, steinPageSchema, steinWebPageSchema],
     bodyHtml: buildSteinBody(),
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },
@@ -191,13 +204,13 @@ router.get("/dr-marcie-stein", (_req, res) => {
 const mollerSchema = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "@id": "https://AdvancedVisionLI.com/#dr-moller",
+  "@id": "https://advancedvisionli.com/#dr-moller",
   name: "Dr. Esther Moller",
   givenName: "Esther",
   familyName: "Moller",
   honorificPrefix: "Dr.",
   honorificSuffix: "OD, FAAO",
-  url: "https://AdvancedVisionLI.com/dr-esther-moller/",
+  url: "https://advancedvisionli.com/dr-esther-moller/",
   description:
     "Dr. Esther Moller, OD, FAAO, is a fellowship-trained optometrist and Certified Low Vision Specialist at Advanced Vision Long Island in Inwood, NY. A graduate of SUNY College of Optometry, she completed her residency at the Northport VA Medical Center. She is a Fellow of the American Academy of Optometry (FAAO) and provides comprehensive primary eye care with focused expertise in low vision rehabilitation and binocular vision.",
   medicalSpecialty: [
@@ -234,8 +247,21 @@ const mollerPageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "Dr. Esther Moller, OD, FAAO | Low Vision Specialist — Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/dr-esther-moller/",
-  mainEntity: { "@id": "https://AdvancedVisionLI.com/#dr-moller" },
+  url: "https://advancedvisionli.com/dr-esther-moller/",
+  mainEntity: { "@id": "https://advancedvisionli.com/#dr-moller" },
+};
+
+const mollerWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://advancedvisionli.com/dr-esther-moller/#webpage",
+  url: "https://advancedvisionli.com/dr-esther-moller/",
+  name: "Dr. Esther Moller, OD, FAAO | Low Vision Specialist — Advanced Vision Long Island",
+  description:
+    "Physician profile of Dr. Esther Moller — Certified Low Vision Specialist and FAAO Fellow at Advanced Vision Long Island in Inwood, NY, specializing in low vision rehabilitation and binocular vision.",
+  isPartOf: { "@id": "https://advancedvisionli.com/#website" },
+  about: { "@id": "https://advancedvisionli.com/#dr-moller" },
+  author: { "@id": "https://advancedvisionli.com/#organization" },
 };
 
 function buildMollerBody(): string {
@@ -318,8 +344,8 @@ router.get("/dr-esther-moller", (_req, res) => {
     title: "Dr. Esther Moller, OD, FAAO | Low Vision Specialist — Advanced Vision Long Island",
     description:
       "Dr. Esther Moller is a Certified Low Vision Specialist and FAAO Fellow at Advanced Vision Long Island in Inwood, NY. Fellowship-trained, with a residency at the Northport VA Medical Center, she specializes in low vision rehabilitation and comprehensive eye care.",
-    canonical: "https://AdvancedVisionLI.com/dr-esther-moller/",
-    schemaJsons: [mollerSchema, mollerPageSchema],
+    canonical: "https://advancedvisionli.com/dr-esther-moller/",
+    schemaJsons: [mollerSchema, mollerPageSchema, mollerWebPageSchema],
     bodyHtml: buildMollerBody(),
     breadcrumbs: [
       { name: "Home", url: `${SITE_URL}/` },

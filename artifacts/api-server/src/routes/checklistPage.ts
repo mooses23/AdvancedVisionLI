@@ -120,7 +120,7 @@ function buildChecklistBody(): string {
   <!-- Print footer -->
   <div class="print-footer">
     <p>${escapeHtml(PRACTICE_NAME)} &nbsp;·&nbsp; ${escapeHtml(PRACTICE_ADDRESS)} &nbsp;·&nbsp; ${escapeHtml(PRACTICE_PHONE)}</p>
-    <p>AdvancedVisionLI.com &nbsp;·&nbsp; Symptom list sourced from OVDRA (covd.org) &nbsp;·&nbsp; For informational purposes only — not medical advice.</p>
+    <p>advancedvisionli.com &nbsp;·&nbsp; Symptom list sourced from OVDRA (covd.org) &nbsp;·&nbsp; For informational purposes only — not medical advice.</p>
   </div>
 </div>
 
@@ -198,7 +198,7 @@ const webPageSchema = {
   name: "10 Signs Your Child May Have a Vision Problem — Patient Checklist",
   description:
     "A printable checklist of the 10 key warning signs of a functional vision problem in children, from Advanced Vision Long Island.",
-  url: "https://AdvancedVisionLI.com/vision-checklist/",
+  url: "https://advancedvisionli.com/vision-checklist/",
   specialty: "Vision Therapy",
   publisher: {
     "@type": "MedicalOrganization",
@@ -219,7 +219,7 @@ router.get("/vision-checklist", (_req, res) => {
     title: "Vision Problem Warning Signs — Printable Checklist | Advanced Vision Long Island",
     description:
       "10 key warning signs of a functional vision problem in children. Print this checklist and bring it to your appointment at Advanced Vision Long Island, Inwood NY.",
-    canonical: "https://AdvancedVisionLI.com/vision-checklist/",
+    canonical: "https://advancedvisionli.com/vision-checklist/",
     schemaJsons: [webPageSchema],
     bodyHtml: buildChecklistBody(),
     breadcrumbs: [

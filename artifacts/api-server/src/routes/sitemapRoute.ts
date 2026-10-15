@@ -3,7 +3,7 @@ import { SERVICE_AREA_SLUGS } from "./serviceAreaPages";
 
 const router = Router();
 
-const BASE = "https://AdvancedVisionLI.com";
+const BASE = "https://advancedvisionli.com";
 
 // All public SSR URLs. Update this list whenever a new SSR route is added.
 // Service area slugs are imported from serviceAreaPages.ts — single source of truth.
@@ -24,6 +24,8 @@ const SSR_URLS = [
   "/vision-therapy-specialist/",
   "/low-vision-specialist/",
   "/vision-therapy-insurance/",
+  "/vision-therapy-long-island/",
+  "/vision-therapy-for-children/",
   ...SERVICE_AREA_SLUGS,
 ];
 
