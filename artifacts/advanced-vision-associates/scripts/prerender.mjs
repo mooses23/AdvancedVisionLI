@@ -97,6 +97,8 @@ const ROUTES = [
   'vision-therapy-specialist',
   'low-vision-specialist',
   'vision-therapy-insurance',
+  'vision-therapy-long-island',
+  'vision-therapy-for-children',
   'vision-therapy-far-rockaway',
   'vision-therapy-howard-beach',
   'vision-therapy-valley-stream',
