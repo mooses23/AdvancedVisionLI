@@ -48,7 +48,7 @@ const pageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   name: "Does Insurance Cover Vision Therapy? | Advanced Vision Long Island",
-  url: "https://AdvancedVisionLI.com/vision-therapy-insurance/",
+  url: "https://advancedvisionli.com/vision-therapy-insurance/",
   about: { "@type": "MedicalTherapy", name: "Vision Therapy" },
   audience: { "@type": "Patient" },
   provider: {
@@ -215,7 +215,7 @@ router.get("/vision-therapy-insurance", (_req, res) => {
     title: "Does Insurance Cover Vision Therapy? | Advanced Vision Long Island",
     description:
       "A plain-language guide to vision therapy insurance coverage in New York. Learn which medical plans may cover treatment, what to ask your insurer, how CBVH helps low vision patients, and how FSA/HSA funds work.",
-    canonical: "https://AdvancedVisionLI.com/vision-therapy-insurance/",
+    canonical: "https://advancedvisionli.com/vision-therapy-insurance/",
     schemaJsons: [faqSchema, pageSchema],
     bodyHtml: buildBody(),
     breadcrumbs: [

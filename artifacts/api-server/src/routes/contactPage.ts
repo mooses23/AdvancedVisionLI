@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/contact/";
+const CANONICAL = "https://advancedvisionli.com/contact/";
 
 const SCHEMA_CONTACT_PAGE = {
   "@context": "https://schema.org",
@@ -15,9 +15,9 @@ const SCHEMA_CONTACT_PAGE = {
   "mainEntity": {
     "@type": "MedicalOrganization",
     "name": "Advanced Vision Long Island",
-    "url": "https://AdvancedVisionLI.com",
+    "url": "https://advancedvisionli.com",
     "telephone": "+17182683937",
-    "email": "doctors@AdvancedVisionLI.com",
+    "email": "doctors@advancedvisionli.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "148c Doughty Blvd",
@@ -70,7 +70,7 @@ const bodyHtml = `
     </div>
     <div class="nap-row">
       <span class="nap-label">Email</span>
-      <span><a href="mailto:doctors@AdvancedVisionLI.com">doctors@AdvancedVisionLI.com</a></span>
+      <span><a href="mailto:doctors@advancedvisionli.com">doctors@advancedvisionli.com</a></span>
     </div>
     <div class="nap-row">
       <span class="nap-label">Doctors</span>

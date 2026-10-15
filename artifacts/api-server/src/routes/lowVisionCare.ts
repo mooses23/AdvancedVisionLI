@@ -3,7 +3,7 @@ import { ssrShell, SITE_URL, CONTACT_URL } from "../lib/ssrShell";
 
 const router: IRouter = Router();
 
-const CANONICAL = "https://AdvancedVisionLI.com/low-vision-care/";
+const CANONICAL = "https://advancedvisionli.com/low-vision-care/";
 
 const FAQ_ITEMS = [
   {
@@ -55,7 +55,7 @@ const SCHEMA_SERVICE = {
   "provider": {
     "@type": "MedicalOrganization",
     "name": "Advanced Vision Long Island",
-    "url": "https://AdvancedVisionLI.com",
+    "url": "https://advancedvisionli.com",
     "telephone": "+17182683937",
     "address": {
       "@type": "PostalAddress",

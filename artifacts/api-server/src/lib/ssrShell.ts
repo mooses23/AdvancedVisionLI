@@ -13,7 +13,7 @@ interface SsrShellOptions {
 export const NAP_ADDRESS = "148c Doughty Blvd, Inwood, NY 11096";
 export const NAP_PHONE = "(718) 268-3937";
 export const PRACTICE_NAME = "Advanced Vision Long Island";
-export const SITE_URL = "https://AdvancedVisionLI.com";
+export const SITE_URL = "https://advancedvisionli.com";
 export const CONTACT_URL = `${SITE_URL}/#contact`;
 export const LOGO_URL = `${SITE_URL}/images/logo-v2.png`;
 export const FAVICON_URL = `${SITE_URL}/favicon-v3.png`;
@@ -256,7 +256,7 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
 <body>
 
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
-  <a href="https://AdvancedVisionLI.com/" class="logo">
+  <a href="https://advancedvisionli.com/" class="logo">
     <div class="logo-mark">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
     </div>
@@ -266,8 +266,8 @@ export function ssrShell({ title, description, canonical, schemaJsons = [], body
     </div>
   </a>
   <ul class="nav-links">
-    <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#vision-therapy">Vision Therapy</a></li>
-    <li class="hide-mobile"><a href="https://AdvancedVisionLI.com/#low-vision">Low Vision</a></li>
+    <li class="hide-mobile"><a href="https://advancedvisionli.com/#vision-therapy">Vision Therapy</a></li>
+    <li class="hide-mobile"><a href="https://advancedvisionli.com/#low-vision">Low Vision</a></li>
     <li><a href="${CONTACT_URL}" class="nav-cta">Schedule</a></li>
   </ul>
 </nav>
@@ -292,7 +292,7 @@ ${relatedDoctors(SITE_URL, canonical)}
       </p>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="https://AdvancedVisionLI.com/">Home</a>
+      <a href="https://advancedvisionli.com/">Home</a>
       <a href="/vision-therapy/">Vision Therapy</a>
       <a href="/low-vision-care/">Low Vision Care</a>
       <a href="/amblyopia/">Amblyopia</a>

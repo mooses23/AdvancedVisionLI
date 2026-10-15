@@ -49,8 +49,8 @@ export default function Footer() {
             </nav>
             <p>© {new Date().getFullYear()} Advanced Vision Long Island. All rights reserved.</p>
             <p>
-              <a href="https://AdvancedVisionLI.com" className="hover:text-white transition-colors">
-                AdvancedVisionLI.com
+              <a href="https://advancedvisionli.com" className="hover:text-white transition-colors">
+                advancedvisionli.com
               </a>
             </p>
             <p className="max-w-xs text-white/40 leading-relaxed">
